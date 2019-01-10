@@ -1,0 +1,133 @@
+/* src/assets/styles/utils/_mixins.scss  */
+
+@mixin isFlex($align: center, $justify: center, $direction: row, $wrap: wrap) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+
+@mixin bgImage($url, $repeat: no-repeat, $position: center, $size: initial) {
+	background-image: url($url);
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $size;
+}
+
+@mixin font-face($font-name, $font-file, $font-style, $font-weight) {
+	@font-face {
+		font-family: '#{$font-name}';
+		src: url('../fonts/#{$font-file}.eot');
+		src:
+			url('../fonts/#{$font-file}.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/#{$font-file}.woff') format('woff'),
+			url('../fonts/#{$font-file}.ttf') format('truetype'),
+			url('../fonts/#{$font-file}.svg') format('svg');
+		font-style: #{$font-style};
+		font-weight: #{$font-weight};
+		text-rendering: optimizeLegibility;
+	}
+}
+
+@mixin arrow($color, $width, $padding, $dir) {
+	$rotate: 0deg;
+
+	@if ($dir=='up') {
+		$rotate: -135deg;
+	}
+
+	@else if ($dir=='down') {
+		$rotate: 45deg;
+	}
+
+	@else if ($dir=='left') {
+		$rotate: 135deg;
+	}
+
+	@else if ($dir=='right') {
+		$rotate: -45deg;
+	}
+
+	border: solid #{$color};
+	border-width: 0 #{$width} #{$width} 0;
+	display: inline-block;
+	padding: #{$padding};
+	transform: rotate($rotate);
+}
+
+@mixin triangle($color, $width, $dir) {
+	$rotate: 0deg;
+
+	@if ($dir=='up') {
+		$rotate: 0deg;
+	}
+
+	@else if ($dir=='down') {
+		$rotate: 180deg;
+	}
+
+	@else if ($dir=='left') {
+		$rotate: 90deg;
+	}
+
+	@else if ($dir=='right') {
+		$rotate: -90deg;
+	}
+
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 #{$width} #{$width} #{$width};
+	border-color: transparent transparent #{$color} transparent;
+	transform: rotate($rotate);
+}
+
+@mixin hexagon($color, $width) {
+	width: #{$width};
+	height: calc(#{$width} - (#{$width} / 2.4));
+	background: #{$color};
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(-#{$width} / 4);
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: calc(#{$width} / 2) solid transparent;
+		border-right: calc(#{$width} / 2) solid transparent;
+		border-bottom: calc(#{$width} / 4) solid #{$color};
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: calc(-#{$width} / 4);
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: calc(#{$width} / 2) solid transparent;
+		border-right: calc(#{$width} / 2) solid transparent;
+		border-top: calc(#{$width} / 4) solid #{$color};
+	}
+}
+
+@mixin rw($width) {
+	@media only screen and (max-width: $width + "px") {
+		@content;
+	}
+}
+
+@mixin rh($height) {
+	@media only screen and (max-height: $height + "px") {
+		@content;
+	}
+}
+
+@mixin rwh($width, $height) {
+	@media (max-width: $width + "px") and (max-height: $height + "px") {
+		@content;
+	}
+}

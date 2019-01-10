@@ -1,0 +1,58 @@
+.selectboxit-btn {
+	box-shadow: none;
+	background: $c_white;
+	text-transform: uppercase;
+	color: $c_blue;
+	border: 2px solid $c_blue;
+	border-radius: 30px !important;
+}
+
+.selectboxit-container * {
+	font-family: $ff_bold;
+	font-size: $fz_default;
+}
+
+.selectboxit-btn.selectboxit-enabled:hover,
+.selectboxit-btn.selectboxit-enabled:focus,
+.selectboxit-btn.selectboxit-enabled:active {
+	color: $c_blue;
+	background-color: $c_white;
+}
+
+.selectboxit .selectboxit-arrow-container .selectboxit-arrow {
+	@include arrow($c_blue, 2px, 4.5px, 'down');
+	
+	top: 7px;
+	transition: all $transition ease;
+}
+
+.selectboxit.selectboxit-open .selectboxit-arrow-container .selectboxit-arrow {
+	@include arrow($c_blue, 2px, 4.5px, 'up');
+
+	top: 12px;
+}
+
+.selectboxit-container .selectboxit-text {
+	min-width: 0 !important;
+	max-width: 100% !important;
+	width: auto !important;
+	padding-left: 6px;
+	margin-right: 0;
+	padding-right: 22px;
+}
+
+.selectboxit-container .selectboxit-arrow-container {
+	right: 6px;
+}
+
+.selectboxit-container .selectboxit-options {
+	border-radius: 15px;
+	border: 2px solid $c_blue;
+	width: 100%;
+	margin-top: -1px;
+}
+
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+	color: $c_blue;
+	background: $c_green;
+}

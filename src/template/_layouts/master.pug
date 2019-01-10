@@ -1,0 +1,11 @@
+include ../_mixins/list
+
+doctype html
+html(lang="ru")
+	include ../_shared/head
+	block head
+	body
+		include ../components/header/header
+		block content
+		include ../components/footer/footer
+		include ../components/popups/popups

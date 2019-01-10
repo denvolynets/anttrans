@@ -1,0 +1,18 @@
+.popup {
+	background-color: $c_white;
+	max-width: 1060px;
+	width: 100%;
+	padding: 70px;
+	margin: auto;
+	box-sizing: border-box;
+
+	.card-product__info {
+		padding-right: 0;
+		padding-left: 60px;
+	}
+
+	.card-product__col:first-child {
+		width: calc(50% - 60px);
+		padding: 0 30px;
+	}
+}

@@ -1,0 +1,227 @@
+$grey: $c_blue;
+$grey_d: rgba(72, 77, 92, .8);
+$accent: $c_blue;
+$white: $c_white;
+$error: $c_error;
+$form: rsform;
+$tr: all .15s ease;
+
+.rsform {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 100%;
+	justify-content: center;
+	width: 100%;
+	margin: auto;
+
+	small {
+		font-size: 12px;
+	}
+
+	fieldset {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&-group {
+		max-width: 250px;
+		width: 100%;
+		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		margin-right: 40px;
+
+		&.required {
+			.#{$form} {
+				&-title {
+					&::after {
+						content: '*';
+						color: $error;
+						margin-left: 2px;
+						font-size: 20px;
+						display: none;
+					}
+				}
+			}
+		}
+
+		&.error {
+			.#{$form} {
+				&-input {
+					border-color: $error;
+				}
+
+				&-hint {
+					display: block;
+				}
+			}
+		}
+
+		&.success {
+			position: relative;
+
+			&.rs-check_mark {
+				&::after {
+					content: '';
+					left: auto;
+					top: auto;
+					right: -20px;
+					bottom: 17px;
+					width: 5px;
+					height: 10px;
+					border: solid $accent;
+					border-width: 0 2px 2px 0;
+					transform: rotate(45deg);
+					zoom: 100%;
+					position: absolute;
+					display: block !important;
+				}
+			}
+
+			.#{$form} {
+				&-input {
+					border-color: $accent;
+				}
+			}
+		}
+	}
+
+	&-checkbox {
+		margin: 4px 0 0;
+
+		.#{$form} {
+			&-title {
+				font-size: 14px;
+			}
+
+			&-checkbox--input {
+				display: none;
+
+				&__clone {
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					background-color: $grey;
+					position: relative;
+					top: 1px;
+					margin-right: 5px;
+
+					&::before {
+						content: '';
+						left: 8px;
+						top: 4px;
+						width: 5px;
+						height: 10px;
+						border: solid transparent;
+						border-width: 0 3px 3px 0;
+						transform: rotate(45deg);
+						zoom: 68%;
+						position: absolute;
+					}
+				}
+
+				&:checked {
+					+ .#{$form}-checkbox--input__clone {
+						background-color: $accent;
+
+						&::before {
+							border-color: $c_white;
+						}
+					}
+				}
+			}
+
+			&-label {
+				cursor: pointer;
+				user-select: none;
+			}
+		}
+
+		&.error {
+			.#{$form}-checkbox--input__clone {
+				background-color: $error;
+			}
+		}
+	}
+
+	&-radio {
+		margin-bottom: 10px;
+
+		&--label {
+			cursor: pointer;
+			display: inline-flex;
+			align-items: center;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.#{$form} {
+			&-title {
+				margin-bottom: 10px;
+				display: block;
+				width: 100%;
+			}
+		}
+
+		&--input {
+			display: none;
+
+			&__clone {
+				width: 15px;
+				height: 15px;
+				background-color: $grey;
+				border-radius: 100%;
+				display: inline-block;
+				position: relative;
+				margin-right: 7px;
+				bottom: 1px;
+			}
+
+			&:checked + .#{$form}-radio--input__clone {
+				background-color: $accent;
+			}
+		}
+	}
+
+	&-title {
+		a {
+			color: $accent;
+			text-decoration: none;
+			font-size: inherit;
+		}
+	}
+
+	&-hint {
+		display: none;
+		position: absolute;
+		bottom: -17px;
+		left: 20px;
+		font-size: 12px;
+		color: $error;
+	}
+
+	&-input {
+		padding: 9px 20px;
+		border-radius: 20px;
+		outline: none;
+		border: 1px solid transparent;
+		color: $grey;
+
+		&::placeholder {
+			color: $grey;
+		}
+
+		&:focus,
+		&:active {
+			border-color: $accent;
+		}
+	}
+
+	&-btn {
+		margin-top: 0;
+	}
+}

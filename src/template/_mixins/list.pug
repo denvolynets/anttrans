@@ -1,0 +1,19 @@
+- var staticPath = "./assets/";
+include ../components/breadcrumb/breadcrumb
+
+mixin title(...titleParts)
+	- var t = "Sitename"
+	each titlePart in titleParts.reverse()
+		- t = titlePart + " / " + t
+	title #{t}
+
+mixin statcss(href)
+	link(rel="stylesheet" href=href)
+
+mixin statjs(href)
+	script(src=href)
+
+mixin selectBox(options, defaultText)
+	select(data-default-text=`${defaultText ? defaultText : ''}`)
+		each option in options
+			option=option
