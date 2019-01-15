@@ -1,5 +1,5 @@
 .popup {
-	background-color: $c_white;
+	background-color: $clr_wh;
 	max-width: 1060px;
 	width: 100%;
 	padding: 70px;
@@ -10,7 +10,7 @@
 		padding-right: 0;
 		padding-left: 60px;
 	}
-
+	
 	.card-product__col:first-child {
 		width: calc(50% - 60px);
 		padding: 0 30px;

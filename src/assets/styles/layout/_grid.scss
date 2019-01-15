@@ -1,0 +1,150 @@
+.g-grid {
+	width: 100%;
+	max-width: $grid-width + $grid-gutter;
+	margin: 0 auto;
+	padding-left: $grid-gutter/2;
+	padding-right: $grid-gutter/2;
+}
+
+@include make-grid-columns-persent(12, $grid-gutter);
+
+.g-row {
+	&_ib .g-col {
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	margin-left: -$grid-gutter/2;
+	margin-right: -$grid-gutter/2;
+
+	@include clearfix;
+
+	.g-col {
+		&_auto {
+			width: auto;
+		}
+
+		&_pr_no {
+			padding-right: 0;
+		}
+
+		&_pl_no {
+			padding-left: 0;
+		}
+
+		&_md_1_5 {
+			width: 11.1111%;
+		}
+
+		&_md_2_5 {
+			width: 20%;
+		}
+
+		&_md_3_5 {
+			width: 27%;
+		}
+
+		&_md_4_5 {
+			width: 40%;
+		}
+
+		&_md_4_2 {
+			width: 38%;
+		}
+
+		&_md_7_8 {
+			width: 62%;
+		}
+	}
+
+	&_narrow {
+		@extend .g-row;
+
+		margin-left: -10px;
+		margin-right: -10px;
+
+		.g-col {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	&_table {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		width: 100%;
+		display: table;
+		border-collapse: separate;
+		border-spacing: 0;
+		table-layout: fixed;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+
+		&-wrap {
+			margin: -5px;
+		}
+
+		.g-col {
+			float: none;
+			display: table-cell;
+			vertical-align: top;
+			padding: 0;
+		}
+	}
+
+	&_flex {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		&:before,
+		&:after {
+			display: none !important;
+		}
+
+		& > .g-col {
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			float: none !important;
+			clear: none !important;
+		}
+	}
+
+	&_indent {
+		margin-left: -$grid-gutter/2;
+		margin-right: -$grid-gutter/2;
+
+		.g-col {
+			padding-left: $grid-gutter/2;
+			padding-right: $grid-gutter/2;
+		}
+
+		&_small {
+			margin-left: -10px;
+			margin-right: -10px;
+
+			.g-col {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
+/* Выравнивнивание блока внутри сетки по центру */
+.g-col.g-col_center,
+.g-col_center,
+.row_center .g-col {
+	margin-left: auto !important;
+	margin-right: auto;
+	float: none;
+	text-align: left;
+}

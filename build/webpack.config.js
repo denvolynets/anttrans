@@ -15,7 +15,6 @@ const yargs = require('yargs');
 const argv = yargs.boolean('disable-compression-plugin').argv;
 // Files
 const utils = require('./utils');
-
 // Configuration
 let consoleStats = {
 	all: false,
@@ -118,7 +117,7 @@ module.exports = env => {
 					loader: 'svg-sprite-loader',
 					options: {
 						extract: true,
-						spriteFilename: 'assets/svg-sptire/svg-sprite.svg'
+						spriteFilename: 'assets/images/svg-sprite/sprite.svg'
 					}
 				},
 				{
@@ -181,10 +180,6 @@ module.exports = env => {
 					{
 						from: 'assets/images',
 						to: 'assets/images'
-					},
-					{
-						from: 'assets/libs',
-						to: 'assets/libs'
 					}
 				]),
 				new ExtractTextPlugin({
@@ -210,21 +205,26 @@ module.exports = env => {
 					name: 'client',
 					logger: str => console.log(`\n${str}`)
 				}),
-				new StyleLintPlugin(),
-				new HardSourceWebpackPlugin(),
-				new ParallelUglifyPlugin({
-					cacheDir: path.join('node_modules', '.cache', 'parallel-uglify'),
-					sourceMap: !prod,
-					uglifyES: {
-					}
-				}),
+				// new StyleLintPlugin(),
+				// new ParallelUglifyPlugin({
+				// 	cacheDir: path.join('node_modules', '.cache', 'parallel-uglify'),
+				// 	sourceMap: !prod,
+				// 	uglifyES: {
+				// 	}
+				// }),
 				new webpack.ProvidePlugin({
 					'window.jQuery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'window.$': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'jQuery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'$': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'Swiper': path.resolve(__dirname, '../node_modules/swiper/dist/js/swiper')
-				})
+				}),
+				// new HardSourceWebpackPlugin({
+				// 	environmentHash: {
+				// 		root: process.cwd(),
+				// 		directories: ['assets/template', 'assets/fonts', 'assets/libs', 'assets/styles', 'assets/images/temp', 'assets/scripts']
+				// 	}
+				// })
 			];
 
 			if (argv.env.NODE_ENV === 'production') {

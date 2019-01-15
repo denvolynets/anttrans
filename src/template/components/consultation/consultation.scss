@@ -1,0 +1,73 @@
+.consultation {
+	&-form {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+
+		> * {
+			margin-bottom: 0;
+			margin-top: 0;
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				width: calc(29% - 10px);
+			}
+
+			&:nth-child(3),
+			&:nth-child(4) {
+				width: calc(21% - 10px);
+			}
+		}
+
+		small {
+			color: $clr_wh;
+
+			a {
+				color: inherit;
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		input {
+			border-color: rgba($clr_wh, .45);
+			font-size: $fs_05;
+			font-family: $ff_main;
+			color: $clr_wh;
+			padding-left: 20px;
+			padding-right: 20px;
+			transition: all $trans;
+		}
+
+		.rsform {
+			&-hint {
+				left: 20px;
+			}
+
+			&-group {
+				&:focus,
+				&:focus-within {
+					.rsform-input {
+						border-color: rgba($clr_wh, 1);
+					}
+				}
+
+				&.success {
+					input {
+						border-color: $clr_wh;
+					}
+					
+					&.rs-check_mark {
+						&:after {
+							border-color: $clr_wh;
+						}
+					}
+				}
+			}
+		}
+	}
+}

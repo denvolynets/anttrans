@@ -1,0 +1,98 @@
+.avtopark {
+	&-list {
+		&__item {
+			$s: &;
+
+			box-sizing: border-box;
+			min-height: 70px;
+			padding: 0 20px;
+			padding-left: 0;
+			border: 1px solid $clr_gray_2;
+			display: flex;
+			cursor: pointer;
+			transition: all $trans;
+
+			&--icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-right: 1px solid $clr_gray_2;
+				min-width: 100px;
+				transition: all $trans;
+			}
+
+			&--name {
+				display: flex;
+				align-items: center;
+				padding-left: 25px;
+			}
+
+			&.active {
+				border-color: $clr_main;
+				background-color: $clr_main_h;
+
+				#{$s} {
+					&--icon {
+						border-right-color: $clr_main;
+					}
+				}
+			}
+		}
+	}
+
+	&-preview {
+		display: flex;
+
+		> * {
+			width: 50%;
+			background-color: $clr_gray_3;
+		}
+
+		&__img {
+			background-position: center;
+			background-size: cover;
+		}
+
+		&__params {
+			padding: 30px;
+
+			&--title {
+				color: $clr_main_1;
+				font-family: $ff_bold;
+			}
+
+			&--inner {
+				li {
+					font-size: $fs_05;
+					color: $clr_dark_2;
+					display: flex;
+					justify-content: space-between;
+					border-bottom: 1px solid $clr_gray_2;
+					margin-bottom: 6px;
+					padding-bottom: 6px;
+
+					&:last-child {
+						border-bottom: none;
+						margin-bottom: 0;
+					}
+
+					span.val {
+						color: $clr_main_1;
+						font-family: $ff_bold;
+					}
+				}
+			}
+		}
+	}
+
+	&-cartext {
+		p.p {
+			font-size: $fs_05;
+			color: $clr_dark_2;
+		}
+	}
+
+	.btn {
+		display: inline-flex;
+	}
+}

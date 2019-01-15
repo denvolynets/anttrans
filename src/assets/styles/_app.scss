@@ -14,12 +14,18 @@
 /*
   Layout
 */
+@import './layout/_normalize';
 @import './layout/_fonts';
+@import './layout/_typo';
+@import './layout/_grid';
+@import './layout/_global';
 @import './layout/_general';
 
 /*
   libs
 */
+@import '../../../node_modules/swiper/dist/css/swiper.min';
+@import '../../../node_modules/jquery.scrollbar/jquery.scrollbar';
 
 /*
   PUG components

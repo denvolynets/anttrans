@@ -1,0 +1,20 @@
+mixin rsformGroup(params)
+    .rsform-group.js-rsform__field.rs-check_mark
+        span.rsform-title
+        if (params.icon)
+            span.rsform-icon
+                svg
+                    use(xlink:href=`./assets/images/svg-sprite/sprite.svg#${params.icon}`)
+        if (params.req)
+            input.rsform-input(
+                type=`${params.type}`, 
+                name=`${params.name}`, 
+                placeholder=`${params.placeholder}`, 
+                data-required=`${params.req}`,
+                class=`${params.icon ? 'icon': ''}`)
+        else 
+            input.rsform-input(
+                type=`${params.type}`, 
+                name=`${params.name}`, 
+                placeholder=`${params.placeholder}`,
+                class=`${params.icon ? 'icon': ''}`)

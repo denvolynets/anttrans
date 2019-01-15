@@ -1,0 +1,22 @@
+mixin consultation()
+    section.consultation.g-clr_m-grad
+        .g-grid
+            .g-row
+                .g-col.g-col_md_4
+                    h3.g-clr_wh.g-mb_0 Бесплатная консультация по грузоперевозке
+                .g-col.g-col_md_8
+                    form.consultation-form.rsform
+                        +rsformGroup({
+                            req: '{"type": "alphabet","message":"Введите ваше имя","minL": 1,"lang": "ru"}',
+                            type: 'text',
+                            name: 'name',
+                            placeholder: 'Как к Вам обращаться?'
+                        })
+                        +rsformGroup({
+                            req: '{"type": "phoneRU","message":"Введите ващ телефон"}',
+                            type: 'tel',
+                            name: 'tel',
+                            placeholder: 'Ваш номер'
+                        })
+                        +btn('lg','yell', 'submit').rsform-btn Отправить
+                        small Нажимая кнопку «отправить» #[a(href='/') я даю согласие на обработку персональных данных]

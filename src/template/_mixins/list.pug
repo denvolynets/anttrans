@@ -1,8 +1,24 @@
 - var staticPath = "./assets/";
+
 include ../components/breadcrumb/breadcrumb
+include ../components/btn/btn
+
+include ../components/carousel/carousel
+include ../components/header/header
+include ../components/form-calc/form-calc
+include ../components/rsform-group/rsform-group
+include ../components/desc/desc
+include ../components/advantages/advantages
+include ../components/tariffs/tariffs
+include ../components/consultation/consultation
+include ../components/showing/showing
+include ../components/avtopark/avtopark
+include ../components/services/services
+include ../components/how/how
+include ../components/reviews/reviews
 
 mixin title(...titleParts)
-	- var t = "Sitename"
+	- var t = "AntTrans"
 	each titlePart in titleParts.reverse()
 		- t = titlePart + " / " + t
 	title #{t}

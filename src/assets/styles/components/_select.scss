@@ -1,33 +1,32 @@
 .selectboxit-btn {
 	box-shadow: none;
-	background: $c_white;
+	background: $clr_wh;
 	text-transform: uppercase;
-	color: $c_blue;
-	border: 2px solid $c_blue;
+	color: $clr_main;
+	border: 2px solid $clr_main;
 	border-radius: 30px !important;
 }
 
 .selectboxit-container * {
-	font-family: $ff_bold;
-	font-size: $fz_default;
+	font-size: $fz_main;
 }
 
 .selectboxit-btn.selectboxit-enabled:hover,
 .selectboxit-btn.selectboxit-enabled:focus,
 .selectboxit-btn.selectboxit-enabled:active {
-	color: $c_blue;
-	background-color: $c_white;
+	color: $clr_main;
+	background-color: $clr_wh;
 }
 
 .selectboxit .selectboxit-arrow-container .selectboxit-arrow {
-	@include arrow($c_blue, 2px, 4.5px, 'down');
+	@include arrow($clr_highlight, 2px, 4.5px, 'down');
 	
 	top: 7px;
-	transition: all $transition ease;
+	transition: all $trans;
 }
 
 .selectboxit.selectboxit-open .selectboxit-arrow-container .selectboxit-arrow {
-	@include arrow($c_blue, 2px, 4.5px, 'up');
+	@include arrow($clr_highlight, 2px, 4.5px, 'up');
 
 	top: 12px;
 }
@@ -47,12 +46,12 @@
 
 .selectboxit-container .selectboxit-options {
 	border-radius: 15px;
-	border: 2px solid $c_blue;
+	border: 2px solid $clr_main;
 	width: 100%;
 	margin-top: -1px;
 }
 
 .selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
-	color: $c_blue;
-	background: $c_green;
+	color: $clr_main;
+	background: $clr_main;
 }

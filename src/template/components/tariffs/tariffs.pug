@@ -1,0 +1,32 @@
+mixin tariffs()
+    section.tariffs
+        .g-grid
+            h2.g-clr_m.g-mb_1 Тарифы на перевозку груза автомобильным транспортом
+            .tariffs-inner#tarrifs
+                .g-row
+                    .g-col.g-col_md_6
+                        .tariffs-dropdown
+                            span Выберите город отправления:
+                            ul.tariffs-dropdown__inner
+                                li.tariffs-dropdown__parent.dropdown.tariffs-city
+                                    ul.tariffs-dropdown__child.dropdown-child
+                    .g-col.g-col_md_6
+                        .tariffs-tabs
+                    .g-col.g-col_md_12
+                        .tariffs-table
+                            table.table-head
+                                thead
+                                    tr
+                                        th Город доставки
+                                        th 1 тонна
+                                        th 1.5 тонны
+                                        th 3 тонны
+                                        th 5 тонна
+                                        th 10 тонна
+                                        th 20 тонн
+                            .scrollbar-outer
+                                .scrollbar-outer__head
+                                table
+                                    tbody
+                    .g-col.g-col_md_12.g-mt_2
+                        small Приведённые цены и характеристики услуг носят исключительно ознакомительный характер и не являются публичной офертой, определённой пунктом 2 статьи 437 Гражданского кодекса Российской Федерации. Для получения подробной информации о характеристиках услуг, их наличия и стоимости обращайтесь, пожалуйста, к специалистам нашей компани

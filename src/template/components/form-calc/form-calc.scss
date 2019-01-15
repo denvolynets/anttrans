@@ -1,0 +1,30 @@
+$f_c: 'form-calc';
+
+.#{$f_c} {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 426px;
+	flex-direction: column;
+	margin-right: 0;
+	margin-left: auto;
+	padding: 30px 30px 39px;
+	box-sizing: border-box;
+	border: 1px solid $clr_wh;
+	border-radius: $br_r;
+	overflow: hidden;
+	background-color: rgba(#161616, .2);
+	margin-top: -25px;
+
+	.rsform-input {
+		@include placeholder() {
+			color: $clr_main;
+		}
+	}
+
+	h3 {
+		font-size: $fs_175;
+		font-family: $ff_bold;
+		line-height: 1;
+		padding-right: 10px;
+	}
+}

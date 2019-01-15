@@ -87,7 +87,7 @@
 						'inputData': inputOptions
 					};
 
-					EL.attr('autocomplete', 'off').parents(inputOptions.parentField).addClass('required');
+					EL.attr('autocomplete', 'off').parents(inputOptions.parentField).first().addClass('required');
 					if (inputOptions.message) EL.parent(inputOptions.parentField).append('<span class="rsform-hint">' + inputOptions.message + '</span>');
 					/* -- дефолтные события при инициализации -- */
 
@@ -222,9 +222,9 @@
 									'state': true,
 									'inputData': inputOptions
 								};
-								EL.parents(inputOptions.parentField).addClass('success').removeClass('error');
+								EL.parents(inputOptions.parentField).first().addClass('success').removeClass('error');
 							} else {
-								EL.parents(inputOptions.parentField).addClass('error').removeClass('success');
+								EL.parents(inputOptions.parentField).first().addClass('error').removeClass('success');
 								DATA_FORM.fieldValid[index] = {
 									'value': inputVal,
 									'state': false,

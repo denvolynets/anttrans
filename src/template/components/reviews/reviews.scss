@@ -1,0 +1,100 @@
+.reviews {
+	position: relative;
+	$s: &;
+
+	&-all {
+		color: $clr_main_1;
+		font-family: $ff_bold;
+		font-size: $fs_175;
+		position: absolute;
+		left: 0;
+		bottom: 10px;
+		cursor: pointer;
+		transition: all $trans;
+		z-index: 4;
+
+		&:hover {
+			color: $clr_main;
+		}
+	}
+
+	&-item {
+		&__col {
+			&:first-child {
+				width: 60%;
+			}
+
+			&:last-child {
+				width: 24.5%;
+			}
+		}
+
+		&__text {
+			font-size: $fs_05;
+			color: $clr_dark_2;
+			margin-bottom: 3px;
+		}
+
+		&__name {
+			font-family: $ff_bold;
+			font-size: $fs_05;
+		}
+
+		&__right {
+			color: $clr_main_1;
+			font-size: $fs_175;
+			opacity: 0;
+			transform: translateX(100px);
+			transition: all .25s ease 0s;
+		}
+	}
+
+	.carousel-reviews {
+		.swiper-slide {
+			display: flex;
+			justify-content: space-between;
+
+			&:before {
+				display: none;
+			}
+
+			&.swiper-slide-active {
+				#{$s}-item__right {
+					opacity: 1;
+					transform: translateX(0);
+					transition: all .55s ease .5s;
+				}
+			}
+		}
+	}
+
+	.carousel-navs {
+		right: 0;
+		left: auto;
+		bottom: 0;
+		top: auto;
+		padding: 0;
+		position: relative;
+		justify-content: flex-end;
+		height: 57px;
+		margin-top: 40px;
+
+		> div {
+			bottom: 0;
+			top: 0;
+			margin: 0;
+			border-color: $clr_main_2;
+			background-color: #fff;
+
+			&:before {
+				background-color: $clr_main;
+			}
+
+			&:not(.swiper-button-disabled) {
+				&:hover {
+					background-color: $clr_main_2;
+				}
+			}
+		}
+	}
+}

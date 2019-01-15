@@ -1,0 +1,24 @@
+mixin carousel(slides, type = 'banner')
+    - slides = slides || [{title: "Title 1", subtitle: "Subtitle 1"}, {title: "Title 2", subtitle: "Subtitle 2"},{title: "Title 3", subtitle: "Subtitle 3"}]
+    .carousel(class=`carousel-${type}`)&attributes(attributes)
+        .swiper-container
+            .swiper-wrapper
+                each slide in slides
+                    if (type == 'banner')
+                        .swiper-slide(style=`background-image: url(./assets/images/temp/${slide.img})`)
+                            .g-grid
+                                .carousel-inner
+                                    h1=slide.title
+                                    p=slide.subtitle
+                    if (type == 'reviews')
+                        .swiper-slide
+                            div(class=`${type}-item__col`)
+                                p(class=`${type}-item__text`)= slide.review
+                                div(class=`${type}-item__name`)= slide.name
+                            div(class=`${type}-item__col`)
+                                div(class=`${type}-item__right`)= slide.rightText
+            if (type == 'reviews')
+                a.reviews-all(href="/") Читать все отзывы
+            .carousel-navs.g-grid
+                .swiper-button-prev
+                .swiper-button-next

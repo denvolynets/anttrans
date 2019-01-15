@@ -1,0 +1,7 @@
+mixin btn(size = 'md', color = 'yell', type = 'link')
+    if type == 'submit'
+        button(type="submit" class=`btn-${size == null ? 'md' : size} btn-${color}`).btn&attributes(attributes)
+            block
+    else
+        a(href="javascript:void(0)" class=`btn-${size == null ? 'md' : size} btn-${color}`).btn&attributes(attributes)
+            block

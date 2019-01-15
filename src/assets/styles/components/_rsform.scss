@@ -1,12 +1,6 @@
-$grey: $c_blue;
-$grey_d: rgba(72, 77, 92, .8);
-$accent: $c_blue;
-$white: $c_white;
-$error: $c_error;
 $form: rsform;
-$tr: all .15s ease;
 
-.rsform {
+.#{$form} {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 100%;
@@ -24,21 +18,50 @@ $tr: all .15s ease;
 		padding: 0;
 	}
 
+	&-row {
+		display: flex;
+		justify-content: space-between;
+
+		.#{$form} {
+			&-group {
+				width: calc(50% - 6px);
+			}
+		}
+	}
+
+	&-icon {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 59px;
+		border-right: 1px solid rgba($clr_main, .5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		svg {
+			width: 100%;
+			height: 100%;
+			max-height: 30px;
+			margin: auto;
+		}
+	}
+
 	&-group {
-		max-width: 250px;
+		max-width: 600px;
 		width: 100%;
-		margin-bottom: 0;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		margin-right: 40px;
+		margin-bottom: 12px;
 
 		&.required {
 			.#{$form} {
 				&-title {
-					&::after {
+					&:after {
 						content: '*';
-						color: $error;
+						color: $clr_error;
 						margin-left: 2px;
 						font-size: 20px;
 						display: none;
@@ -50,7 +73,11 @@ $tr: all .15s ease;
 		&.error {
 			.#{$form} {
 				&-input {
-					border-color: $error;
+					border-color: $clr_error;
+				}
+
+				&-icon {
+					border-color: $clr_error;
 				}
 
 				&-hint {
@@ -63,15 +90,15 @@ $tr: all .15s ease;
 			position: relative;
 
 			&.rs-check_mark {
-				&::after {
+				&:after {
 					content: '';
 					left: auto;
 					top: auto;
-					right: -20px;
-					bottom: 17px;
+					right: 15px;
+					bottom: 22px;
 					width: 5px;
 					height: 10px;
-					border: solid $accent;
+					border: solid $clr_main;
 					border-width: 0 2px 2px 0;
 					transform: rotate(45deg);
 					zoom: 100%;
@@ -82,8 +109,19 @@ $tr: all .15s ease;
 
 			.#{$form} {
 				&-input {
-					border-color: $accent;
+					border-color: $clr_main;
 				}
+			}
+		}
+
+		&:focus,
+		&:focus-within {
+			.#{$form}-input {
+				border-color: $clr_main;
+			}
+
+			.#{$form}-icon {
+				border-color: $clr_main;
 			}
 		}
 	}
@@ -103,12 +141,12 @@ $tr: all .15s ease;
 					display: inline-block;
 					width: 15px;
 					height: 15px;
-					background-color: $grey;
+					background-color: $clr_gray;
 					position: relative;
 					top: 1px;
 					margin-right: 5px;
 
-					&::before {
+					&:before {
 						content: '';
 						left: 8px;
 						top: 4px;
@@ -124,10 +162,10 @@ $tr: all .15s ease;
 
 				&:checked {
 					+ .#{$form}-checkbox--input__clone {
-						background-color: $accent;
+						background-color: $clr_main;
 
-						&::before {
-							border-color: $c_white;
+						&:before {
+							border-color: $clr_wh;
 						}
 					}
 				}
@@ -141,7 +179,7 @@ $tr: all .15s ease;
 
 		&.error {
 			.#{$form}-checkbox--input__clone {
-				background-color: $error;
+				background-color: $clr_error;
 			}
 		}
 	}
@@ -173,7 +211,7 @@ $tr: all .15s ease;
 			&__clone {
 				width: 15px;
 				height: 15px;
-				background-color: $grey;
+				background-color: $clr_gray;
 				border-radius: 100%;
 				display: inline-block;
 				position: relative;
@@ -182,14 +220,14 @@ $tr: all .15s ease;
 			}
 
 			&:checked + .#{$form}-radio--input__clone {
-				background-color: $accent;
+				background-color: $clr_main;
 			}
 		}
 	}
 
 	&-title {
 		a {
-			color: $accent;
+			color: $clr_main;
 			text-decoration: none;
 			font-size: inherit;
 		}
@@ -198,26 +236,34 @@ $tr: all .15s ease;
 	&-hint {
 		display: none;
 		position: absolute;
-		bottom: -17px;
-		left: 20px;
+		bottom: -2px;
+		left: 79px;
 		font-size: 12px;
-		color: $error;
+		color: $clr_error;
 	}
 
 	&-input {
-		padding: 9px 20px;
-		border-radius: 20px;
+		padding: 9px 30px 9px 30px;
 		outline: none;
 		border: 1px solid transparent;
-		color: $grey;
+		min-height: 55px;
+		box-sizing: border-box;
+		border-radius: $br_r;
+		border-color: rgba($clr_main, .5);
+		background-color: transparent;
+		color: $clr_main;
+		font-family: $ff_bold;
 
-		&::placeholder {
-			color: $grey;
+		&.icon {
+			padding: 9px 30px 9px 79px;
 		}
 
-		&:focus,
-		&:active {
-			border-color: $accent;
+		@include placeholder() {
+			color: $clr_main;
+		}
+
+		&::placeholder {
+			color: $clr_gray;
 		}
 	}
 

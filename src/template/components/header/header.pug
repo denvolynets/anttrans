@@ -1,93 +1,107 @@
-- 
-	var menu = [
-		"О компании",
-		"Новости и акции",
-		"Вода & Кофе",
-		"Производство",
-		"Услуги",
-		"Купить",
-		"Контакты"
-	];
-	var cities = [
-		"Санкт-Петербург",
-		"Новосибирск",
-		"Екатеринбург",
-		"Нижний Новгород",
-		"Казань",
-		"Челябинск",
-		"Омск",
-		"Самара",
-		"Ростов-на-Дону",
-		"Уфа",
-		"Красноярск",
-		"Пермь",
-		"Воронеж",
-		"Волгоград"
-	];
-	var lang = [
-		"RU",
-		"ENG",
-		"FR",
-		"DE"
-	];
--
+mixin header(type)
+	- 
+		var menu = [
+			{
+				"name": "Москва",
+				"href": "/moscow",
+				"childs": [
+					{
+						"name": "Санкт-Петербург",
+						"href": '/city'
+					},{
+						"name": "Екатеринбург",
+						"href": '/city'
+					},{
+						"name": "Нижний Новгород",
+						"href": '/city'
+					},{
+						"name": "Казань",
+						"href": '/city'
+					},{
+						"name": "Челябинск",
+						"href": '/city'
+					},{
+						"name": "Омск",
+						"href": '/city'
+					},{
+						"name": "Самара",
+						"href": '/city'
+					},{
+						"name": "Ростов-на-Дону",
+						"href": '/city'
+					},{
+						"name": "Уфа",
+						"href": '/city'
+					},{
+						"name": "Пермь",
+						"href": '/city'
+					},{
+						"name": "Воронеж",
+						"href": '/city'
+					},{
+						"name": "Волгоград",
+						"href": '/city'
+					}
+				]
+			},{
+				"name": "Компания",
+				"href": '/company'
+			},{
+				"name": "Услуги",
+				"href": '/services'
+			},{
+				"name": "Быстрая заявка",
+				"href": '/services'
+			},{
+				"name": "Контакты",
+				"href": '/contacts'
+			}
+		];
+		var lang = [
+			"RU",
+			"ENG",
+			"FR",
+			"DE"
+		];
 
-header.header
-	.header-top
-		.container
-			.header-top__inner
-				.header-top__contacts заказ воды и кофе В МОСКВЕ 
-					a(href="tel:+7 (495) 258-25-78") +7 (495) 258-25-78 
-					| И В САНКТ-ПЕТЕРБУРГЕ 
-					a(href="tel:+7 (812) 448-68-68") +7 (812) 448-68-68 
-				.header-top__region.header-top__dropdown Регион: 
-					span.header-top__dropdown--select Москва
-					ul.header-top__dropdown--inner
-						each city in cities
-							li.header-top__dropdown--item
-								a(href="#")=city
-				.header-top__localization.header-top__dropdown
-					span.header-top__dropdown--select Ru
-					ul.header-top__dropdown--inner
-						each item in lang
-							li.header-top__dropdown--item
-								a(href="#")=item					
-	.header-bottom
-		.container
-			.header-bottom__inner
-				a.header-logo(href="/index.html")
-					img.svg(src="./assets/images/svg/logoH.svg", alt="")
-				ul.header-nav
-					each link in menu
-						if link == 'Услуги'
-							li.header-nav__item.parent
-								a.header-nav__link(href='#')= link
-								ul.header-nav__item--ul
-									li.header-nav__item--li
-										a(href="#") Доставка воды и кофе
-									li.header-nav__item--li
-										a(href="#") Сервис оборудования
-									li.header-nav__item--li
-										a(href="#") Оптовые поставки
-						else if link == 'Производство'
-							li.header-nav__item.parent
-								a.header-nav__link(href='#')= link
-								ul.header-nav__item--ul
-									li.header-nav__item--li
-										a(href="#") Вода
-									li.header-nav__item--li
-										a(href="#") Кофе
-									li.header-nav__item--li
-										a(href="#") Контроль качества									
-						else 
-							li.header-nav__item
-								a.header-nav__link(href='#')= link
-				.header-icons
-					.header-icon
-						img.svg(src="./assets/images/svg/user.svg", alt="")
-					.header-icon.js-header__cart
-						img.svg(src="./assets/images/svg/cart-header.svg", alt="")
-						.header-icon__value 0
-			
+		var banner = [
+			{
+				"title": "Транспортно-экспедиционная  компания АНТТРАНС",
+				"subtitle": "Доставляем грузы по всей стране",
+				"img": "1.jpg"
+			},{
+				"title": "Транспортно-экспедиционная  компания АНТТРАНС - 2",
+				"subtitle": "Доставляем грузы по всей стране - 2",
+				"img": "2.jpg"
+			}
+		]
+	-
+
+	header.header
+		.header-top
+			.g-grid
+				div.g-d_f.g-jc_sb.g-as_c
+					a.header-top__logo.g-d_f.g-as_c(href='/')
+						img.svg(src='./assets/images/svg/logo.svg')
+					nav.header-top__nav.g-d_f.g-as_c
+						ul.g-d_f
+							each link, index in menu
+								if (link.childs)
+									li.header-top__link.dropdown
+										a= link.name
+										ul.header-top__link--child.dropdown-child
+											each subLink, index in link.childs
+												li #[a(href= subLink.name)= subLink.name]
+								else
+									li.header-top__link #[a(href= link.href)= link.name]
+					div.header-top__contacts.g-d_f.g-as_c
+						a.header-top__phone.g-d_f.g-fd_c 8 800 555-35-35
+							small Звонок по России бесплатный
+						+btn() Заказать звонок
+		.header-banner
+			+carousel(banner)
+		.header-form
+			.g-grid
+				+formCalc()
 
 

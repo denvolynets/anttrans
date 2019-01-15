@@ -1,0 +1,57 @@
+.how {
+	background-image: url(../../assets/images/temp/how.jpg);
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	color: $clr_wh;
+
+	.g-grid {
+		position: relative;
+		z-index: 2;
+	}
+
+	&-step {
+		display: flex;
+		justify-content: space-between;
+
+		&__item {
+			width: calc(100% / 3 - 30px);
+			box-sizing: border-box;
+			padding: 30px;
+			border: 1px solid rgba($clr_wh, .12);
+			border-radius: $br_r;
+			min-height: 180px;
+			position: relative;
+
+			.btn {
+				display: inline-flex;
+				margin-top: 10px;
+			}
+
+			&--title {
+				font-family: $ff_bold;
+			}
+
+			&--num {
+				font-size: 100px;
+				color: $clr_main;
+				font-family: $ff_main;
+				position: absolute;
+				right: 30px;
+				bottom: 0;
+				line-height: .57;
+			}
+		}
+	}
+	
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		background-color: rgba($clr_black, .7);
+		pointer-events: none;
+	}
+}

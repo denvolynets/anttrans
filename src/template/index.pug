@@ -2,5 +2,12 @@ extends ./_layouts/master.pug
 block title
 	+title("Главная")
 block content
-	include ./components/banner/banner
-	include ./components/form-quick-order/form-quick-order
+	+desc()
+	+advantages()
+	+tariffs()
+	+consultation()
+	+showing()
+	+avtopark()
+	+services()
+	+how({title: 'Как мы осуществляем перевозки', subtitle: 'Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.', steps: ['Вы оставляете заявку на сайте', 'Оформляем необходимые документы', 'Перевозим груз']})
+	+reviews()

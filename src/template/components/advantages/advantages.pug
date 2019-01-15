@@ -1,0 +1,43 @@
+mixin advantages()
+    - 
+        var advantages = [
+            {
+                "title": "100% расчет стоимости",
+                "icon": "icon",
+                "info": "Менеджер сразу озвучит конечную стоимость перевозки без каких-либо скрытых платежей"
+            },{
+                "title": "Работаем круглосуточно",
+                "icon": "telephone",
+                "info": "За Вами закрепляется личный менеджер, который доступен круглые сутки"
+            },{
+                "title": "Выгодные спецпредложения",
+                "icon": "discount",
+                "info": "Предоставим скидку 10% при оформлении заявки за неделю до погрузки"
+            },{
+                "title": "Соблюдение сроков",
+                "icon": "wall-clock",
+                "info": "Мы не нарушаем оговоренные сроки доставки"
+            },{
+                "title": "Большой автопарк",
+                "icon": "delivery-truck",
+                "info": "Мы подберем Вам машину с любой длиной и грузоподъемностью"
+            },{
+                "title": "Бережная перевозка",
+                "icon": "forklift",
+                "info": "Мы имеем все необходимое оборудование для деликатной перевозки"
+            }
+        ]
+    -
+    section.advantages.g-bg_grb
+        div.g-grid
+            h2.g-clr_m.g-mb_1 Наши преимущества
+            .advantages-inner
+                .g-row
+                    each adv in advantages
+                        div.g-col.g-col_md_4.advantages-item.g-mb_4
+                            div.advantages-item__head
+                                span.advantages-item__icon
+                                    svg
+                                        use(xlink:href=`./assets/images/svg-sprite/sprite.svg#${adv.icon}`)
+                                h3.advantages-item__title.g-clr_m= adv.title
+                            p.advantages-item__info= adv.info

@@ -5,7 +5,8 @@ html(lang="ru")
 	include ../_shared/head
 	block head
 	body
-		include ../components/header/header
-		block content
-		include ../components/footer/footer
-		include ../components/popups/popups
+		main#main
+			+header()
+			block content
+			include ../components/footer/footer
+			include ../components/popups/popups

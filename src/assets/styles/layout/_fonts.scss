@@ -1,12 +1,18 @@
 @include font-face (
-	"HermesC",
-	"HermesC/HermesC",
+	"CirceRegular",
+	"CirceRegular/Circe-Regular",
 	"normal",
 	"normal"
 );
 @include font-face (
-	"MyriadPro",
-	"MyriadPro/MyriadPro-Regular",
+	"CirceBold",
+	"CirceBold/Circe-Bold",
+	"normal",
+	"normal"
+);
+@include font-face (
+	"CirceExtraBold",
+	"CirceExtraBold/Circe-ExtraBold",
 	"normal",
 	"normal"
 );
