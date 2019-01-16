@@ -1,3 +1,43 @@
 .footer {
-	opacity: 1;
+	background: linear-gradient(to bottom, #00b242, #007b1f);
+	color: $clr_wh;
+
+	a {
+		font-size: $fs_05;
+		color: $clr_wh;
+	}
+
+	ul > li:not(.g-mb_2.g-mt_2) {
+		margin-bottom: 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	a.footer-phone {
+		font-size: 30px;
+	}
+
+	&-logo {
+		margin-top: -22px;
+	}
+
+	&-title {
+		font-family: $ff_bold;
+		font-size: $fs_175;
+		line-height: 1.1;
+	}
+
+	&-link {
+		&__icon {
+			color: $clr_wh;
+			display: flex;
+			align-items: center;
+
+			img {
+				margin-right: 10px;
+			}
+		}
+	}
 }
