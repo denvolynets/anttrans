@@ -51,6 +51,11 @@ small {
 	font-size: 80%;
 }
 
+mark {
+	background: none;
+	color: $clr_yell;
+}
+
 b {
 	font-weight: normal;
 	font-family: $ff_bold;

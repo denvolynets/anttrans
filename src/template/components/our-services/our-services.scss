@@ -1,0 +1,118 @@
+.our-services {
+	.carousel {
+		&-navs {
+			position: relative;
+			padding: 0;
+			margin-top: -39px;
+			justify-content: space-between;
+			margin-left: 0;
+			margin-right: 0;
+
+			> div {
+				margin: 0;
+				background-color: transparent;
+				border-color: transparent;
+
+				&:before {
+					background-color: $clr_main;
+					transition: all $trans;
+				}
+
+				&.swiper-button-disabled {
+					&:before {
+						background-color: $clr_main_2;
+					}
+				}
+
+				&:first-child {
+					margin-left: -30px;
+				}
+
+				&:last-child {
+					margin-right: -74px;
+				}
+			}
+		}
+
+		&-services {
+			$s: &;
+
+			&__item {
+				min-height: 260px;
+				border-radius: $br_r8;
+				background-size: cover;
+				background-position: center center;
+				color: $clr_wh;
+				display: flex;
+				align-items: flex-end;
+				opacity: .5;
+
+				&--desc {
+					overflow: hidden;
+					transition: all $trans;
+				}
+			}
+			
+			&__info {
+				padding: 15px;
+				background-color: rgba(#111, .58);
+				border-radius: $br_r8;
+				width: 100%;
+				transition: all $trans;
+
+				&--title {
+					font-size: $fs_15;
+					font-family: $ff_bold;
+					margin-bottom: 0;
+					transition: all $trans;
+				}
+
+				&--desc {
+					font-size: 0;
+					overflow: hidden;
+					transition: all $trans;
+					height: 100%;
+					opacity: 0;
+				}
+			}
+
+			.swiper-slide {
+				transition: all $trans;
+
+				&:before {
+					display: none;
+				}
+			}
+
+			.swiper-wrapper {
+				padding: 60px 0;
+			}
+
+			.swiper-slide-active {
+				transform: scale(1.4);
+				z-index: 1;
+				
+				.carousel-services {
+
+					&__info {
+						font-size: 14px;
+
+						&--title {
+							margin-bottom: 7px;
+						}
+
+						&--desc {
+							font-size: $fs_030;
+							opacity: 1;
+						}
+					}
+
+					&__item {
+						opacity: 1;
+					}
+				}
+				
+			}
+		}
+	}
+}

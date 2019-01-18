@@ -6,15 +6,30 @@ mixin rsformGroup(params)
                 svg
                     use(xlink:href=`./assets/images/svg-sprite/sprite.svg#${params.icon}`)
         if (params.req)
-            input.rsform-input(
-                type=`${params.type}`, 
-                name=`${params.name}`, 
-                placeholder=`${params.placeholder}`, 
-                data-required=`${params.req}`,
-                class=`${params.icon ? 'icon': ''}`)
+            if (params.type == 'textarea')
+                textarea.rsform-input(
+                    type=`${params.type}`, 
+                    name=`${params.name}`, 
+                    placeholder=`${params.placeholder}`, 
+                    data-required=`${params.req}`,
+                    class=`${params.icon ? 'icon': ''}`)
+            else
+                input.rsform-input(
+                    type=`${params.type}`, 
+                    name=`${params.name}`, 
+                    placeholder=`${params.placeholder}`, 
+                    data-required=`${params.req}`,
+                    class=`${params.icon ? 'icon': ''}`)
         else 
-            input.rsform-input(
-                type=`${params.type}`, 
-                name=`${params.name}`, 
-                placeholder=`${params.placeholder}`,
-                class=`${params.icon ? 'icon': ''}`)
+            if (params.type == 'textarea')
+                textarea.rsform-input(
+                    type=`${params.type}`, 
+                    name=`${params.name}`, 
+                    placeholder=`${params.placeholder}`,
+                    class=`${params.icon ? 'icon': ''}`)
+            else
+                input.rsform-input(
+                    type=`${params.type}`, 
+                    name=`${params.name}`, 
+                    placeholder=`${params.placeholder}`,
+                    class=`${params.icon ? 'icon': ''}`)

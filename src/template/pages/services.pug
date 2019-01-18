@@ -1,32 +1,19 @@
-extends ./_layouts/master.pug
+extends ../_layouts/master.pug
 block title
-	+title("Главная")
+	+title("Услуги")
 block content
-	-
-		var banner = [
-			{
-				"title": "Транспортно-экспедиционная  компания АНТТРАНС",
-				"subtitle": "Доставляем грузы по всей стране",
-				"img": "1.jpg"
-			},{
-				"title": "Транспортно-экспедиционная  компания АНТТРАНС - 2",
-				"subtitle": "Доставляем грузы по всей стране - 2",
-				"img": "2.jpg"
-			}
-		]
-	-
 	+header()
-		.header-banner
-			+carousel(banner)
-		.header-form
+		.header-banner__static.js-scroll-zoom(style='background-image: url(./assets/images/temp/2-1.jpg)')
 			.g-grid
-				+formCalc()
+				.header-banner
+					h1 Перевозка негабаритных и тяжеловесных грузов по России
+					p Доставляем грузы по всей стране
+				.header-form
+					.g-grid
+						+formCalc('services')
 	+desc()
 	+advantages()
-	+tariffs()
-	+consultation()
-	+showing()
-	+avtopark('vertical', 'Взгляните на наш автопарк')
-	+services()
+	+avtopark('horizontal', 'Автомобили для грузоперевозки негабарита')
 	+how({title: 'Как мы осуществляем перевозки', subtitle: 'Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.', steps: ['Вы оставляете заявку на сайте', 'Оформляем необходимые документы', 'Перевозим груз']})
 	+reviews()
+	+ourServices()

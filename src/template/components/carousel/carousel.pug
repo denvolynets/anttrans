@@ -5,7 +5,7 @@ mixin carousel(slides, type = 'banner')
             .swiper-wrapper
                 each slide in slides
                     if (type == 'banner')
-                        .swiper-slide(style=`background-image: url(./assets/images/temp/${slide.img})`)
+                        .swiper-slide.js-scroll-zoom(style=`background-image: url(./assets/images/temp/${slide.img})`)
                             .g-grid
                                 .carousel-inner
                                     h1=slide.title
@@ -17,6 +17,12 @@ mixin carousel(slides, type = 'banner')
                                 div(class=`${type}-item__name`)= slide.name
                             div(class=`${type}-item__col`)
                                 div(class=`${type}-item__right`)= slide.rightText
+                    if (type == 'services')
+                        .swiper-slide
+                            div(class=`carousel-${type}__item` style=`background-image: url(./assets/images/temp/${slide.img})`)
+                                div(class=`carousel-${type}__info`)
+                                    h4(class=`carousel-${type}__info--title`)= slide.title
+                                    p(class=`carousel-${type}__info--desc`)= slide.info
             if (type == 'reviews')
                 a.reviews-all(href="/") Читать все отзывы
             .carousel-navs.g-grid

@@ -10,23 +10,21 @@ $form: rsform;
 
 	small {
 		font-size: 12px;
+		
+		a {
+			color: inherit;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	fieldset {
 		border: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	&-row {
-		display: flex;
-		justify-content: space-between;
-
-		.#{$form} {
-			&-group {
-				width: calc(50% - 6px);
-			}
-		}
 	}
 
 	&-icon {
@@ -55,6 +53,13 @@ $form: rsform;
 		flex-direction: column;
 		position: relative;
 		margin-bottom: 12px;
+
+		textarea {
+			resize: none;
+			height: 100%;
+			padding-top: 17px;
+			padding-bottom: 17px;
+		}
 
 		&.required {
 			.#{$form} {
@@ -269,5 +274,39 @@ $form: rsform;
 
 	&-btn {
 		margin-top: 0;
+	}
+
+	&-row {
+		display: flex;
+		justify-content: space-between;
+
+		.#{$form} {
+			&-group {
+				width: calc(50% - 6px);
+			}
+		}
+
+		&__vertical {
+			display: flex;
+			justify-content: space-between;
+
+			small {
+				color: #bbb;
+
+				a {
+					color: #bbb;
+				}
+			}
+
+			> * {
+				&:first-child {
+					width: calc(60% - 6px);
+				}
+
+				&:last-child {
+					width: calc(40% - 6px);
+				}
+			}
+		}
 	}
 }

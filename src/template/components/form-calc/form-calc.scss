@@ -21,6 +21,10 @@ $f_c: 'form-calc';
 		}
 	}
 
+	&__services {
+		max-width: 535px;
+	}
+
 	h3 {
 		font-size: $fs_175;
 		font-family: $ff_bold;

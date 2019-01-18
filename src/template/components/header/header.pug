@@ -63,21 +63,9 @@ mixin header(type)
 			"FR",
 			"DE"
 		];
-
-		var banner = [
-			{
-				"title": "Транспортно-экспедиционная  компания АНТТРАНС",
-				"subtitle": "Доставляем грузы по всей стране",
-				"img": "1.jpg"
-			},{
-				"title": "Транспортно-экспедиционная  компания АНТТРАНС - 2",
-				"subtitle": "Доставляем грузы по всей стране - 2",
-				"img": "2.jpg"
-			}
-		]
 	-
 
-	header.header
+	header.header&attributes(attributes)
 		.header-top
 			.g-grid
 				div.g-d_f.g-jc_sb.g-as_c
@@ -98,10 +86,5 @@ mixin header(type)
 						a.header-top__phone.g-d_f.g-fd_c 8 800 555-35-35
 							small Звонок по России бесплатный
 						+btn() Заказать звонок
-		.header-banner
-			+carousel(banner)
-		.header-form
-			.g-grid
-				+formCalc()
-
+		block
 

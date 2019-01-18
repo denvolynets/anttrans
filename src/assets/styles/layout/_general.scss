@@ -18,3 +18,18 @@ body {
 html {
 	scroll-behavior: smooth;
 }
+
+.requisite {
+	table {
+		td {
+			padding-right: 40px;
+			padding-top: 7px;
+			padding-bottom: 7px;
+
+			&:last-child {
+				font-family: $ff_bold;
+				color: $clr_main_1;
+			}
+		}
+	}
+}

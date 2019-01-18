@@ -1,33 +1,89 @@
-mixin formCalc()
-    form.form-calc.rsform.js-required
-        h3.g-mb_2 Рассчитайте стоимость перевозки груза
-        +rsformGroup({
-            req: '{"type": "alphabet","message":"Введите начальную точку маршрута","minL": 1,"lang": "ru"}',
-            type: 'text',
-            name: 'from',
-            placeholder: 'Откуда',
-            icon: 'placeholder'
-        })
-        +rsformGroup({
-            req: '{"type": "alphabet","message":"Введите конечную точку маршрута","minL": 2,"lang": "ru"}',
-            type: 'text',
-            name: 'to',
-            placeholder: 'Куда',
-            icon: 'placeholder'
-        })
-        .rsform-row
+mixin formCalc(type)
+    if (type == 'services')
+        form.form-calc.form-calc__services.rsform.js-required
+            h3.g-mb_2 Быстрый рассчет стоимости на перевозку #[mark негабаритного груза]
+            .rsform-row
+                +rsformGroup({
+                    req: '{"type": "alphabet","message":"Введите начальную точку маршрута","minL": 1,"lang": "ru"}',
+                    type: 'text',
+                    name: 'from',
+                    placeholder: 'Откуда',
+                    icon: 'placeholder'
+                })
+                +rsformGroup({
+                    req: '{"type": "alphabet","message":"Введите конечную точку маршрута","minL": 2,"lang": "ru"}',
+                    type: 'text',
+                    name: 'to',
+                    placeholder: 'Куда',
+                    icon: 'placeholder'
+                })
+            .rsform-row__vertical
+                +rsformGroup({
+                    type: 'textarea',
+                    name: 'textarea',
+                    placeholder: 'Опишите груз'
+                })
+                .rsform-row__vertical--fx_c
+                    +rsformGroup({
+                        req: '{"type": "numerical","message":"Введите вес","minL": 1,"lang": "ru"}',
+                        type: 'text',
+                        name: 'to',
+                        placeholder: 'Вес',
+                        icon: 'scale'
+                    })
+                    +rsformGroup({
+                        req: '{"type": "numerical","message":"Введите объём","minL": 1,"lang": "ru"}',
+                        type: 'text',
+                        name: 'to',
+                        placeholder: 'Объeм',
+                        icon: '3d'
+                })
+            .rsform-row
+                +rsformGroup({
+                    req: '{"type": "alphabet","message":"Введите начальную точку маршрута","minL": 1,"lang": "ru"}',
+                    type: 'text',
+                    name: 'from',
+                    placeholder: 'Откуда'
+                })
+                +rsformGroup({
+                    req: '{"type": "alphabet","message":"Введите конечную точку маршрута","minL": 2,"lang": "ru"}',
+                    type: 'text',
+                    name: 'to',
+                    placeholder: 'Куда'
+                })
+            .rsform-row__vertical.g-d_f.g-ai_c.g-mt_1
+                +btn('lg','yell', 'submit').rsform-btn Отправить запрос
+                small Нажимая кнопку «отправить» #[a(href='/') я даю согласие на обработку персональных данных]
+    else
+        form.form-calc.rsform.js-required
+            h3.g-mb_2 Рассчитайте стоимость перевозки груза
             +rsformGroup({
-                req: '{"type": "numerical","message":"Введите вес","minL": 1,"lang": "ru"}',
+                req: '{"type": "alphabet","message":"Введите начальную точку маршрута","minL": 1,"lang": "ru"}',
                 type: 'text',
-                name: 'to',
-                placeholder: 'Вес',
-                icon: 'scale'
+                name: 'from',
+                placeholder: 'Откуда',
+                icon: 'placeholder'
             })
             +rsformGroup({
-                req: '{"type": "numerical","message":"Введите объём","minL": 1,"lang": "ru"}',
+                req: '{"type": "alphabet","message":"Введите конечную точку маршрута","minL": 2,"lang": "ru"}',
                 type: 'text',
                 name: 'to',
-                placeholder: 'Объeм',
-                icon: '3d'
+                placeholder: 'Куда',
+                icon: 'placeholder'
             })
-        +btn('lg','gr', 'submit').rsform-btn.g-mt_1 Рассчитать стоимость
+            .rsform-row
+                +rsformGroup({
+                    req: '{"type": "numerical","message":"Введите вес","minL": 1,"lang": "ru"}',
+                    type: 'text',
+                    name: 'to',
+                    placeholder: 'Вес',
+                    icon: 'scale'
+                })
+                +rsformGroup({
+                    req: '{"type": "numerical","message":"Введите объём","minL": 1,"lang": "ru"}',
+                    type: 'text',
+                    name: 'to',
+                    placeholder: 'Объeм',
+                    icon: '3d'
+                })
+            +btn('lg','gr', 'submit').rsform-btn.g-mt_1 Рассчитать стоимость

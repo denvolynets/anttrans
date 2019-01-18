@@ -1,0 +1,61 @@
+extends ../_layouts/master.pug
+block title
+	+title("О компании")
+block content
+	-
+		var banner = [
+			{
+				"title": "Контактная информация",
+				"subtitle": "",
+				"img": "contacts.png"
+			},{
+				"title": "Контактная информация 1",
+				"subtitle": "",
+				"img": "contacts.png"
+			}
+		]
+	-
+	+header()(class="header-contacts")
+		.header-banner
+			+carousel(banner)
+		.header-card
+			.g-grid
+				.header-card__inner
+					.header-card__title Главный офис
+					.header-card__row
+						span.g-mb_1 г. Лобня, ул.Такая то, д.1
+						a.header-card__lg.g-mb_1(href='tel:88005553535') 8 (800) 555-35-35
+						span info@anttrans.ru
+					.header-card__row
+						span.g-mb_1 Время работы офиса
+						span.header-card__lg Пн-Пт: с 9:00 до 20:00 #[br] Сб-Вс: выходной
+	section.requisite.g-bg_grb
+		div.g-grid
+			h2.g-clr_m.g-mb_1 Реквизиты
+			.requisite-table
+				table
+					tbody
+						tr
+							td Юридическое 
+							td Общество с ограниченной ответственностью
+						tr
+							td название
+							td "АНТТРАНС"
+						tr
+							td Юридический адрес
+							td 141733, Россия, Московская область, г. Лобня
+						tr
+							td ИНН
+							td 5047210490
+						tr
+							td КПП
+							td 504701001
+						tr
+							td р/сч
+							td 407028106019990001270
+						tr
+							td к/сч
+							td 30101810200000000593
+						tr
+							td Наименование банка
+							td АО "АЛЬФА-БАНК"

@@ -1,0 +1,13 @@
+extends ../_layouts/master.pug
+block title
+	+title("О компании")
+block content
+	+header()
+		.header-banner__static.header-banner__text.js-scroll-zoom(style='background-image: url(./assets/images/temp/5.jpg)')
+			.g-grid
+				.header-banner
+					h1 О компании
+					p АНТТРАНС — это, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+					p Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor
+	+how({title: 'Как мы осуществляем перевозки', subtitle: 'Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.', steps: ['Вы оставляете заявку на сайте', 'Оформляем необходимые документы', 'Перевозим груз']})
+	+reviews()

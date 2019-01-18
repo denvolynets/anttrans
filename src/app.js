@@ -23,11 +23,14 @@ const app = {
 		const scrFUNC = {
 			'showingSVG': () => {
 				let sSVG = $('.showing-svg');
-				if (st >= sSVG.offset().top - 300) {
-					sSVG.addClass('animate');
+
+				if (sSVG.length) {
+					if (st >= sSVG.offset().top - 300) {
+						sSVG.addClass('animate');
+					}
 				}
 
-				$('.swiper-slide').css({
+				$('.js-scroll-zoom').css({
 					backgroundSize: (100 + st / 15) + '%'
 				});
 			}

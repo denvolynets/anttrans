@@ -10,6 +10,10 @@ $h: header;
 		position: relative;
 	}
 
+	p:not(.g-fs_05) {
+		font-size: $fs_175;
+	}
+
 	&-top {
 		min-height: 70px;
 		display: flex;
@@ -86,7 +90,8 @@ $h: header;
 		}
 	}
 
-	&-form {
+	&-form,
+	&-card {
 		.g-grid {
 			position: absolute;
 			right: 0;
@@ -103,14 +108,106 @@ $h: header;
 		}
 	}
 
+	&-card {
+		&__inner {
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: 0;
+			background-color: rgba(#161616, .7);
+			padding: 30px;
+
+			a {
+				color: $clr_wh;
+			}
+		}
+
+		span {
+			display: block;
+		}
+
+		.g-mb_1 {
+			margin-bottom: .2em;
+		}
+
+		&__title {
+			font-family: $ff_bold;
+			color: $clr_main;
+			font-size: $fs_25;
+			margin-bottom: 5px;
+		}
+
+		&__row {
+			&:last-child {
+				margin-top: 40px;
+				position: relative;
+
+				&:before {
+					content: '';
+					position: absolute;
+					left: -30px;
+					right: -30px;
+					top: -20px;
+					background-color: rgba($clr_wh, .2);
+					height: 1px;
+				}
+			}
+		}
+
+		&__lg {
+			font-family: $ff_bold;
+			font-size: $fs_2;
+			line-height: 1.2;
+			display: inline-block;
+		}
+	}
+
 	&-banner {
 		position: relative;
 		background-color: $clr_dark_l;
+		$b: &;
 
 		.carousel {
 			&-inner {
 				min-height: 730px;
 			}
 		}
+
+		&__static {
+			background-position: center center;
+			background-size: cover;
+			position: relative;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				background-color: rgba(#616161, .28);
+			}
+
+			#{$b} {
+				box-sizing: border-box;
+				min-height: 730px;
+				padding: 170px 0;
+				max-width: 720px;
+				width: 100%;
+				background: transparent;
+			}
+		}
+
+		&__text {
+			#{$b} {
+				max-width: 900px;
+			}
+		}
+	}
+
+	&-contacts {
+
 	}
 }
