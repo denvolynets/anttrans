@@ -22,7 +22,7 @@ $h: header;
 		left: 0;
 		right: 0;
 		width: 100%;
-		z-index: 1;
+		z-index: 3;
 		border-bottom: 1px solid rgba($clr_wh, .2);
 
 		&__logo {
@@ -179,7 +179,7 @@ $h: header;
 			background-position: center center;
 			background-size: cover;
 			position: relative;
-			
+
 			&:before {
 				content: '';
 				position: absolute;
@@ -188,6 +188,37 @@ $h: header;
 				bottom: 0;
 				top: 0;
 				background-color: rgba(#616161, .28);
+			}
+
+			&--calc {
+				overflow: hidden;
+
+				> .g-grid {
+					position: relative;
+					z-index: 2;
+				}
+			}
+
+			&--bg {
+				right: -2px;
+				bottom: -2px;
+				left: -2px;
+				top: -2px;
+				background-position: center center;
+				background-size: cover;
+				position: absolute;
+				filter: blur(2px);
+				margin: -2px;
+
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					background-color: rgba(#1a1a1a, .32);
+				}
 			}
 
 			#{$b} {
@@ -207,7 +238,9 @@ $h: header;
 		}
 	}
 
-	&-contacts {
-
+	&-calc {
+		min-height: 730px;
+		padding: 170px 0;
+		box-sizing: border-box;
 	}
 }

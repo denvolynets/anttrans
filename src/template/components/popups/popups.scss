@@ -1,18 +1,217 @@
 .popup {
 	background-color: $clr_wh;
-	max-width: 1060px;
 	width: 100%;
-	padding: 70px;
-	margin: auto;
+	padding: 30px 37px;
 	box-sizing: border-box;
+	margin: auto;
 
-	.card-product__info {
-		padding-right: 0;
-		padding-left: 60px;
+	.mfp-close {
+		right: -37px;
+		top: -37px;
+		color: $clr_wh !important;
+		opacity: 1;
+		font-size: 40px;
+		
+		&:active,
+		&:focus,
+		&:focus-within {
+			top: -37px;
+			transform: translateY(0);
+		}
+	}
+
+	input,
+	textarea {
+		color: $clr_main_1;
+
+		@include placeholder() {
+			color: $clr_main_1;
+		}
+	}
+
+	input {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	textarea {
+		min-height: 110px;
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	&-date {
+		display: flex;
+
+		.select.nice-select {
+			padding-right: 18px;
+			display: flex;
+			justify-content: center;
+
+			&:after {
+				display: none;
+			}
+
+			.option {
+				padding-left: 0;
+				padding-right: 0;
+				text-align: center;
+			}
+
+			&.day {
+				min-width: 55px;
+				max-width: 55px;
+			}
+
+			&.month {
+				min-width: 105px;
+				max-width: 105px;
+			}
+		}
 	}
 	
-	.card-product__col:first-child {
-		width: calc(50% - 60px);
-		padding: 0 30px;
+	&-loaders {
+		display: flex;
+		justify-content: center;
+
+		.rsform-checkbox {
+			margin-top: 0;
+			padding-top: 20px;
+		}
+	}
+
+	.rsform {
+		&-checkbox {
+			display: flex;
+			align-items: flex-start;
+
+			.rsform-title {
+				position: relative;
+				top: 3px;
+				user-select: none;
+			}
+
+			&--input__clone {
+				background-color: transparent;
+				border: 1px solid $clr_main;
+				border-radius: 3px;
+				width: 19px;
+				height: 19px;
+	
+				&:before {
+					left: 10px;
+					top: 4px;
+					width: 7px;
+					height: 13px;
+				}
+			}
+		}
+
+		&-group {
+			margin-bottom: 20px;
+		}
+
+		&-hint {
+			left: 19px;
+		}
+
+		&-row {
+			width: 100%;
+			margin-bottom: 20px;
+
+			.rsform-group {
+				margin-bottom: 0;
+			}
+		}
+
+		&-title {
+			font-family: $ff_bold;
+			color: $clr_main_1;
+		}
+
+		&-input {
+			color: $clr_black;
+			border-color: rgba($clr_main, 1);
+		}
+
+		&-icon {
+			border-color: rgba($clr_main, 1);
+		}
+	}
+
+	&-title {
+		font-family: $ff_bold;
+		font-size: $fs_175;
+		margin-bottom: 25px;
+		color: $clr_black;
+	}
+
+	&-subtitle {
+		color: $clr_black;
+		text-align: center;
+		margin-top: 10px;
+		font-size: $fs_030;
+	}
+
+	&-sm {
+		max-width: 430px;
+	}
+
+	&-md {
+		max-width: 565px;
+
+		small {
+			width: calc(50% - 6px);
+		}
+
+		.btn {
+			width: calc(50% - 6px);
+	
+			&-wrapper {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+	}
+
+	&-lg {
+		max-width: 1250px;
+	}
+
+	&-cities {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: -30px;
+
+		span.large {
+			color: $clr_main;
+			font-family: $ff_bold;
+			font-size: 48px;
+			position: absolute;
+			left: 0;
+			top: -10px;
+		}
+
+		&__li {
+			width: calc(100% / 5);
+			position: relative;
+			padding-left: 60px;
+			box-sizing: border-box;
+			margin-bottom: 30px;
+		}
+
+		a {
+			color: $clr_black;
+			font-family: $ff_bold;
+
+			&:hover {
+				color: $clr_main;
+			}
+		}
 	}
 }

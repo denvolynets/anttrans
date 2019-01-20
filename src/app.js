@@ -2,10 +2,16 @@
 import '../src/assets/styles/_app.scss';
 // js components
 import '../node_modules/jquery.nice-number/dist/jquery.nice-number';
-import '../node_modules/jquery.scrollbar/jquery.scrollbar.min';
 import '../node_modules/jquery-mousewheel/jquery.mousewheel';
+
 import '../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js';
 import '../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+
+import '../node_modules/magnific-popup/dist/jquery.magnific-popup.min.js';
+import '../node_modules/magnific-popup/dist/magnific-popup.css';
+
+import '../node_modules/jquery-nice-select/js/jquery.nice-select.min.js';
+import '../node_modules/jquery-nice-select/scss/nice-select.scss';
 
 import '../src/assets/scripts/rsForm';
 import imgToSvg from '../src/assets/scripts/imgToSvg';
@@ -29,13 +35,14 @@ const app = {
 						sSVG.addClass('animate');
 					}
 				}
-
+			},
+			'scrollBgZoom': () => {
 				$('.js-scroll-zoom').css({
 					backgroundSize: (100 + st / 15) + '%'
 				});
 			}
 		};
-
+		scrFUNC.scrollBgZoom();
 		scrFUNC.showingSVG();
 	},
 	bindEvents: () => {
@@ -43,15 +50,26 @@ const app = {
 
 		$('form').rsForm();
 
-		$('select').each(function() {
-			let defText = $(this).data('default-text').length > 0 ? $(this).data('default-text') : '';
-			$(this).selectBoxIt({
-				defaultText: defText,
-				showEffect: 'fadeIn',
-				showEffectSpeed: 150,
-				hideEffect: 'fadeOut',
-				hideEffectSpeed: 150
-			});
+		$('select').niceSelect();
+
+		$('.js-popup').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-slide-bottom',
+			callbacks: {
+				open: function() {
+
+				},
+				close: function() {
+
+				}
+			}
 		});
 
 		imgToSvg();

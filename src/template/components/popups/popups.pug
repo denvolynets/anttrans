@@ -1,2 +1,147 @@
-.g-hide
-   
+mixin popups()
+    -
+        var cities = [
+            {
+                letter: "А",
+                list: ["Абакан", "Азов", "Александров", "Алексин", "Алметьевск", "Анапа", "Ангарск"]
+            },
+            {
+                letter: "Б",
+                list: ["Балаково", "Балахна", "Балашиха", "Балашов", "Барнаул", "Батайск", "Белгород", "Белебей", "Белово"] 
+            },
+            {
+                letter: "В",
+                list: ["Великие Луки", "Великий Новгород", "Верхняя Пышма", "Видное", "Владивосток", "Владикавказ", "Владимир", "Волгоград", "Волгодонск"] 
+            },
+            {
+                letter: "Г",
+                list: ["Гатчина", "Геленджик", "Георгиевск", "Глазов", "Горно-Алтайск", "Грозный", "Гудермес", "Гуково", "Гусь-Хрустальный"] 
+            },
+            {
+                letter: "Д",
+                list: ["Дербент", "Дзержинск", "Димитровград", "Дмитров", "Долгопрудный", "Домодедово", "Донской", "Дубна"] 
+            },{
+                letter: "А",
+                list: ["Абакан", "Азов", "Александров", "Алексин", "Алметьевск", "Анапа", "Ангарск"]
+            },
+            {
+                letter: "Б",
+                list: ["Балаково", "Балахна", "Балашиха", "Балашов", "Барнаул", "Батайск", "Белгород", "Белебей", "Белово"] 
+            },
+            {
+                letter: "В",
+                list: ["Великие Луки", "Великий Новгород", "Верхняя Пышма", "Видное", "Владивосток", "Владикавказ", "Владимир", "Волгоград", "Волгодонск"] 
+            },
+            {
+                letter: "Г",
+                list: ["Гатчина", "Геленджик", "Георгиевск", "Глазов", "Горно-Алтайск", "Грозный", "Гудермес", "Гуково", "Гусь-Хрустальный"] 
+            },
+            {
+                letter: "Д",
+                list: ["Дербент", "Дзержинск", "Димитровград", "Дмитров", "Долгопрудный", "Домодедово", "Донской", "Дубна"] 
+            }
+        ]
+    -
+    .g-hide__popups
+        .popup.popup-sm.zoom-anim-dialog#popup-callback
+            .popup-inner
+                .popup-title Оставьте свой номер телефона
+                form.rsform
+                    +rsformGroup({
+                        req: '{"type": "phoneRU","message":"Введите ващ телефон"}',
+                        type: 'tel',
+                        name: 'tel',
+                        placeholder: 'Ваш номер'
+                    })
+                    +btn('lg','yell', 'submit').rsform-btn Перезвоните мне
+                .popup-subtitle Мы с вами свяжемся в течении 30 секунд!
+
+
+        .popup.popup-md.zoom-anim-dialog#popup-request
+            .popup-inner
+                .popup-title Быстрая заявка на
+                form.rsform
+                    .rsform-row
+                        select.select.wide(name="request")
+                            option(value="1") Междугороднюю перевозку 
+                            option(value="2") Второй вариант
+                            option(value="3") Третий вариант
+                    .rsform-row
+                        +rsformGroup({
+                            req: '',
+                            type: 'text',
+                            name: 'from',
+                            labelText: 'Откуда',
+                            icon: 'placeholder',
+                        })
+                        +rsformGroup({
+                            req: '',
+                            type: 'text',
+                            name: 'to',
+                            labelText: 'Куда',
+                            icon: 'placeholder',
+                        })
+                    .rsform-group
+                        .rsform-title Выберите тип авто
+                        select.select.wide(name="request")
+                            option(value="1") Удлиненная газель
+                            option(value="2") Портер
+                            option(value="3") Бычок
+                    .rsform-row
+                        .rsform-group
+                            .rsform-title Выберите дату
+                            .popup-date
+                                select.select.wide.day(name="request")
+                                    option(value="1") 1
+                                    option(value="2") 2
+                                    option(value="3") 3
+                                    option(value="3") 31
+                                    option(value="3") 13
+                                select.select.wide.month(name="request")
+                                    option(value="1") Январь
+                                    option(value="2") Февраль
+                                    option(value="3") Март
+                                    option(value="3") Апрель
+                                    option(value="3") Декабрь
+                                select.select.wide.year(name="request")
+                                    option(value="1") 2000
+                                    option(value="2") 2001
+                                    option(value="3") 2002
+                                    option(value="3") 2003
+                                    option(value="3") 2004
+                        +rsformGroup({
+                            type: 'checkbox',
+                            name: 'loaders',
+                            labelText: 'Мне потребуются грузчики'
+                        }).popup-loaders
+                    +rsformGroup({
+                        type: 'textarea',
+                        name: 'loaders',
+                        placeholder: 'Комментарий к заказу'
+                    })
+                    .rsform-row
+                        +rsformGroup({
+                            req: '{"type": "alphabet","message":"Введите ваше имя","minL": 1,"lang": "ru"}',
+                            type: 'text',
+                            name: 'name',
+                            placeholder: 'Ваше имя'
+                        })
+                        +rsformGroup({
+                            req: '{"type": "phoneRU","message":"Введите ващ телефон"}',
+                            type: 'tel',
+                            name: 'tel',
+                            placeholder: 'Ваш телефон'
+                        })
+                    +btn('lg','yell', 'submit', true).rsform-btn Отправить
+
+
+        .popup.popup-lg.zoom-anim-dialog#popup-cities
+            .popup-inner
+                ul.popup-cities
+                    each city in cities
+                        li.popup-cities__li
+                            span.large= city.letter
+                            ul
+                                each item in city.list
+                                    li
+                                        a(href="#")= item

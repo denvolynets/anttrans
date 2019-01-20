@@ -13,6 +13,8 @@ const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const yargs = require('yargs');
 const argv = yargs.boolean('disable-compression-plugin').argv;
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const smp = new SpeedMeasurePlugin();
 // Files
 const utils = require('./utils');
 // Configuration
@@ -25,7 +27,8 @@ let consoleStats = {
 	moduleTrace: true,
 	errorDetails: true
 };
-module.exports = env => {
+
+module.exports = (env) => {
 	let prod = env.NODE_ENV === 'production';
 	return {
 		mode: prod ? 'production' : 'development',
@@ -187,8 +190,8 @@ module.exports = env => {
 					allChunks: true
 				}),
 				/*
-				  Pages
-				*/
+					  Pages
+					*/
 				// Desktop page
 				new HtmlWebpackPlugin({
 					filename: 'index.html',
@@ -218,15 +221,16 @@ module.exports = env => {
 					'jQuery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'$': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'Swiper': path.resolve(__dirname, '../node_modules/swiper/dist/js/swiper')
-				}),
+				})
 				// new HardSourceWebpackPlugin({
 				// 	environmentHash: {
 				// 		root: process.cwd(),
 				// 		directories: ['assets/template', 'assets/fonts', 'assets/libs', 'assets/styles', 'assets/images/temp', 'assets/scripts']
 				// 	}
 				// })
+				
 			];
-
+	
 			if (argv.env.NODE_ENV === 'production') {
 				pluginsComplete.push(
 					new OptimizeCssAssetsPlugin({

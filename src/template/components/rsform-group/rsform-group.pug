@@ -1,6 +1,7 @@
 mixin rsformGroup(params)
-    .rsform-group.js-rsform__field.rs-check_mark
-        span.rsform-title
+    .rsform-group.js-rsform__field.rs-check_mark&attributes(attributes)
+        if (params.type !== 'checkbox' && params.labelText)
+            span.rsform-title= params.labelText || ''
         if (params.icon)
             span.rsform-icon
                 svg
@@ -10,26 +11,52 @@ mixin rsformGroup(params)
                 textarea.rsform-input(
                     type=`${params.type}`, 
                     name=`${params.name}`, 
-                    placeholder=`${params.placeholder}`, 
+                    placeholder=`${params.placeholder || ''}`, 
                     data-required=`${params.req}`,
-                    class=`${params.icon ? 'icon': ''}`)
+                    class=`${params.icon ? 'icon': ''}`
+                )
+            else if (params.type == 'checkbox')
+                label.rsform-checkbox
+                    input.rsform-checkbox--input(
+                        type=`${params.type}`, 
+                        name=`${params.name}`, 
+                        data-required=`${params.req}`,
+                        class=`${params.icon ? 'icon': ''}`
+                    )
+                    span.rsform-checkbox--input__clone
+                    if (params.labelText)
+                        .rsform-title= params.labelText || ''
             else
                 input.rsform-input(
                     type=`${params.type}`, 
                     name=`${params.name}`, 
-                    placeholder=`${params.placeholder}`, 
+                    placeholder=`${params.placeholder || ''}`, 
                     data-required=`${params.req}`,
-                    class=`${params.icon ? 'icon': ''}`)
+                    class=`${params.icon ? 'icon': ''}`
+                )
         else 
             if (params.type == 'textarea')
                 textarea.rsform-input(
                     type=`${params.type}`, 
                     name=`${params.name}`, 
-                    placeholder=`${params.placeholder}`,
-                    class=`${params.icon ? 'icon': ''}`)
+                    placeholder=`${params.placeholder || ''}`,
+                    class=`${params.icon ? 'icon': ''}`
+                )
+            else if (params.type == 'checkbox')
+                label.rsform-checkbox
+                    input.rsform-checkbox--input(
+                        type=`${params.type}`, 
+                        name=`${params.name}`, 
+                        data-required=`${params.req}`,
+                        class=`${params.icon ? 'icon': ''}`
+                    )
+                    span.rsform-checkbox--input__clone
+                    if (params.labelText)
+                        .rsform-title= params.labelText || ''
             else
                 input.rsform-input(
                     type=`${params.type}`, 
                     name=`${params.name}`, 
-                    placeholder=`${params.placeholder}`,
-                    class=`${params.icon ? 'icon': ''}`)
+                    placeholder=`${params.placeholder || ''}`,
+                    class=`${params.icon ? 'icon': ''}`
+                )

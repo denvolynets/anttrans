@@ -69,7 +69,7 @@ mixin header(type)
 		.header-top
 			.g-grid
 				div.g-d_f.g-jc_sb.g-as_c
-					a.header-top__logo.g-d_f.g-as_c(href='/')
+					a.header-top__logo.g-d_f.g-as_c(href='#')
 						img.svg(src='./assets/images/svg/logo.svg')
 					nav.header-top__nav.g-d_f.g-as_c
 						ul.g-d_f
@@ -85,6 +85,6 @@ mixin header(type)
 					div.header-top__contacts.g-d_f.g-as_c
 						a.header-top__phone.g-d_f.g-fd_c 8 800 555-35-35
 							small Звонок по России бесплатный
-						+btn() Заказать звонок
+						+btn().js-popup(href="#popup-callback") Заказать звонок
 		block
 

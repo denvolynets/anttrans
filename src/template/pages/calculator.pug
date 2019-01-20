@@ -1,0 +1,23 @@
+extends ../_layouts/master.pug
+block title
+	+title("О компании")
+block content
+	-
+		var banner = [
+			{
+				"title": "Контактная информация",
+				"subtitle": "",
+				"img": "contacts.png"
+			},{
+				"title": "Контактная информация 1",
+				"subtitle": "",
+				"img": "contacts.png"
+			}
+		]
+	-
+	+header()
+		.header-banner__static.header-banner__static--calc
+			.header-banner__static--bg(style='background-image: url(./assets/images/temp/6.jpg)')
+			.g-grid
+				+calc('header')
+	+how({title: 'Как мы осуществляем перевозки', subtitle: 'Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.', steps: ['Вы оставляете заявку на сайте', 'Оформляем необходимые документы', 'Перевозим груз']})

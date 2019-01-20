@@ -1,0 +1,82 @@
+mixin calc(className)
+    div.calc(class=`${className}-calc`)&attributes(attributes)
+        div(class=`${className}-calc__inner` id='calc')
+            h1 Калькулятор грузоперевозки
+            .g-row
+                .g-col.g-col_md_6
+                    .rsform-row
+                        +rsformGroup({
+                            type: 'text',
+                            name: 'from',
+                            labelText: 'Откуда',
+                            icon: 'placeholder'
+                        })
+                        +rsformGroup({
+                            type: 'text',
+                            name: 'to',
+                            labelText: 'Куда',
+                            icon: 'placeholder'
+                        })
+                    .rsform-row.rsform-row__3
+                        +rsformGroup({
+                            type: 'tel',
+                            name: 'from',
+                            labelText: 'Вес, кг',
+                            icon: 'scale'
+                        })
+                        +rsformGroup({
+                            type: 'tel',
+                            name: 'to',
+                            labelText: 'Объем, м3',
+                            icon: '3d'
+                        })
+                        +rsformGroup({
+                            type: 'tel',
+                            name: 'from',
+                            labelText: 'Расстояние, км',
+                            icon: 'distance'
+                        })
+                    .rsform-row
+                        .calc-params
+                            p.calc-params__title Дополнительные параметры
+                            +rsformGroup({
+                                type: 'checkbox',
+                                name: 'hydrobort',
+                                labelText: 'Наличие гидроборта'
+                            })
+                            +rsformGroup({
+                                type: 'checkbox',
+                                name: 'from',
+                                labelText: 'Бортовой транспорт'
+                            })
+                            +rsformGroup({
+                                type: 'checkbox',
+                                name: 'from',
+                                labelText: 'Температурный режим'
+                            })
+                            +rsformGroup({
+                                type: 'checkbox',
+                                name: 'from',
+                                labelText: 'Верхняя, боковая загрузка-выгрузка'
+                            })
+                .g-col.g-col_md_6
+                    .calc-result
+                        .calc-time.calc-result__row
+                            .calc-label Время в пути
+                            mark.calc-value 1 д. 1
+                        .calc-price.calc-result__row
+                            .calc-price__group
+                                .calc-label Цена перезвоки
+                                mark.calc-value 50 000 &#8381;
+                            .calc-price__icon
+                                img(src='./assets/images/svg/porter.svg')
+                    form.calc-result__form.rsform
+                        .rsform-row
+                            +rsformGroup({
+                                req: '{"type": "phoneRU","message":"Введите ващ телефон"}',
+                                type: 'tel',
+                                name: 'tel',
+                                placeholder: 'Ваш номер'
+                            })
+                            +btn('lg','yell', 'submit', true).rsform-btn Отправить
+                            
