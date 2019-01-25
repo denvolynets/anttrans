@@ -20,12 +20,20 @@ h1,
 	font-size: 2.67em;
 	margin-bottom: (nth($m_rem, 5));
 	font-family: $ff_bold;
+
+	@include rw($width_xs) {
+		font-size: $fs_25;
+	}
 }
 
 h2,
 .h2 {
 	font-size: $fs_25;
 	font-family: $ff_bold;
+	
+	@include rw($width_xs) {
+		font-size: 1.75em;
+	}
 }
 
 h3,
@@ -69,7 +77,7 @@ a {
 @include media($width_xs) {
 	h1,
 	.h1 {
-		font-size: 1.125em;
+		// font-size: 1.125em;
 		margin-bottom: (nth($m_rem, 3));
 	}
 }

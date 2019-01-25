@@ -81,10 +81,15 @@ mixin header(type)
 											each subLink, index in link.childs
 												li #[a(href= subLink.name)= subLink.name]
 								else
-									li.header-top__link #[a(href= link.href)= link.name]
+									li.header-top__link(class=`${index !== 0 ? 'g-hide_lg' : ''}`) #[a(href= link.href)= link.name]
 					div.header-top__contacts.g-d_f.g-as_c
-						a.header-top__phone.g-d_f.g-fd_c 8 800 555-35-35
+						a(href="tel:88005553535").header-top__phone.g-d_f.g-fd_c.g-hide_lg 8 800 555-35-35
 							small Звонок по России бесплатный
-						+btn().js-popup(href="#popup-callback") Заказать звонок
+						+btn().js-popup.g-hide_lg(href="#popup-callback") Заказать звонок
+						a(href="#menu").header-top__burger
+							.menu-icon
+								span.line
+								span.line.line--second
+								span.line.line--third
 		block
 

@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const WebpackMessages = require('webpack-messages');
@@ -13,10 +12,7 @@ const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const yargs = require('yargs');
 const argv = yargs.boolean('disable-compression-plugin').argv;
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const smp = new SpeedMeasurePlugin();
 // Files
-const utils = require('./utils');
 // Configuration
 let consoleStats = {
 	all: false,
@@ -107,12 +103,6 @@ module.exports = (env) => {
 					})
 				},
 				{
-					test: /\.pug$/,
-					use: [{
-						loader: 'pug-loader'
-					}]
-				},
-				{
 					test: /\.svg$/,
 					include: [
 						path.resolve(__dirname, '../src/assets/images/svg/')
@@ -160,6 +150,10 @@ module.exports = (env) => {
 				{
 					test: /\.(sass|scss)$/,
 					loader: 'import-glob-loader'
+				},
+				{
+					test: /\.pug$/,
+					loaders: ['file-loader?name=../dist/[name].html', 'pug-html-loader?pretty&exports=false']
 				}
 			]
 		},
@@ -189,16 +183,7 @@ module.exports = (env) => {
 					filename: 'assets/css/[name].bundle.css',
 					allChunks: true
 				}),
-				/*
-					  Pages
-					*/
-				// Desktop page
-				new HtmlWebpackPlugin({
-					filename: 'index.html',
-					template: 'template/index.pug',
-					inject: true
-				}),
-				...utils.pages(env),
+				
 				new WebpackBuildNotifierPlugin({
 					title: 'RedSoft',
 					suppressSuccess: 'initial',

@@ -18,12 +18,16 @@ mixin tariffs()
                                 thead
                                     tr
                                         th Город доставки
-                                        th 1 тонна
-                                        th 1.5 тонны
-                                        th 3 тонны
-                                        th 5 тонна
-                                        th 10 тонна
-                                        th 20 тонн
+                                        th.g-hide_xs 1 тонна
+                                        th.g-hide_xs 1.5 тонны
+                                        th.g-hide_xs 3 тонны
+                                        th.g-hide_xs 5 тонна
+                                        th.g-hide_xs 10 тонна
+                                        th.g-hide_xs 20 тонн
+                                        th.tariffs-table__dropdown
+                                            ul.tariffs-table__dropdown--parent
+                                                li.dropdown.tariffs-city
+                                                    ul.tariffs-dropdown__child.dropdown-child
                             .scrollbar-outer
                                 .scrollbar-outer__head
                                 table

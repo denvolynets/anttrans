@@ -115,19 +115,19 @@
 }
 
 @mixin rw($width) {
-	@media only screen and (max-width: $width + "px") {
+	@media only screen and (max-width: $width) {
 		@content;
 	}
 }
 
 @mixin rh($height) {
-	@media only screen and (max-height: $height + "px") {
+	@media only screen and (max-height: $height) {
 		@content;
 	}
 }
 
 @mixin rwh($width, $height) {
-	@media (max-width: $width + "px") and (max-height: $height + "px") {
+	@media (max-width: $width) and (max-height: $height) {
 		@content;
 	}
 }

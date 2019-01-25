@@ -15,6 +15,18 @@ $f_c: 'form-calc';
 	background-color: rgba(#161616, .2);
 	margin-top: -25px;
 
+	@include rw($width_md) {
+		margin-top: 0;
+		position: relative;
+		max-width: 100%;
+	}
+
+	@include rw($width_xs) {
+		border: none;
+		padding: 0;
+		overflow: unset;
+	}
+
 	.rsform-input {
 		@include placeholder() {
 			color: $clr_main;
@@ -30,5 +42,9 @@ $f_c: 'form-calc';
 		font-family: $ff_bold;
 		line-height: 1;
 		padding-right: 10px;
+	}
+
+	.rsform-btn {
+		margin-bottom: -26px;
 	}
 }

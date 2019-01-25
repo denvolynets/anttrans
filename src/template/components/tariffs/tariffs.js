@@ -6,6 +6,7 @@ export default class TariffsTable {
 		this.currCity = 'Москва';
 		this.currRegion = 'russia';
 		this.currRegData = [];
+		this.mobileView = true;
 
 		this.tabs();
 		this.dropdownCities();
@@ -34,6 +35,7 @@ export default class TariffsTable {
 		let curRegionDataArr = [];
 		let firstLetterOld = '';
 		let firstLetter = '';
+		let html = '';
 
 		this.currRegData[0].cities.map(item => {
 			item.prices.filter(st => {
@@ -52,19 +54,30 @@ export default class TariffsTable {
 		});
 	
 		curRegionDataArr.forEach((item, index) => {
+			if (!this.mobileView) {
+				html = `
+					<tr class="tariffs-tr">
+						<td><mark class="${firstLetter ? '' : 'g-op_0'}">${item.name.split('')[0].toUpperCase()}</mark><a href='#'>${item.name}</a></td>
+						<td>${this.currencyFormat(item.prices.cars.t1)} &#8381;</td>
+						<td>${this.currencyFormat(item.prices.cars.t15)} &#8381;</td>
+						<td>${this.currencyFormat(item.prices.cars.t3)} &#8381;</td>
+						<td>${this.currencyFormat(item.prices.cars.t5)} &#8381;</td>
+						<td>${this.currencyFormat(item.prices.cars.t10)} &#8381;</td>
+						<td>${this.currencyFormat(item.prices.cars.t20)} &#8381;</td>
+					</tr>
+				`;
+			} else {
+				html = `
+					<tr class="tariffs-tr">
+						<td><mark class="${firstLetter ? '' : 'g-op_0'}">${item.name.split('')[0].toUpperCase()}</mark><a href='#'>${item.name}</a></td>
+						<td>${this.currencyFormat(item.prices.cars.t1)} &#8381;</td>
+					</tr>
+				`;
+			}
+			
 			firstLetter = item.name.split('')[0].toUpperCase() === firstLetterOld.toUpperCase() ? '' : item.name.split('')[0].toUpperCase();
 			
-			this.app.find('.tariffs-table tbody').append(`
-			<tr class="tariffs-tr">
-				<td><mark class="${firstLetter ? '' : 'g-op_0'}">${item.name.split('')[0].toUpperCase()}</mark><a href='#'>${item.name}</a></td>
-				<td>${this.currencyFormat(item.prices.cars.t1)} &#8381;</td>
-				<td>${this.currencyFormat(item.prices.cars.t15)} &#8381;</td>
-				<td>${this.currencyFormat(item.prices.cars.t3)} &#8381;</td>
-				<td>${this.currencyFormat(item.prices.cars.t5)} &#8381;</td>
-				<td>${this.currencyFormat(item.prices.cars.t10)} &#8381;</td>
-				<td>${this.currencyFormat(item.prices.cars.t20)} &#8381;</td>
-			</tr>
-			`);
+			this.app.find('.tariffs-table tbody').append(html);
 			firstLetterOld = item.name.split('')[0].toLowerCase();
 		});
 	}
@@ -90,7 +103,8 @@ export default class TariffsTable {
 			THIS.currRegion = $(this).data('region');
 			THIS.app.find('.tariffs-table tbody').html('');
 			THIS.tableRows();
-			$('.scrollbar-outer').mCustomScrollbar('scrollTo', 'top');
+			// $('.scrollbar-outer').mCustomScrollbar('scrollTo', 'top');
+			$('.scrollbar-outer').overlayScrollbars().scroll({ y: 0 }, 500);
 		});
 	}
 

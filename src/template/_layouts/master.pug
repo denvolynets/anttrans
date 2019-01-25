@@ -5,8 +5,9 @@ html(lang="ru")
 	include ../_shared/head
 	block head
 	body
-		main#main
+		div#main.mm-page
 			block content
 			include ../components/footer/footer
 			.g-hide
 				+popups()
+		nav#menu

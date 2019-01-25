@@ -1,0 +1,52 @@
+.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
+	width: 40px;
+	padding: 0;
+	border-top: 1px solid $clr_gray_2;
+	border-bottom: 1px solid $clr_gray_2;
+	border-right: 1px solid $clr_gray_2;
+	border-top-right-radius: $br_r;
+	border-bottom-right-radius: $br_r;
+}
+.os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
+	background-color: $clr_main !important;
+}
+
+.os-theme-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,
+.os-theme-light.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+	width: 13px;
+	background-color: $clr_main !important;
+	border-radius: $br_r;
+	cursor: pointer;
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,
+.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track,
+.os-theme-light > .os-scrollbar > .os-scrollbar-track {
+	display: flex;
+	justify-content: center;
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track,
+.os-theme-light > .os-scrollbar > .os-scrollbar-track {
+	position: relative;
+
+	&:before {
+		content: '';
+		background-color: $clr_gray_2;
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		height: 100%;
+		width: 1px;
+		margin: auto;
+		pointer-events: none;
+	}
+}
+
+.os-host-overflow > .os-padding {
+	margin-bottom: -10px;
+}

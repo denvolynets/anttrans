@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Главная / AntTrans</title>
+    <title>Услуги / AntTrans</title>
     <meta charset="utf-8">
     <meta name="description" content="...">
     <meta name="keywords" content="...">
@@ -19,220 +19,236 @@
   </head>
   <body>
     <div class="mm-page" id="main">
-      <header class="header">
-        <div class="header-top">
-          <div class="g-grid">
-            <div class="g-d_f g-jc_sb g-as_c"><a class="header-top__logo g-d_f g-as_c" href="#"><img class="svg" src="./assets/images/svg/logo.svg"/></a>
-              <nav class="header-top__nav g-d_f g-as_c">
-                <ul class="g-d_f">
-                  <li class="header-top__link dropdown"><a>Москва</a>
-                    <ul class="header-top__link--child dropdown-child">
-                      <li><a href="Санкт-Петербург">Санкт-Петербург</a></li>
-                      <li><a href="Екатеринбург">Екатеринбург</a></li>
-                      <li><a href="Нижний Новгород">Нижний Новгород</a></li>
-                      <li><a href="Казань">Казань</a></li>
-                      <li><a href="Челябинск">Челябинск</a></li>
-                      <li><a href="Омск">Омск</a></li>
-                      <li><a href="Самара">Самара</a></li>
-                      <li><a href="Ростов-на-Дону">Ростов-на-Дону</a></li>
-                      <li><a href="Уфа">Уфа</a></li>
-                      <li><a href="Пермь">Пермь</a></li>
-                      <li><a href="Воронеж">Воронеж</a></li>
-                      <li><a href="Волгоград">Волгоград</a></li>
-                    </ul>
-                  </li>
-                  <li class="header-top__link g-hide_lg"><a href="/company">Компания</a></li>
-                  <li class="header-top__link g-hide_lg"><a href="/services">Услуги</a></li>
-                  <li class="header-top__link g-hide_lg"><a href="/services">Быстрая заявка</a></li>
-                  <li class="header-top__link g-hide_lg"><a href="/contacts">Контакты</a></li>
-                </ul>
-              </nav>
-              <div class="header-top__contacts g-d_f g-as_c"><a class="header-top__phone g-d_f g-fd_c g-hide_lg" href="tel:88005553535">8 800 555-35-35<small>Звонок по России бесплатный</small></a><a class="btn-md btn-yell btn js-popup g-hide_lg" href="#popup-callback">Заказать звонок</a><a class="header-top__burger" href="#menu">
-                  <div class="menu-icon"><span class="line"></span><span class="line line--second"></span><span class="line line--third"></span></div></a>
+      <div class="g-hide__popups">
+        <div class="popup popup-sm zoom-anim-dialog" id="popup-callback">
+          <div class="popup-inner">
+            <div class="popup-title">Оставьте свой номер телефона</div>
+            <form class="rsform">
+              <div class="rsform-group js-rsform__field rs-check_mark">
+                <input class="rsform-input" type="tel" name="tel" placeholder="Ваш номер" data-required="{&quot;type&quot;: &quot;phoneRU&quot;,&quot;message&quot;:&quot;Введите ващ телефон&quot;}"/>
               </div>
-            </div>
+              <button class="btn-lg btn-yell btn rsform-btn" type="submit">Перезвоните мне
+              </button>
+            </form>
+            <div class="popup-subtitle">Мы с вами свяжемся в течении 30 секунд!</div>
           </div>
         </div>
-        <div class="header-banner">
-          <div class="carousel carousel-banner">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide js-scroll-zoom" style="background-image: url(./assets/images/temp/1.jpg)">
-                  <div class="g-grid">
-                    <div class="carousel-inner">
-                      <h1>Транспортно-экспедиционная  компания АНТТРАНС</h1>
-                      <p>Доставляем грузы по всей стране</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide js-scroll-zoom" style="background-image: url(./assets/images/temp/2.jpg)">
-                  <div class="g-grid">
-                    <div class="carousel-inner">
-                      <h1>Транспортно-экспедиционная  компания АНТТРАНС - 2</h1>
-                      <p>Доставляем грузы по всей стране - 2</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-navs g-grid">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header-form">
-          <div class="g-grid">
-            <form class="form-calc rsform js-required">
-              <h3 class="g-mb_2">Рассчитайте стоимость перевозки груза</h3>
-              <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
-                  <svg>
-                    <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
-                  </svg></span>
-                <input class="rsform-input icon" type="text" name="from" placeholder="Откуда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите начальную точку маршрута&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
-              </div>
-              <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
-                  <svg>
-                    <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
-                  </svg></span>
-                <input class="rsform-input icon" type="text" name="to" placeholder="Куда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите конечную точку маршрута&quot;,&quot;minL&quot;: 2,&quot;lang&quot;: &quot;ru&quot;}"/>
+        <div class="popup popup-md zoom-anim-dialog" id="popup-request">
+          <div class="popup-inner">
+            <div class="popup-title">Быстрая заявка на</div>
+            <form class="rsform">
+              <div class="rsform-row">
+                <select class="select wide" name="request">
+                  <option value="1">Междугороднюю перевозку </option>
+                  <option value="2">Второй вариант</option>
+                  <option value="3">Третий вариант</option>
+                </select>
               </div>
               <div class="rsform-row">
-                <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
+                <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-title">Откуда</span><span class="rsform-icon">
                     <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#scale"></use>
+                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
                     </svg></span>
-                  <input class="rsform-input icon" type="text" name="to" placeholder="Вес" data-required="{&quot;type&quot;: &quot;numerical&quot;,&quot;message&quot;:&quot;Введите вес&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                  <input class="rsform-input icon" type="text" name="from" placeholder=""/>
                 </div>
-                <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
+                <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-title">Куда</span><span class="rsform-icon">
                     <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#3d"></use>
+                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
                     </svg></span>
-                  <input class="rsform-input icon" type="text" name="to" placeholder="Объeм" data-required="{&quot;type&quot;: &quot;numerical&quot;,&quot;message&quot;:&quot;Введите объём&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                  <input class="rsform-input icon" type="text" name="to" placeholder=""/>
                 </div>
               </div>
-              <button class="btn-lg btn-yell btn rsform-btn g-mt_1" type="submit">Рассчитать стоимость
-              </button>
+              <div class="rsform-group">
+                <div class="rsform-title">Выберите тип авто</div>
+                <select class="select wide" name="request">
+                  <option value="1">Удлиненная газель</option>
+                  <option value="2">Портер</option>
+                  <option value="3">Бычок</option>
+                </select>
+              </div>
+              <div class="rsform-row">
+                <div class="rsform-group">
+                  <div class="rsform-title">Выберите дату</div>
+                  <div class="popup-date">
+                    <select class="select wide day" name="request">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="3">31</option>
+                      <option value="3">13</option>
+                    </select>
+                    <select class="select wide month" name="request">
+                      <option value="1">Январь</option>
+                      <option value="2">Февраль</option>
+                      <option value="3">Март</option>
+                      <option value="3">Апрель</option>
+                      <option value="3">Декабрь</option>
+                    </select>
+                    <select class="select wide year" name="request">
+                      <option value="1">2000</option>
+                      <option value="2">2001</option>
+                      <option value="3">2002</option>
+                      <option value="3">2003</option>
+                      <option value="3">2004</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="rsform-group js-rsform__field rs-check_mark popup-loaders">
+                  <label class="rsform-checkbox">
+                    <input class="rsform-checkbox--input" type="checkbox" name="loaders" data-required="undefined"/><span class="rsform-checkbox--input__clone"></span>
+                    <div class="rsform-title">Мне потребуются грузчики</div>
+                  </label>
+                </div>
+              </div>
+              <div class="rsform-group js-rsform__field rs-check_mark">
+                <textarea class="rsform-input" type="textarea" name="loaders" placeholder="Комментарий к заказу"></textarea>
+              </div>
+              <div class="rsform-row">
+                <div class="rsform-group js-rsform__field rs-check_mark">
+                  <input class="rsform-input" type="text" name="name" placeholder="Ваше имя" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите ваше имя&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                </div>
+                <div class="rsform-group js-rsform__field rs-check_mark">
+                  <input class="rsform-input" type="tel" name="tel" placeholder="Ваш телефон" data-required="{&quot;type&quot;: &quot;phoneRU&quot;,&quot;message&quot;:&quot;Введите ващ телефон&quot;}"/>
+                </div>
+              </div>
+              <div class="btn-wrapper rsform-group">
+                <button class="btn-lg btn-yell btn rsform-btn" type="submit">Отправить
+                </button><small>Нажимая кнопку «отправить» <a href="/">я даю согласие на обработку персональных данных</a></small>
+              </div>
             </form>
           </div>
         </div>
-      </header>
-      <section class="desc">
-        <div class="g-grid">
-          <div class="desc-inner">
-            <h2 class="g-clr_m g-mb_1">Грузовые перевозки по России</h2>
-            <p>При морской грузоперевозке нужно немалое количество затрат энергетических и трудовых ресурсов. Но можно заметить, что всевозможные сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. При морской грузоперевозке нужно немалое количество затрат энергетических и трудовых ресурсов. Данный вид транспортировки является самым медленным и самым дешёвым среди всех возможных видов перевозки грузов.</p>
+        <div class="popup popup-lg zoom-anim-dialog" id="popup-cities">
+          <div class="popup-inner">
+            <ul class="popup-cities">
+              <li class="popup-cities__li"><span class="large">А</span>
+                <ul>
+                  <li><a href="#">Абакан</a></li>
+                  <li><a href="#">Азов</a></li>
+                  <li><a href="#">Александров</a></li>
+                  <li><a href="#">Алексин</a></li>
+                  <li><a href="#">Алметьевск</a></li>
+                  <li><a href="#">Анапа</a></li>
+                  <li><a href="#">Ангарск</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">Б</span>
+                <ul>
+                  <li><a href="#">Балаково</a></li>
+                  <li><a href="#">Балахна</a></li>
+                  <li><a href="#">Балашиха</a></li>
+                  <li><a href="#">Балашов</a></li>
+                  <li><a href="#">Барнаул</a></li>
+                  <li><a href="#">Батайск</a></li>
+                  <li><a href="#">Белгород</a></li>
+                  <li><a href="#">Белебей</a></li>
+                  <li><a href="#">Белово</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">В</span>
+                <ul>
+                  <li><a href="#">Великие Луки</a></li>
+                  <li><a href="#">Великий Новгород</a></li>
+                  <li><a href="#">Верхняя Пышма</a></li>
+                  <li><a href="#">Видное</a></li>
+                  <li><a href="#">Владивосток</a></li>
+                  <li><a href="#">Владикавказ</a></li>
+                  <li><a href="#">Владимир</a></li>
+                  <li><a href="#">Волгоград</a></li>
+                  <li><a href="#">Волгодонск</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">Г</span>
+                <ul>
+                  <li><a href="#">Гатчина</a></li>
+                  <li><a href="#">Геленджик</a></li>
+                  <li><a href="#">Георгиевск</a></li>
+                  <li><a href="#">Глазов</a></li>
+                  <li><a href="#">Горно-Алтайск</a></li>
+                  <li><a href="#">Грозный</a></li>
+                  <li><a href="#">Гудермес</a></li>
+                  <li><a href="#">Гуково</a></li>
+                  <li><a href="#">Гусь-Хрустальный</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">Д</span>
+                <ul>
+                  <li><a href="#">Дербент</a></li>
+                  <li><a href="#">Дзержинск</a></li>
+                  <li><a href="#">Димитровград</a></li>
+                  <li><a href="#">Дмитров</a></li>
+                  <li><a href="#">Долгопрудный</a></li>
+                  <li><a href="#">Домодедово</a></li>
+                  <li><a href="#">Донской</a></li>
+                  <li><a href="#">Дубна</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">А</span>
+                <ul>
+                  <li><a href="#">Абакан</a></li>
+                  <li><a href="#">Азов</a></li>
+                  <li><a href="#">Александров</a></li>
+                  <li><a href="#">Алексин</a></li>
+                  <li><a href="#">Алметьевск</a></li>
+                  <li><a href="#">Анапа</a></li>
+                  <li><a href="#">Ангарск</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">Б</span>
+                <ul>
+                  <li><a href="#">Балаково</a></li>
+                  <li><a href="#">Балахна</a></li>
+                  <li><a href="#">Балашиха</a></li>
+                  <li><a href="#">Балашов</a></li>
+                  <li><a href="#">Барнаул</a></li>
+                  <li><a href="#">Батайск</a></li>
+                  <li><a href="#">Белгород</a></li>
+                  <li><a href="#">Белебей</a></li>
+                  <li><a href="#">Белово</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">В</span>
+                <ul>
+                  <li><a href="#">Великие Луки</a></li>
+                  <li><a href="#">Великий Новгород</a></li>
+                  <li><a href="#">Верхняя Пышма</a></li>
+                  <li><a href="#">Видное</a></li>
+                  <li><a href="#">Владивосток</a></li>
+                  <li><a href="#">Владикавказ</a></li>
+                  <li><a href="#">Владимир</a></li>
+                  <li><a href="#">Волгоград</a></li>
+                  <li><a href="#">Волгодонск</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">Г</span>
+                <ul>
+                  <li><a href="#">Гатчина</a></li>
+                  <li><a href="#">Геленджик</a></li>
+                  <li><a href="#">Георгиевск</a></li>
+                  <li><a href="#">Глазов</a></li>
+                  <li><a href="#">Горно-Алтайск</a></li>
+                  <li><a href="#">Грозный</a></li>
+                  <li><a href="#">Гудермес</a></li>
+                  <li><a href="#">Гуково</a></li>
+                  <li><a href="#">Гусь-Хрустальный</a></li>
+                </ul>
+              </li>
+              <li class="popup-cities__li"><span class="large">Д</span>
+                <ul>
+                  <li><a href="#">Дербент</a></li>
+                  <li><a href="#">Дзержинск</a></li>
+                  <li><a href="#">Димитровград</a></li>
+                  <li><a href="#">Дмитров</a></li>
+                  <li><a href="#">Долгопрудный</a></li>
+                  <li><a href="#">Домодедово</a></li>
+                  <li><a href="#">Донской</a></li>
+                  <li><a href="#">Дубна</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-      <section class="advantages g-bg_grb">
-        <div class="g-grid">
-          <h2 class="g-clr_m g-mb_1">Наши преимущества</h2>
-          <div class="advantages-inner">
-            <div class="g-row">
-              <div class="g-col g-col_md_4 advantages-item g-mb_4">
-                <div class="advantages-item__head"><span class="advantages-item__icon">
-                    <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#icon"></use>
-                    </svg></span>
-                  <h3 class="advantages-item__title g-clr_m">100% расчет стоимости</h3>
-                </div>
-                <p class="advantages-item__info">Менеджер сразу озвучит конечную стоимость перевозки без каких-либо скрытых платежей</p>
-              </div>
-              <div class="g-col g-col_md_4 advantages-item g-mb_4">
-                <div class="advantages-item__head"><span class="advantages-item__icon">
-                    <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#telephone"></use>
-                    </svg></span>
-                  <h3 class="advantages-item__title g-clr_m">Работаем круглосуточно</h3>
-                </div>
-                <p class="advantages-item__info">За Вами закрепляется личный менеджер, который доступен круглые сутки</p>
-              </div>
-              <div class="g-col g-col_md_4 advantages-item g-mb_4">
-                <div class="advantages-item__head"><span class="advantages-item__icon">
-                    <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#discount"></use>
-                    </svg></span>
-                  <h3 class="advantages-item__title g-clr_m">Выгодные спецпредложения</h3>
-                </div>
-                <p class="advantages-item__info">Предоставим скидку 10% при оформлении заявки за неделю до погрузки</p>
-              </div>
-              <div class="g-col g-col_md_4 advantages-item g-mb_4">
-                <div class="advantages-item__head"><span class="advantages-item__icon">
-                    <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#wall-clock"></use>
-                    </svg></span>
-                  <h3 class="advantages-item__title g-clr_m">Соблюдение сроков</h3>
-                </div>
-                <p class="advantages-item__info">Мы не нарушаем оговоренные сроки доставки</p>
-              </div>
-              <div class="g-col g-col_md_4 advantages-item g-mb_4">
-                <div class="advantages-item__head"><span class="advantages-item__icon">
-                    <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#delivery-truck"></use>
-                    </svg></span>
-                  <h3 class="advantages-item__title g-clr_m">Большой автопарк</h3>
-                </div>
-                <p class="advantages-item__info">Мы подберем Вам машину с любой длиной и грузоподъемностью</p>
-              </div>
-              <div class="g-col g-col_md_4 advantages-item g-mb_4">
-                <div class="advantages-item__head"><span class="advantages-item__icon">
-                    <svg>
-                      <use xlink:href="./assets/images/svg-sprite/sprite.svg#forklift"></use>
-                    </svg></span>
-                  <h3 class="advantages-item__title g-clr_m">Бережная перевозка</h3>
-                </div>
-                <p class="advantages-item__info">Мы имеем все необходимое оборудование для деликатной перевозки</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="tariffs">
-        <div class="g-grid">
-          <h2 class="g-clr_m g-mb_1">Тарифы на перевозку груза автомобильным транспортом</h2>
-          <div class="tariffs-inner" id="tarrifs">
-            <div class="g-row">
-              <div class="g-col g-col_md_6">
-                <div class="tariffs-dropdown"><span>Выберите город отправления:</span>
-                  <ul class="tariffs-dropdown__inner">
-                    <li class="tariffs-dropdown__parent dropdown tariffs-city">
-                      <ul class="tariffs-dropdown__child dropdown-child"></ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="g-col g-col_md_6">
-                <div class="tariffs-tabs"></div>
-              </div>
-              <div class="g-col g-col_md_12">
-                <div class="tariffs-table">
-                  <table class="table-head">
-                    <thead>
-                      <tr>
-                        <th>Город доставки</th>
-                        <th>1 тонна</th>
-                        <th>1.5 тонны</th>
-                        <th>3 тонны</th>
-                        <th>5 тонна</th>
-                        <th>10 тонна</th>
-                        <th>20 тонн</th>
-                      </tr>
-                    </thead>
-                  </table>
-                  <div class="scrollbar-outer">
-                    <div class="scrollbar-outer__head"></div>
-                    <table>
-                      <tbody></tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="g-col g-col_md_12 g-mt_2"><small>Приведённые цены и характеристики услуг носят исключительно ознакомительный характер и не являются публичной офертой, определённой пунктом 2 статьи 437 Гражданского кодекса Российской Федерации. Для получения подробной информации о характеристиках услуг, их наличия и стоимости обращайтесь, пожалуйста, к специалистам нашей компани</small></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
       <footer class="footer">
         <div class="g-grid">
           <div class="g-row">

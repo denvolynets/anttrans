@@ -14,7 +14,7 @@ exports.pages = function(env) {
 			template: `template/pages/${view}`,
 			inject: true
 		};
-
+		console.log(env.NODE_ENV);
 		if (env.NODE_ENV === 'development') {
 			options.minify = {
 				removeComments: true,

@@ -54,6 +54,10 @@ $form: rsform;
 		position: relative;
 		margin-bottom: 12px;
 
+		@include rw($width_lg) {
+			max-width: 100%;
+		}
+
 		textarea {
 			resize: none;
 			height: 100%;

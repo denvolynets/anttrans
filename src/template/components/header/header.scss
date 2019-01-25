@@ -12,6 +12,20 @@ $h: header;
 
 	p:not(.g-fs_05) {
 		font-size: $fs_175;
+
+		@include rw($width_xs) {
+			font-size: $fs_1;
+		}
+	}
+
+	.rsform-row {
+		flex-wrap: wrap;
+
+		@include rw($width_xs) {
+			.rsform-group {
+				width: 100%;
+			}
+		}
 	}
 
 	&-top {
@@ -34,6 +48,11 @@ $h: header;
 			margin-left: 125px;
 			margin-right: auto;
 
+			@include rw($width_lg) {
+				margin-left: auto;
+				margin-right: -33px;
+			}
+
 			a {
 				font-size: $fs_05;
 				font-family: $ff_bold;
@@ -45,6 +64,7 @@ $h: header;
 			font-family: $ff_bold;
 			margin-right: 22px;
 			text-align: right;
+			color: $clr_wh;
 
 			small {
 				font-size: 10px;
@@ -88,6 +108,18 @@ $h: header;
 				}
 			}
 		}
+
+		&__burger {
+			display: flex;
+			align-items: center;
+			margin-left: 22px;
+
+			&:hover {
+				.line {
+					background-color: $clr_yell;
+				}
+			}
+		}
 	}
 
 	&-form,
@@ -99,12 +131,28 @@ $h: header;
 			bottom: 0;
 			margin: auto;
 			left: 0;
-			padding: 170px 0;
+			padding: 170px 20px;
+			width: auto;
 			pointer-events: none;
+
+			@include rw($width_md) {
+				position: relative;
+				padding: 60px 20px;
+			}
+
+			@include rw($width_xs) {
+				padding-bottom: 0;
+			}
 
 			> * {
 				pointer-events: all;
 			}
+		}
+	}
+
+	&-form {
+		@include rw($width_md) {
+			background-color: $clr_dark_3;
 		}
 	}
 
@@ -170,8 +218,46 @@ $h: header;
 		$b: &;
 
 		.carousel {
+			.js-scroll-zoom {
+				@include rw(($width_lgx - 36px)) {
+					background-size: cover !important;
+				}
+			}
+
+			.swiper-slide {
+				@include rw($width_xs) {
+					background-position: 29% center;
+				}
+			}
+
 			&-inner {
 				min-height: 730px;
+
+				@include rw($width_lgx) {
+					min-height: 670px;
+				}
+
+				@include rw(($width_lgx - 36px)) {
+					min-height: 670px;
+				}
+
+				@include rw($width_md) {
+					min-height: 0;
+					padding: 120px 0 160px;
+					max-width: 100%;
+
+					h1 {
+						margin-bottom: 15px;
+
+						@include rw($width_xs) {
+							margin-bottom: 30px;
+						}
+					}
+				}
+
+				@include rw($width_xs) {
+					padding-bottom: 125px;
+				}
 			}
 		}
 
