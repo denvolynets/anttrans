@@ -10,7 +10,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="./assets/css/app.bundle.css"/>
+    <link rel="stylesheet" href="./assets/css/app.css"/>
     <script src="./assets/js/app.bundle.js"></script>
     <meta property="og:type" content="article">
     <meta property="article:publisher" content="...">
@@ -211,12 +211,26 @@
                     <thead>
                       <tr>
                         <th>Город доставки</th>
-                        <th>1 тонна</th>
-                        <th>1.5 тонны</th>
-                        <th>3 тонны</th>
-                        <th>5 тонна</th>
-                        <th>10 тонна</th>
-                        <th>20 тонн</th>
+                        <th class="t-desc">1 тонна</th>
+                        <th class="t-desc">1.5 тонны</th>
+                        <th class="t-desc">3 тонны</th>
+                        <th class="t-desc">5 тонн</th>
+                        <th class="t-desc">10 тонн</th>
+                        <th class="t-desc">20 тонн</th>
+                        <th class="tariffs-table__dropdown t-mob">
+                          <ul class="tariffs-table__dropdown--parent">
+                            <li class="dropdown tariffs-car"><a href="javascript:void(0)" data-car="t1">1 тонна</a>
+                              <ul class="dropdown-child">
+                                <li><a href="" data-car="t1">1 тонна</a></li>
+                                <li><a href="" data-car="t15">1.5 тонны</a></li>
+                                <li><a href="" data-car="t3">3 тонны</a></li>
+                                <li><a href="" data-car="t5">5 тонн</a></li>
+                                <li><a href="" data-car="t10">10 тонн</a></li>
+                                <li><a href="" data-car="t20">20 тонн</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </th>
                       </tr>
                     </thead>
                   </table>
@@ -233,10 +247,275 @@
           </div>
         </div>
       </section>
+      <section class="consultation g-clr_m-grad">
+        <div class="g-grid">
+          <div class="g-row">
+            <div class="g-col g-col_lg_4 g-col_md_12">
+              <h3 class="g-clr_wh g-mb_0 g-mb_1_md">Бесплатная консультация по грузоперевозке</h3>
+            </div>
+            <div class="g-col g-col_lg_8 g-col_md_12">
+              <form class="consultation-form rsform">
+                <div class="rsform-group js-rsform__field rs-check_mark">
+                  <input class="rsform-input" type="text" name="name" placeholder="Как к Вам обращаться?" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите ваше имя&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                </div>
+                <div class="rsform-group js-rsform__field rs-check_mark">
+                  <input class="rsform-input" type="tel" name="tel" placeholder="Ваш номер" data-required="{&quot;type&quot;: &quot;phoneRU&quot;,&quot;message&quot;:&quot;Введите ващ телефон&quot;}"/>
+                </div>
+                <button class="btn-lg btn-yell btn rsform-btn" type="submit">Отправить
+                </button><small>Нажимая кнопку «отправить» <a href="/">я даю согласие на обработку персональных данных</a></small>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="showing">
+        <div class="g-grid">
+          <h2 class="g-clr_wh g-mb_0">Наши показатели растут из года в год</h2>
+        </div>
+        <svg class="showing-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1187" height="660" viewBox="0 0 1187 660">
+          <g class="showing-group">
+            <g class="showing-title">
+              <text fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 0.537842 398.07)" font-size="64" font-weight="bold" font-family="Segoe UI" x="-1.8831406" y="64.90625">113</text>
+            </g>
+            <g class="showing-info">
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 69.5378 497.07)" font-size="18" font-family="Segoe UI" x="0" y="39.301758">присутствует</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 69.5378 497.07)" font-size="18" font-family="Segoe UI" x="0" y="17.301758">автомобилей</text>
+            </g>
+            <g class="showing-dot">
+              <path fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 57.6055 469.62)" d="M6.07952 12.3569C9.43714 12.3569 12.159 9.59069 12.159 6.17844C12.159 2.76618 9.43714 0 6.07952 0C2.72189 0 0 2.76618 0 6.17844C0 9.59069 2.72189 12.3569 6.07952 12.3569Z"></path>
+              <path fill="#00bd2d" fill-opacity="0.44705883" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 55 466.972)" d="M8.68503 17.6527C13.4816 17.6527 17.3701 13.701 17.3701 8.82634C17.3701 3.95169 13.4816 0 8.68503 0C3.88842 0 0 3.95169 0 8.82634C0 13.701 3.88842 17.6527 8.68503 17.6527Z"></path>
+            </g>
+          </g>
+          <g class="showing-group">
+            <g class="showing-title">
+              <text fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 232.039 363.976)" font-size="64" font-weight="bold" font-family="Segoe UI" x="-40.578781" y="64.90625">1252</text>
+            </g>
+            <g class="showing-info">
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 318.039 461.976)" font-size="18" font-family="Segoe UI" x="0" y="61.301758">за октябрь 2018</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 318.039 461.976)" font-size="18" font-family="Segoe UI" x="0" y="39.301758">перевезли</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 318.039 461.976)" font-size="18" font-family="Segoe UI" x="0" y="17.301758">тонны</text>
+            </g>
+            <g class="showing-dot">
+              <path fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 308.208 433.321)" d="M6.07959 12.357C9.43726 12.357 12.1592 9.59078 12.1592 6.17849C12.1592 2.7662 9.43726 0 6.07959 0C2.72193 0 0 2.7662 0 6.17849C0 9.59078 2.72193 12.357 6.07959 12.357Z"></path>
+              <path fill="#00bd2d" fill-opacity="0.44705883" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 305.602 430.673)" d="M8.68513 17.6528C13.4818 17.6528 17.3703 13.7011 17.3703 8.82642C17.3703 3.95172 13.4818 0 8.68513 0C3.88847 0 0 3.95172 0 8.82642C0 13.7011 3.88847 17.6528 8.68513 17.6528Z"></path>
+            </g>
+          </g>
+          <g class="showing-group">
+            <g class="showing-title">
+              <text fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 401 282)" font-size="64" font-weight="bold" font-family="Segoe UI" x="-4.1341553" y="64.90625">50000</text>
+            </g>
+            <g class="showing-info">
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 556.036 384.981)" font-size="18" font-family="Segoe UI" x="0" y="17.301758">выполненных</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 556.036 384.981)" font-size="18" font-family="Segoe UI" x="0" y="39.301758">заказов</text>
+            </g>
+            <g class="showing-dot">
+              <path fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 550.425 353.687)" d="M6.07961 12.3569C9.43728 12.3569 12.1592 9.59072 12.1592 6.17846C12.1592 2.76619 9.43728 0 6.07961 0C2.72193 0 0 2.76619 0 6.17846C0 9.59072 2.72193 12.3569 6.07961 12.3569Z"></path>
+              <path fill="#00bd2d" fill-opacity="0.44705883" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 547.819 351.039)" d="M8.68515 17.6527C13.4818 17.6527 17.3703 13.701 17.3703 8.82637C17.3703 3.9517 13.4818 0 8.68515 0C3.88847 0 0 3.9517 0 8.82637C0 13.701 3.88847 17.6527 8.68515 17.6527Z"></path>
+            </g>
+          </g>
+          <g class="showing-group">
+            <g class="showing-title">
+              <text fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 685 159)" font-size="64" font-weight="bold" font-family="Segoe UI" x="69.490845" y="64.90625">3</text>
+            </g>
+            <g class="showing-info">
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 767.997 268.228)" font-size="18" font-family="Segoe UI" x="0" y="17.301758">филиала:</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 767.997 268.228)" font-size="18" font-family="Segoe UI" x="0" y="39.301758">Россия,</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 767.997 268.228)" font-size="18" font-family="Segoe UI" x="0" y="61.301758">Белоруссия,</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 767.997 268.228)" font-size="18" font-family="Segoe UI" x="0" y="83.301758">Казахстан</text>
+            </g>
+            <g class="showing-dot">
+              <path fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 766.145 231.894)" d="M6.07958 12.3568C9.43725 12.3568 12.1592 9.59062 12.1592 6.17839C12.1592 2.76616 9.43725 0 6.07958 0C2.72192 0 0 2.76616 0 6.17839C0 9.59062 2.72192 12.3568 6.07958 12.3568Z"></path>
+              <path fill="#00bd2d" fill-opacity="0.44705883" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 763.539 229.246)" d="M8.68512 17.6525C13.4818 17.6525 17.3702 13.7009 17.3702 8.82627C17.3702 3.95166 13.4818 0 8.68512 0C3.88846 0 0 3.95166 0 8.82627C0 13.7009 3.88846 17.6525 8.68512 17.6525Z"></path>
+            </g>
+          </g>
+          <g class="showing-group">
+            <g class="showing-title">
+              <text fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 916 106)" font-size="64" font-weight="bold" font-family="Segoe UI" x="51.084595" y="64.90625">12</text>
+            </g>
+            <g class="showing-info">
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 1001.4 212.021)" font-size="18" font-family="Segoe UI" x="0" y="17.301758">лет в сфере грузовых</text>
+              <text fill="#ffffff" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 1001.4 212.021)" font-size="18" font-family="Segoe UI" x="0" y="39.301758">перевозок</text>
+            </g>
+            <g class="showing-dot">
+              <path fill="#00bd2d" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 1003.24 175.863)" d="M6.07969 12.3569C9.43741 12.3569 12.1594 9.59068 12.1594 6.17843C12.1594 2.76618 9.43741 0 6.07969 0C2.72197 0 0 2.76618 0 6.17843C0 9.59068 2.72197 12.3569 6.07969 12.3569Z"></path>
+              <path fill="#00bd2d" fill-opacity="0.44705883" stroke="none" transform="matrix(1 4.45468e-09 -4.45468e-09 1 1000.64 173.215)" d="M8.68527 17.6526C13.482 17.6526 17.3705 13.701 17.3705 8.82632C17.3705 3.95168 13.482 0 8.68527 0C3.88853 0 0 3.95168 0 8.82632C0 13.701 3.88853 17.6526 8.68527 17.6526Z"></path>
+            </g>
+          </g>
+          <path id="path" fill="none" stroke="#00bd2d" stroke-width="1" stroke-miterlimit="4" transform="matrix(0.996195 0.0871557 -0.0871557 0.996195 160.805 -0.000732422)" d="M-59.314 483.074L189.49 425.528L425.551 324.716L630.718 180.972L859.39 105.52"></path>
+        </svg>
+        <div class="showing-mob">
+          <div class="showing-mob__item">
+            <mark>113</mark><span>автомобилей присутствует в нашей компании</span>
+          </div>
+          <div class="showing-mob__item">
+            <mark>1252</mark><span>тонны перевезли за октябрь 2018</span>
+          </div>
+          <div class="showing-mob__item">
+            <mark>50000</mark><span>выполненных заказов</span>
+          </div>
+          <div class="showing-mob__item">
+            <mark>3</mark><span>филиала: Россия, Белоруссия, Казахстан</span>
+          </div>
+          <div class="showing-mob__item">
+            <mark>12</mark><span>лет в сфере грузовых перевозок</span>
+          </div>
+        </div>
+      </section>
+      <section class="avtopark avtopark-vertical" id="avtopark">
+        <div class="g-grid">
+          <h2 class="g-clr_m g-mb_1">Взгляните на наш автопарк</h2>
+          <p class="g-mb_4">Все грузовые автомобили принадлежат компании АНТТРАНС</p>
+          <div class="g-row">
+            <div class="g-col g-col_lg_4">
+              <ul class="avtopark-list">
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;Портер&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/porter.svg"/></span><span class="avtopark-list__item--name">Портер</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;ГАЗель тент&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/gaz-tent.svg"/></span><span class="avtopark-list__item--name">ГАЗель тент</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;ГАЗель фургон&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/gaz-furg.svg"/></span><span class="avtopark-list__item--name">ГАЗель фургон</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;ГАЗель удлиненная&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/gaz-udl.svg"/></span><span class="avtopark-list__item--name">ГАЗель удлиненная</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;ГАЗель фермер&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/gaz-ferm.svg"/></span><span class="avtopark-list__item--name">ГАЗель фермер</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;ЗИЛ Бычок&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/bychok.svg"/></span><span class="avtopark-list__item--name">ЗИЛ Бычок</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;Пятитонник&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/t5.svg"/></span><span class="avtopark-list__item--name">Пятитонник</span></li>
+                <li class="avtopark-list__item" data-car="{&quot;name&quot;:&quot;Еврофура&quot;, &quot;img&quot;:&quot;porter.png&quot;, &quot;length&quot;: &quot;2.7 м&quot;, &quot;width&quot;: &quot;1.6 м&quot;, &quot;height&quot;: &quot;1.6 м&quot;, &quot;volume&quot;: &quot;7 м3&quot;, &quot;capacity&quot;: &quot;1000 кг&quot;, &quot;pallets&quot;: &quot;3 паллета&quot;, &quot;info&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;, &quot;link&quot;: &quot;#car-link&quot;}"><span class="avtopark-list__item--icon"><img src="./assets/images/svg/fura.svg"/></span><span class="avtopark-list__item--name">Еврофура</span></li>
+              </ul>
+            </div>
+            <div class="g-col g-col_lg_8">
+              <div class="avtopark-preview">
+                <div class="avtopark-preview__img"></div>
+                <div class="avtopark-preview__params">
+                  <h4 class="avtopark-preview__params--title g-mb_2">Характеристики автомобиля</h4>
+                  <ul class="avtopark-preview__params--inner">
+                    <li><span class="param">Длина кузова</span><span class="val a-length"></span></li>
+                    <li><span class="param">Ширина кузова</span><span class="val a-width"></span></li>
+                    <li><span class="param">Высота кузова</span><span class="val a-height"></span></li>
+                    <li><span class="param">Объем кузова</span><span class="val a-volume"></span></li>
+                    <li><span class="param">Грузоподъемность</span><span class="val a-capacity"></span></li>
+                    <li><span class="param">Вместимость</span><span class="val a-pallets"></span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="avtopark-cartext g-mt_3">
+                <h3 class="h3 g-clr_m g-mb_1"></h3>
+                <p class="p"></p><a class="btn-lg btn-yell btn" href="javascript:void(0)">Узнать стоимость перевозки</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services g-bg_grb">
+        <div class="g-grid">
+          <h2 class="g-clr_m g-mb_1">Наши услуги</h2>
+          <p class="g-mb_4">Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.</p>
+          <div class="g-row">
+            <div class="g-col g-col_md_12">
+              <div class="services-cards carousel" data-swiper="{&quot;speed&quot;: 500, &quot;effect&quot;: &quot;slide&quot;, &quot;loop&quot;: false, &quot;slidesPerView&quot;: 4, &quot;autoHeight&quot;: false, &quot;simulateTouch&quot;: false, &quot;breakpoints&quot;: { &quot;1024&quot;: { &quot;slidesPerView&quot;: 2, &quot;spaceBetween&quot;: 20 }, &quot;550&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 20 } } }">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="services-card services-card__left"><a class="services-card__title g-clr_m" href="#">Грузоперевозки по России</a>
+                        <p class="services-card__info">Но можно заметить, что всевозможные сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.</p><img class="services-card__img" src="./assets/images/svg/world.svg"/>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">   
+                      <div class="services-card services-card__left"><a class="services-card__title g-clr_m" href="#">Грузоперевозки  по Москве  и московской области</a>
+                        <p class="services-card__info">Данный вид транспортировки является самым медленным и самым дешёвым среди всех возможных видов перевозки грузов.</p><img class="services-card__img services-card__img--sticky" src="./assets/images/svg/moscow.svg"/>
+                      </div>
+                    </div>
+                    <div class="swiper-slide"> 
+                      <div class="services-card services-card__right"><a class="services-card__title g-clr_m" href="#"><span class="services-card__icon">
+                            <svg>
+                              <use xlink:href="./assets/images/svg-sprite/sprite.svg#single-door"></use>
+                            </svg></span>Грузоперевозки по России</a>
+                        <p class="services-card__info">Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.</p>
+                      </div>
+                      <div class="services-card services-card__right"><a class="services-card__title g-clr_m" href="#"><span class="services-card__icon">
+                            <svg>
+                              <use xlink:href="./assets/images/svg-sprite/sprite.svg#package"></use>
+                            </svg></span>Перевозка нагабаритных грузов</a>
+                        <p class="services-card__info">Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide"> 
+                      <div class="services-card services-card__right"><a class="services-card__title g-clr_m" href="#"><span class="services-card__icon">
+                            <svg>
+                              <use xlink:href="./assets/images/svg-sprite/sprite.svg#file"></use>
+                            </svg></span>Страхование груза</a>
+                        <p class="services-card__info">Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. </p>
+                      </div>
+                      <div class="services-card services-card__right"><a class="services-card__title g-clr_m" href="#"><span class="services-card__icon">
+                            <svg>
+                              <use xlink:href="./assets/images/svg-sprite/sprite.svg#truck"></use>
+                            </svg></span>Перевозка оборудования</a>
+                        <p class="services-card__info">Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-navs g-grid">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="how">
+        <div class="g-grid">
+          <h2>Как мы осуществляем перевозки</h2>
+          <p>Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.</p>
+          <div class="how-step">
+            <div class="how-step__item">
+              <div class="how-step__item--title">Вы оставляете заявку на сайте</div><a class="btn-md btn-yell btn" href="javascript:void(0)">Оставить заявку</a>
+              <div class="how-step__item--num"><img src="./assets/images/svg/1.svg"/></div>
+            </div>
+            <div class="how-step__item">
+              <div class="how-step__item--title">Оформляем необходимые документы</div>
+              <div class="how-step__item--num"><img src="./assets/images/svg/2.svg"/></div>
+            </div>
+            <div class="how-step__item">
+              <div class="how-step__item--title">Перевозим груз</div>
+              <div class="how-step__item--num"><img src="./assets/images/svg/3.svg"/></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="reviews">
+        <div class="g-grid">
+          <h2 class="g-clr_m g-mb_1">Благодарности неравнодушных клиентов</h2>
+          <div class="carousel carousel-reviews" data-swiper="{&quot;speed&quot;: 500, &quot;effect&quot;: &quot;slide&quot;, &quot;loop&quot;: &quot;true&quot;}">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="reviews-item__col">
+                    <p class="reviews-item__text">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
+                    <div class="reviews-item__name">Aлександр Александрович</div>
+                  </div>
+                  <div class="reviews-item__col">
+                    <div class="reviews-item__right">«You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side»</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="reviews-item__col">
+                    <p class="reviews-item__text">Being the savage's bowsman, that is, the person who pulled the bow-oar in his boat (the second one from forward), it was my cheerful duty to attend upon him while taking that hard-scrabble scramble upon the dead whale's back. You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side, did I hold Queequeg down there in the sea, by what is technically called in the fishery a monkey-rope, attached to a strong strip of canvas belted round his waist.</p>
+                    <div class="reviews-item__name">Игорь Сергеевич</div>
+                  </div>
+                  <div class="reviews-item__col">
+                    <div class="reviews-item__right">«You have seen Italian organ-boys holding a dancing-ape by a long cord. Just so, from the ship's steep side»</div>
+                  </div>
+                </div>
+              </div><a class="reviews-all" href="/">Читать все отзывы</a>
+              <div class="carousel-navs g-grid">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer class="footer">
         <div class="g-grid">
           <div class="g-row">
-            <div class="g-col g-col_md_3">
+            <div class="g-col g-col_lg_3 g-col_md_4">
               <div class="footer-logo"><img class="svg" src="./assets/images/svg/logotype-footer.svg">
                 <div class="footer-title g-mb_1 g-mt_2">Мы в соцсетях</div>
                 <div class="footer-socials">
@@ -249,7 +528,7 @@
                 </ul>
               </div>
             </div>
-            <div class="g-col g-col_md_3">
+            <div class="g-col g-col_lg_3 g-col_md_4 g-hide_xs">
               <div class="footer-title g-mb_1">Компания</div>
               <ul>
                 <li><a href="">О компании</a></li>
@@ -262,7 +541,7 @@
                 <li><a href="">Карта сайта</a></li>
               </ul>
             </div>
-            <div class="g-col g-col_md_3">
+            <div class="g-col g-col_lg_3 g-col_md_4 g-hide_xs">
               <div class="footer-title g-mb_1">Услуги перевозки</div>
               <ul>
                 <li><a href="">Междугородние перевозки</a></li>
@@ -278,7 +557,7 @@
                 <li><a href="">Страхование груза</a></li>
               </ul>
             </div>
-            <div class="g-col g-col_md_3">
+            <div class="g-col g-col_lg_3 g-col_md_4 g-mt_3_xs">
               <div class="footer-title g-mb_1">Контактная информация</div><a class="footer-phone" href="">8 800 555-35-35</a>
               <ul>
                 <li><a href="mailto:info@anttrans.ru"><b>info@anttrans.ru</b></a></li>
@@ -292,10 +571,10 @@
         <div class="footer-bottom">
           <div class="g-grid">
             <div class="g-row">
-              <div class="g-col g-col_md_3"><a class="footer-link__icon" href=""><img src="./assets/images/svg/st.svg">Разработка и продвижение</a></div>
-              <div class="g-col g-col_md_3"><span>Copyright (C) "АНТТРАНС", 2018</span></div>
-              <div class="g-col g-col_md_3"><span class="g-clr_wh">Московская обл., г. Лобня</span></div>
-              <div class="g-col g-col_md_3"><a class="g-clr_wh" href="">Пользовательское соглашение</a></div>
+              <div class="g-col g-col_lg_3 g-col_md_4"><a class="footer-link__icon" href=""><img src="./assets/images/svg/st.svg">Разработка и продвижение</a></div>
+              <div class="g-col g-col_lg_3 g-col_md_4 g-mt_1"><span>Copyright (C) "АНТТРАНС", 2018</span></div>
+              <div class="g-col g-col_lg_3 g-col_md_4 g-mt_1"><span class="g-clr_wh">Московская обл., г. Лобня</span></div>
+              <div class="g-col g-col_lg_3 g-col_md_4 g-mt_1"><a class="g-clr_wh" href="">Пользовательское соглашение</a></div>
             </div>
           </div>
         </div>

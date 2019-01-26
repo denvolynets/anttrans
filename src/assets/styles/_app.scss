@@ -25,7 +25,11 @@
   libs
 */
 @import '../../../node_modules/swiper/dist/css/swiper.min';
-// @import '../../../node_modules/jquery.scrollbar/jquery.scrollbar';
+@import '../../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+@import '../../../node_modules/magnific-popup/dist/magnific-popup.css';
+@import '../../../node_modules/jquery-nice-select/scss/nice-select.scss';
+@import '../../../node_modules/jquery.mmenu/dist/jquery.mmenu.all.css';
+@import '../../../node_modules/overlayscrollbars/css/OverlayScrollbars.min.css';
 
 /*
   PUG components

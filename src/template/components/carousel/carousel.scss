@@ -1,6 +1,10 @@
 .carousel {
 	position: relative;
 	z-index: 0;
+	
+	.swiper-container {
+		width: 100%;
+	}
 
 	.swiper-slide {
 		background-position: center;

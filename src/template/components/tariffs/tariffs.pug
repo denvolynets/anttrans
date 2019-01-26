@@ -18,16 +18,30 @@ mixin tariffs()
                                 thead
                                     tr
                                         th Город доставки
-                                        th.g-hide_xs 1 тонна
-                                        th.g-hide_xs 1.5 тонны
-                                        th.g-hide_xs 3 тонны
-                                        th.g-hide_xs 5 тонна
-                                        th.g-hide_xs 10 тонна
-                                        th.g-hide_xs 20 тонн
-                                        th.tariffs-table__dropdown
+                                        th.t-desc 1 тонна
+                                        th.t-desc 1.5 тонны
+                                        th.t-desc 3 тонны
+                                        th.t-desc 5 тонн
+                                        th.t-desc 10 тонн
+                                        th.t-desc 20 тонн
+                                        th.tariffs-table__dropdown.t-mob
                                             ul.tariffs-table__dropdown--parent
-                                                li.dropdown.tariffs-city
-                                                    ul.tariffs-dropdown__child.dropdown-child
+                                                li.dropdown.tariffs-car
+                                                    a(href="javascript:void(0)" data-car="t1") 1 тонна
+                                                    ul.dropdown-child
+                                                        li
+                                                            a(href="" data-car="t1") 1 тонна
+                                                        li
+                                                            a(href="" data-car="t15") 1.5 тонны
+                                                        li
+                                                            a(href="" data-car="t3") 3 тонны
+                                                        li
+                                                            a(href="" data-car="t5") 5 тонн
+                                                        li
+                                                            a(href="" data-car="t10") 10 тонн
+                                                        li
+                                                            a(href="" data-car="t20") 20 тонн
+                                                        
                             .scrollbar-outer
                                 .scrollbar-outer__head
                                 table

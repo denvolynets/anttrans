@@ -6,12 +6,14 @@ export default class TariffsTable {
 		this.currCity = 'Москва';
 		this.currRegion = 'russia';
 		this.currRegData = [];
-		this.mobileView = true;
+		this.mobileView = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		this.mobileViewCar = 't1';
 
 		this.tabs();
 		this.dropdownCities();
 		this.tableRows();
 		this.cityChange();
+		this.carChange();
 		this.regionChange();
 	}
 
@@ -36,6 +38,14 @@ export default class TariffsTable {
 		let firstLetterOld = '';
 		let firstLetter = '';
 		let html = '';
+
+		if (this.mobileView) {
+			this.app.find('.t-desc').hide();
+			this.app.find('.t-mob').show();
+		} else {
+			this.app.find('.t-desc').show();
+			this.app.find('.t-mob').hide();
+		}
 
 		this.currRegData[0].cities.map(item => {
 			item.prices.filter(st => {
@@ -70,7 +80,7 @@ export default class TariffsTable {
 				html = `
 					<tr class="tariffs-tr">
 						<td><mark class="${firstLetter ? '' : 'g-op_0'}">${item.name.split('')[0].toUpperCase()}</mark><a href='#'>${item.name}</a></td>
-						<td>${this.currencyFormat(item.prices.cars.t1)} &#8381;</td>
+						<td>${this.currencyFormat(item.prices.cars[this.mobileViewCar])} &#8381;</td>
 					</tr>
 				`;
 			}
@@ -88,6 +98,18 @@ export default class TariffsTable {
 			e.preventDefault();
 			THIS.currCity = $(this).text();
 			THIS.app.find('.tariffs-city > a').text(THIS.currCity);
+			THIS.app.find('.tariffs-table tbody').html('');
+			THIS.tableRows();
+		});
+	}
+
+	carChange() {
+		let THIS = this;
+		this.app.find('.tariffs-car ul a').click(function(e) {
+			e.preventDefault();
+			let label = $(this).text();
+			THIS.mobileViewCar = $(this).data('car');
+			THIS.app.find('.tariffs-car > a').text(label);
 			THIS.app.find('.tariffs-table tbody').html('');
 			THIS.tableRows();
 		});

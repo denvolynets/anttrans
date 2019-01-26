@@ -3,21 +3,11 @@ import '../src/assets/styles/_app.scss';
 // js components
 import '../node_modules/jquery.nice-number/dist/jquery.nice-number';
 import '../node_modules/jquery-mousewheel/jquery.mousewheel';
-
-import '../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js';
-import '../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
-
-import '../node_modules/magnific-popup/dist/jquery.magnific-popup.min.js';
-import '../node_modules/magnific-popup/dist/magnific-popup.css';
-
-import '../node_modules/jquery-nice-select/js/jquery.nice-select.min.js';
-import '../node_modules/jquery-nice-select/scss/nice-select.scss';
-
-import '../node_modules/jquery.mmenu/dist/jquery.mmenu.all.js';
-import '../node_modules/jquery.mmenu/dist/jquery.mmenu.all.css';
-
-import '../node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min.js';
-import '../node_modules/overlayscrollbars/css/OverlayScrollbars.min.css';
+import '../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
+import '../node_modules/magnific-popup/dist/jquery.magnific-popup.min';
+import '../node_modules/jquery-nice-select/js/jquery.nice-select.min';
+import '../node_modules/jquery.mmenu/dist/jquery.mmenu.all';
+import '../node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min';
 
 import '../src/assets/scripts/rsForm';
 import imgToSvg from '../src/assets/scripts/imgToSvg';
@@ -53,8 +43,12 @@ const app = {
 	},
 	bindEvents: () => {
 		let readyFUNC = {
+			isMobile: () => { return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent); },
 			mobileMenu: () => {
-				// $('.header-top__nav > ul').clone().appendTo('#menu');
+				if (readyFUNC.isMobile()) {
+					$('html').addClass('ismobile');
+				}
+
 				let menu = $('.header-top__nav > ul').clone();
 				menu.children('li.dropdown').each(function() {
 					$(this).children('a').first().replaceWith('<span>' + $(this).children('a').first().html() + '</span>');
@@ -83,8 +77,8 @@ const app = {
 					'navbars': [{
 						'position': 'bottom',
 						'content': [
-							$('.header-top__phone').get(0).outerHTML,
-							$('.header-top .btn.js-popup').get(0).outerHTML
+							$('.header-top__phone').clone().removeClass('g-hide_lg').get(0).outerHTML,
+							$('.header-top .btn.js-popup').clone().removeClass('g-hide_lg').get(0).outerHTML
 						]
 					}]
 				});
@@ -151,3 +145,7 @@ requireAll(require.context('./assets/images/svg/', true, /\.svg$/));
 
 function requireAllPug(r) { r.keys().forEach(r); }
 requireAllPug(require.context('./template/pages/', true, /\.pug$/));
+
+if (module.hot) {
+	module.hot.accept();
+}

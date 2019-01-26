@@ -6,18 +6,32 @@ $trf: 'tariffs';
 		min-height: 60px;
 		align-items: center;
 
+		@include media($width_xs, 0) {
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
 		a {
 			cursor: pointer;
 		}
 
 		&__inner {
 			margin-left: 10px;
+
+			@include media($width_xs, 0) {
+				margin-left: 0;
+			}
 		}
 	}
 
 	&-inner {
 		> .g-row {
 			padding-right: 40px;
+
+			@include media($width_xs, 0) {
+				padding-right: 0;
+			}
 		}
 	}
 
@@ -41,6 +55,12 @@ $trf: 'tariffs';
 		height: 730px;
 		width: calc(100% + 40px) !important;
 		margin-top: -72px;
+
+		@include media($width_xs, 0) {
+			width: calc(100%) !important;
+			height: 531px;
+		}
+		
 
 		&__head {
 			height: 70px;
@@ -71,12 +91,21 @@ $trf: 'tariffs';
 			width: calc(100% - 40px);
 			position: relative;
 			bottom: 1px;
+
+			@include media($width_xs, 0) {
+				width: calc(100% - 20px);
+			}
 		}
 	}
 
 	&-table {
 		width: 100%;
 		
+		@include media($width_xs, 0) {
+			width: calc(100% + 40px);
+			margin-left: -20px;
+		}
+
 		table {
 			width: 100%;
 			border-collapse: collapse;
@@ -168,7 +197,24 @@ $trf: 'tariffs';
 						bottom: -4px;
 						display: inline-block;
 						width: 35px;
+						
+						@include media($width_xs) {
+							font-size: 36px;
+						}
 					}
+				}
+			}
+		}
+
+		&__dropdown {
+			> ul > li {
+				position: relative;
+
+				> ul {
+					width: 84px;
+					left: 0;
+					right: 0;
+					margin: auto;
 				}
 			}
 		}
@@ -179,6 +225,10 @@ $trf: 'tariffs';
 		align-items: center;
 		position: relative;
 		z-index: 4;
+
+		@include media($width_xs, 0) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&-tab {
@@ -195,6 +245,11 @@ $trf: 'tariffs';
 		background-color: $clr_gray_3;
 		cursor: pointer;
 		transition: all $trans;
+
+		@include media($width_xs, 0) {
+			width: 100%;
+			height: 40px;
+		}
 
 		&-active {
 			border-color: $clr_main;

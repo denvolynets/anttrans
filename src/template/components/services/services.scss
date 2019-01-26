@@ -4,11 +4,60 @@
 		justify-content: space-between;
 	}
 
+	.swiper-slide {
+		&:before {
+			display: none;
+		}
+	}
+
+	.carousel-navs {
+		position: relative;
+		padding: 0;
+		height: auto;
+		justify-content: flex-end;
+		top: 23px;
+		display: none;
+		
+		@include media($width_md) {
+			display: flex;
+		}
+
+		> div {
+			position: relative;
+			top: 0;
+			margin: 0;
+			bottom: 0;
+			border-color: $clr_main_2;
+			background-color: #f7f7f7;
+
+			&:before {
+				background-color: $clr_main;
+			}
+
+			&:not(.swiper-button-disabled) {
+				&:hover {
+					background-color: $clr_main_2;
+				}
+			}
+		}
+	}
+
+	.swiper-container {
+		@include media($width_md) {
+			padding-bottom: 80px;
+		}
+
+		@include media($width_xs) {
+			padding-bottom: 55px;
+		}
+	}
+
 	&-card {
 		$s: &;
 
+		height: 100%;
 		overflow: hidden;
-		padding: 30px 30px 0;
+		padding: 30px 30px 28px;
 		border: 1px solid $clr_gray_2;
 		border-radius: $br_r;
 		box-sizing: border-box;
@@ -31,9 +80,12 @@
 		}
 
 		&__left {
-			display: flex;
-			justify-content: space-between;
-			width: calc(50% - 15px);
+			padding-bottom: 0;
+			margin-right: 20px;
+
+			@include media($width_md) {
+				margin-right: 0;
+			}
 
 			#{$s} {
 				width: calc(50% - 10px);
@@ -53,7 +105,7 @@
 		&__right {
 			display: flex;
 			flex-wrap: wrap;
-			width: calc(50% - 15px);
+			height: 50%;
 
 			#{$s} {
 				width: 50%;
@@ -78,6 +130,12 @@
 				&__info {
 					font-size: $fs_030;
 				}
+			}
+		}
+
+		&__img {
+			&--sticky {
+				margin-bottom: -63px;
 			}
 		}
 	}

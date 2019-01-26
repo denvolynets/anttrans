@@ -170,14 +170,14 @@ mixin avtopark(type = 'vertical', title)
             p.g-mb_4 Все грузовые автомобили принадлежат компании АНТТРАНС
             .g-row
                 if (type == 'vertical')
-                    .g-col.g-col_md_4
+                    .g-col.g-col_lg_4
                         ul.avtopark-list
                             each car in avtoparkList
                                 li.avtopark-list__item(data-car=`{"name":"${car.car}", "img":"${car.imgLarge}", "length": "${car.length}", "width": "${car.width}", "height": "${car.height}", "volume": "${car.volume}", "capacity": "${car.capacity}", "pallets": "${car.pallets}", "info": "${car.info}", "link": "${car.link}"}`)
                                     span.avtopark-list__item--icon
                                         img(src=`./assets/images/svg/${car.imgSmall}.svg`)
                                     span.avtopark-list__item--name= car.car
-                    .g-col.g-col_md_8
+                    .g-col.g-col_lg_8
                         .avtopark-preview
                             .avtopark-preview__img
                             .avtopark-preview__params
@@ -207,12 +207,12 @@ mixin avtopark(type = 'vertical', title)
                             +btn('lg') Узнать стоимость перевозки
                 if (type == 'horizontal')
                     each car in avtoparkList
-                        .g-col.g-col_md_3
+                        .g-col.g-col_lg_3
                             li.avtopark-list__item(data-car=`{"name":"${car.car}", "img":"${car.imgLarge}", "length": "${car.length}", "width": "${car.width}", "height": "${car.height}", "volume": "${car.volume}", "capacity": "${car.capacity}", "pallets": "${car.pallets}", "info": "${car.info}", "link": "${car.link}"}`)
                                 span.avtopark-list__item--icon
                                     img(src=`./assets/images/svg/${car.imgSmall}.svg`)
                                 span.avtopark-list__item--name= car.car
-                    .g-col.g-col_md_8.g-mt_3
+                    .g-col.g-col_lg_8.g-mt_3
                         .avtopark-preview
                             .avtopark-preview__img
                             .avtopark-preview__params
@@ -230,7 +230,7 @@ mixin avtopark(type = 'vertical', title)
                                     li
                                         span.param Вместимость
                                         span.val.a-pallets
-                    .g-col.g-col_md_4
+                    .g-col.g-col_lg_4
                         .avtopark-cartext.g-mt_3
                             h3.h3.g-clr_m.g-mb_1
                             p.p

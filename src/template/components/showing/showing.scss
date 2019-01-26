@@ -7,6 +7,10 @@
 	position: relative;
 	overflow: hidden;
 
+	@include media($width_xs) {
+		min-height: 0;
+	}
+
 	h2,
 	.h2 {
 		position: relative;
@@ -43,6 +47,10 @@
 		height: 100%;
 		z-index: 1;
 		opacity: 0;
+
+		@include media($width_xs) {
+			display: none;
+		}
 
 		&.animate {
 			opacity: 1;
@@ -118,6 +126,43 @@
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+
+	&-mob {
+		display: none;
+
+		@include media($width_xs) {
+			display: flex;
+			position: relative;
+			z-index: 1;
+			color: $clr_wh;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-top: 30px;
+
+			mark {
+				color: $clr_main;
+				font-size: $fs_3 * 1.5;
+				font-family: $ff_bold;
+				margin-right: 20px;
+				line-height: .9;
+				position: relative;
+				top: 3px;
+			}
+
+			&__item {
+				margin-bottom: 20px;
+				width: calc(100%);
+				display: flex;
+				align-items: center;
+
+				&:last-child {
+					margin-bottom: 0;
 				}
 			}
 		}

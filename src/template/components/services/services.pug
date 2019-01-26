@@ -5,42 +5,49 @@ mixin services()
             p.g-mb_4 Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.
             .g-row
                 .g-col.g-col_md_12
-                    .services-cards
-                        .services-card__left
-                            .services-card
-                                a.services-card__title.g-clr_m(href='#') Грузоперевозки по России
-                                p.services-card__info Но можно заметить, что всевозможные сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.
-                                img(src='./assets/images/svg/world.svg').services-card__img
-                            .services-card
-                                a.services-card__title.g-clr_m(href='#') Грузоперевозки  по Москве  и московской области
-                                p.services-card__info Данный вид транспортировки является самым медленным и самым дешёвым среди всех возможных видов перевозки грузов.
-                                img(src='./assets/images/svg/moscow.svg').services-card__img
-                        .services-card__right
-                            .services-card.services-card__small
-                                a.services-card__title.g-clr_m(href='#')
-                                    span.services-card__icon
-                                        svg
-                                            use(xlink:href=`./assets/images/svg-sprite/sprite.svg#single-door`)
-                                    | Грузоперевозки по России
-                                p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.   
-                            .services-card.services-card__small
-                                a.services-card__title.g-clr_m(href='#')
-                                    span.services-card__icon
-                                        svg
-                                            use(xlink:href=`./assets/images/svg-sprite/sprite.svg#package`)
-                                    | Перевозка нагабаритных грузов
-                                p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. 
-                            .services-card.services-card__small
-                                a.services-card__title.g-clr_m(href='#')
-                                    span.services-card__icon
-                                        svg
-                                            use(xlink:href=`./assets/images/svg-sprite/sprite.svg#file`)
-                                    | Страхование груза
-                                p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. 
-                            .services-card.services-card__small
-                                a.services-card__title.g-clr_m(href='#')
-                                    span.services-card__icon
-                                        svg
-                                            use(xlink:href=`./assets/images/svg-sprite/sprite.svg#truck`)
-                                    | Перевозка оборудования
-                                p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. 
+                    .services-cards.carousel(data-swiper=`{"speed": 500, "effect": "slide", "loop": false, "slidesPerView": 4, "autoHeight": false, "simulateTouch": false, "breakpoints": { "1024": { "slidesPerView": 2, "spaceBetween": 20 }, "550": { "slidesPerView": 1, "spaceBetween": 20 } } }`)
+                        .swiper-container
+                            .swiper-wrapper
+                                .swiper-slide
+                                    .services-card.services-card__left
+                                        a.services-card__title.g-clr_m(href='#') Грузоперевозки по России
+                                        p.services-card__info Но можно заметить, что всевозможные сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.
+                                        img(src='./assets/images/svg/world.svg').services-card__img
+                                .swiper-slide    
+                                    .services-card.services-card__left
+                                        a.services-card__title.g-clr_m(href='#') Грузоперевозки  по Москве  и московской области
+                                        p.services-card__info Данный вид транспортировки является самым медленным и самым дешёвым среди всех возможных видов перевозки грузов.
+                                        img(src='./assets/images/svg/moscow.svg').services-card__img.services-card__img--sticky
+                                .swiper-slide 
+                                    .services-card.services-card__right
+                                        a.services-card__title.g-clr_m(href='#')
+                                            span.services-card__icon
+                                                svg
+                                                    use(xlink:href=`./assets/images/svg-sprite/sprite.svg#single-door`)
+                                            | Грузоперевозки по России
+                                        p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.
+                                    .services-card.services-card__right
+                                        a.services-card__title.g-clr_m(href='#')
+                                            span.services-card__icon
+                                                svg
+                                                    use(xlink:href=`./assets/images/svg-sprite/sprite.svg#package`)
+                                            | Перевозка нагабаритных грузов
+                                        p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями.
+                                .swiper-slide 
+                                    .services-card.services-card__right
+                                        a.services-card__title.g-clr_m(href='#')
+                                            span.services-card__icon
+                                                svg
+                                                    use(xlink:href=`./assets/images/svg-sprite/sprite.svg#file`)
+                                            | Страхование груза
+                                        p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. 
+                                    .services-card.services-card__right
+                                        a.services-card__title.g-clr_m(href='#')
+                                            span.services-card__icon
+                                                svg
+                                                    use(xlink:href=`./assets/images/svg-sprite/sprite.svg#truck`)
+                                            | Перевозка оборудования
+                                        p.services-card__info Но можно заметить, что сложности с организацией морских грузоперевозок компенсируются всеми предоставляемыми его возможностями. 
+                            .carousel-navs.g-grid
+                                .swiper-button-prev
+                                .swiper-button-next

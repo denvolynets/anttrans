@@ -15,6 +15,10 @@
 			cursor: pointer;
 			transition: all $trans;
 
+			@include media($width_xs) {
+				min-height: 48px;
+			}
+
 			&--icon {
 				display: flex;
 				align-items: center;
@@ -56,14 +60,33 @@
 	&-preview {
 		display: flex;
 
+		@include media($width_xs) {
+			flex-wrap: wrap;
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+
 		> * {
 			width: 50%;
 			background-color: $clr_gray_3;
+
+			@include media($width_xs) {
+				width: 100%;
+			}
 		}
 
 		&__img {
 			background-position: center;
 			background-size: cover;
+
+			@include media($width_xs) {
+				min-height: 300px;
+				margin-top: 30px;
+			}
+
+			@include media($width_xs_s) {
+				min-height: 250px;
+			}
 		}
 
 		&__params {
@@ -107,6 +130,10 @@
 
 	.btn {
 		display: inline-flex;
+
+		@include media($width_xs) {
+			display: flex;
+		}
 	}
 
 	&-horizontal {

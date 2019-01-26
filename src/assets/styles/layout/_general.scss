@@ -38,7 +38,7 @@ html {
 	}
 }
 
-.mm-wrapper_blocking {
+.mm-wrapper_blocking:not(.ismobile) {
 	margin-right: 17px;
 }
 
@@ -65,6 +65,10 @@ html {
 }
 
 #menu {
+	.mm-panels {
+		bottom: 109px;
+	}
+	
 	.mm-panel,
 	.mm-panels {
 		background: linear-gradient(to top, #191919, #2f3131);
@@ -162,9 +166,10 @@ html {
 
 		.btn {
 			color: $clr_dark;
+			min-height: 55px;
+			border-radius: 0;
 		}
 	}
-
 	.mm-btn_prev:before,
 	.mm-btn_next:after {
 		border-color: $clr_wh;

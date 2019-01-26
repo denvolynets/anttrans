@@ -1,5 +1,6 @@
 .reviews {
 	position: relative;
+	padding-bottom: 50px;
 	$s: &;
 
 	&-all {
@@ -16,16 +17,30 @@
 		&:hover {
 			color: $clr_main;
 		}
+
+		@include media($width_xs) {
+			bottom: 18px;
+			font-size: $fs_1;
+		}
 	}
 
 	&-item {
 		&__col {
 			&:first-child {
 				width: 60%;
+
+				@include media($width_xs) {
+					width: 100%;
+				}
 			}
 
 			&:last-child {
 				width: 24.5%;
+
+				@include media($width_xs) {
+					width: 100%;
+					margin-bottom: 20px;
+				}
 			}
 		}
 
@@ -46,6 +61,11 @@
 			opacity: 0;
 			transform: translateX(100px);
 			transition: all .25s ease 0s;
+
+			@include media($width_xs) {
+				opacity: 1;
+				transform: translateX(0);
+			}
 		}
 	}
 
@@ -53,6 +73,10 @@
 		.swiper-slide {
 			display: flex;
 			justify-content: space-between;
+
+			@include media($width_xs) {
+				flex-direction: column-reverse;
+			}
 
 			&:before {
 				display: none;
@@ -78,6 +102,10 @@
 		justify-content: flex-end;
 		height: 57px;
 		margin-top: 40px;
+
+		@include media($width_xs) {
+			margin-top: 4px;
+		}
 
 		> div {
 			bottom: 0;

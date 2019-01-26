@@ -3,6 +3,10 @@
 	color: $clr_wh;
 	padding-bottom: 20px;
 
+	@include media($width_xs) {
+		padding-bottom: 0;
+	}
+
 	a,
 	span {
 		font-size: $fs_05;
@@ -25,6 +29,10 @@
 		margin-top: 60px;
 		padding: 19px 0;
 		background: $clr_main_1;
+
+		@include media($width_xs) {
+			margin-top: 54px;
+		}
 
 		a,
 		span {

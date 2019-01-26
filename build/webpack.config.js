@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const WebpackMessages = require('webpack-messages');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+// const StyleLintPlugin = require('stylelint-webpack-plugin');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+// const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const yargs = require('yargs');
 const argv = yargs.boolean('disable-compression-plugin').argv;
@@ -43,21 +43,13 @@ module.exports = (env) => {
 			contentBase: path.resolve(__dirname, '../src'),
 			overlay: true,
 			compress: true,
-			port: 9000,
+			port: 9090,
 			disableHostCheck: true,
 			historyApiFallback: true,
+			quiet: true,
 			stats: consoleStats
 		},
 		resolve: {
-			// extensions: ['.js'],
-			// alias: {
-			// 	source: path.resolve(__dirname, '../src'),
-			// 	images: path.resolve(__dirname, '../src/assets/images')
-			// }
-			// modules: ['bower_components', 'node_modules'],
-			// alias: {
-			// 	'Swiper': 'swiper/dist/js/swiper.js'
-			// }
 		},
 		stats: consoleStats,
 		performance: {
@@ -189,9 +181,11 @@ module.exports = (env) => {
 					suppressSuccess: 'initial',
 					activateTerminalOnError: true
 				}),
-				new WebpackMessages({
-					name: 'client',
-					logger: str => console.log(`\n${str}`)
+				new FriendlyErrorsWebpackPlugin({
+					compilationSuccessInfo: {
+						messages: ['You server is running here http://localhost:9090']
+						// notes: ['Some additionnal notes to be displayed upon successful compilation']
+					}
 				}),
 				// new StyleLintPlugin(),
 				// new ParallelUglifyPlugin({

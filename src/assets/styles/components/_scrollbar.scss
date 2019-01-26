@@ -6,6 +6,10 @@
 	border-right: 1px solid $clr_gray_2;
 	border-top-right-radius: $br_r;
 	border-bottom-right-radius: $br_r;
+
+	@include media($width_xs, 0) {
+		width: 20px;
+	}
 }
 .os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
 	background-color: $clr_main !important;
@@ -17,6 +21,10 @@
 	background-color: $clr_main !important;
 	border-radius: $br_r;
 	cursor: pointer;
+
+	@include media($width_xs, 0) {
+		width: 9px;
+	}
 }
 
 .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,

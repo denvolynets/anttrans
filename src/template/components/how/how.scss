@@ -14,6 +14,16 @@
 		display: flex;
 		justify-content: space-between;
 
+		@include media($width_md) {
+			flex-wrap: wrap;
+		}
+
+		@include media($width_xs) {
+			margin-left: -20px;
+			margin-right: -20px;
+			width: auto;
+		}
+
 		&__item {
 			width: calc(100% / 3 - 30px);
 			box-sizing: border-box;
@@ -22,6 +32,12 @@
 			border-radius: $br_r;
 			min-height: 180px;
 			position: relative;
+
+			@include media($width_md) {
+				width: 100%;
+				padding: 20px;
+				min-height: 100px;
+			}
 
 			.btn {
 				display: inline-flex;
@@ -40,6 +56,12 @@
 				right: 30px;
 				bottom: 0;
 				line-height: .57;
+
+				img {
+					@include media($width_xs) {
+						height: 43px;
+					}
+				}
 			}
 		}
 	}
