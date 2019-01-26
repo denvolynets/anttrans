@@ -6,15 +6,15 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-// const StyleLintPlugin = require('stylelint-webpack-plugin');
-// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-// const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const yargs = require('yargs');
 const argv = yargs.boolean('disable-compression-plugin').argv;
-// Files
-// Configuration
-let consoleStats = {
+
+// const StyleLintPlugin = require('stylelint-webpack-plugin');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+// const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+
+const consoleStats = {
 	all: false,
 	modules: true,
 	maxModules: 0,
@@ -184,16 +184,8 @@ module.exports = (env) => {
 				new FriendlyErrorsWebpackPlugin({
 					compilationSuccessInfo: {
 						messages: ['You server is running here http://localhost:9090']
-						// notes: ['Some additionnal notes to be displayed upon successful compilation']
 					}
 				}),
-				// new StyleLintPlugin(),
-				// new ParallelUglifyPlugin({
-				// 	cacheDir: path.join('node_modules', '.cache', 'parallel-uglify'),
-				// 	sourceMap: !prod,
-				// 	uglifyES: {
-				// 	}
-				// }),
 				new webpack.ProvidePlugin({
 					'window.jQuery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
 					'window.$': path.resolve(__dirname, '../node_modules/jquery/dist/jquery'),
@@ -206,8 +198,14 @@ module.exports = (env) => {
 				// 		root: process.cwd(),
 				// 		directories: ['assets/template', 'assets/fonts', 'assets/libs', 'assets/styles', 'assets/images/temp', 'assets/scripts']
 				// 	}
+				// }),
+				// new StyleLintPlugin(),
+				// new ParallelUglifyPlugin({
+				// 	cacheDir: path.join('node_modules', '.cache', 'parallel-uglify'),
+				// 	sourceMap: !prod,
+				// 	uglifyES: {
+				// 	}
 				// })
-				
 			];
 	
 			if (argv.env.NODE_ENV === 'production') {

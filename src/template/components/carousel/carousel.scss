@@ -33,9 +33,6 @@
 		position: relative;
 		z-index: 1;
 		box-sizing: border-box;
-
-		@include rw($width_md) {
-		}
 	}
 
 	&-navs {
@@ -50,10 +47,6 @@
 
 		@include rw($width_md) {
 			padding: 170px 20px 60px;
-		}
-
-		@include rw($width_xs) {
-			
 		}
 
 		> div {
