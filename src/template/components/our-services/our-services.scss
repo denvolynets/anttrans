@@ -1,5 +1,12 @@
 .our-services {
+	@include media($width_xs) {
+		padding-bottom: 0;
+	}
+	
 	.carousel {
+		margin-left: -20px;
+		margin-right: -20px;
+		
 		&-navs {
 			position: relative;
 			padding: 0;
@@ -29,7 +36,66 @@
 				}
 
 				&:last-child {
-					margin-right: -74px;
+					margin-right: -30px;
+
+					@include media($width_md) {
+						margin-right: -30px;
+					}
+				}
+			}
+
+			@include media($width_xs) {
+				justify-content: flex-end;
+				margin-bottom: 0;
+				position: relative;
+				padding: 0;
+				bottom: 30px;
+				right: 20px;
+				left: auto;
+
+				> div {
+					position: relative;
+					left: 0;
+					right: 0;
+					width: 90px;
+					height: 55px;
+					border-radius: 3px;
+					border: 1px solid $clr_wh;
+					background: rgba($clr_main, .5);
+					transition: all $trans;
+		
+					&.swiper-button-disabled {
+						opacity: 1;
+						background: rgba($clr_main, .25);
+					}
+		
+					@include rw($width_xs) {
+						width: 60px;
+						height: 30px;
+					}
+		
+					&:before {
+						content: '';
+						position: absolute;
+						width: 30px;
+						height: 1px;
+						background-color: $clr_wh;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+						display: block;
+					}
+					
+					&:first-child {
+						right: -1px;
+						left: auto;
+						margin: 0;
+					}
+					&:last-child {
+						margin: 0;
+					}
 				}
 			}
 		}
@@ -51,6 +117,27 @@
 					overflow: hidden;
 					transition: all $trans;
 				}
+
+				@include media($width_md) {
+					background: none !important;
+					flex-direction: column;
+					opacity: 1;
+				}
+
+				figure {
+					display: none;
+					width: 100%;
+					margin: 0;
+
+					img {
+						width: 100%;
+					}
+
+					@include media($width_md) {
+						display: flex;
+						align-items: center;
+					}
+				}
 			}
 			
 			&__info {
@@ -60,19 +147,44 @@
 				width: 100%;
 				transition: all $trans;
 
+				@include media($width_md) {
+					width: auto;
+					border-radius: 0;
+					background-color: rgba(#111, 1);
+				}
+
+				@include media($width_xs) {
+					padding: 20px 20px 100px;
+				}
+
 				&--title {
 					font-size: $fs_15;
 					font-family: $ff_bold;
 					margin-bottom: 0;
 					transition: all $trans;
+
+					@include media($width_md) {
+						font-size: $fs_175;
+					}
 				}
 
 				&--desc {
-					font-size: 0;
-					overflow: hidden;
-					transition: all $trans;
-					height: 100%;
-					opacity: 0;
+					@include media($width_md, 1) {
+						font-size: 0;
+						overflow: hidden;
+						transition: all $trans;
+						height: 100%;
+						opacity: 0;
+					}
+
+					@include media($width_md) {
+						font-size: $fs_025;
+					}
+
+					@include media($width_xs) {
+						font-size: $fs_05;
+						margin-top: 10px;
+					}
 				}
 			}
 
@@ -85,25 +197,44 @@
 			}
 
 			.swiper-wrapper {
-				padding: 60px 0;
+				@include media($width_md, 1) {
+					padding: 60px 0;
+				}
+
+				@include media($width_md) {
+					padding-bottom: 60px;
+				}
+
+				@include media($width_xs) {
+					padding-bottom: 0;
+				}
 			}
 
 			.swiper-slide-active {
 				transform: scale(1.4);
 				z-index: 1;
+
+				@include media($width_md) {
+					transform: scale(1);
+				}
 				
 				.carousel-services {
-
 					&__info {
-						font-size: 14px;
-
+						@include media($width_md, 1) {
+							font-size: 14px;
+						}
+						
 						&--title {
-							margin-bottom: 7px;
+							@include media($width_md, 1) {
+								margin-bottom: 7px;
+							}
 						}
 
 						&--desc {
-							font-size: $fs_030;
-							opacity: 1;
+							@include media($width_md, 1) {
+								font-size: $fs_030;
+								opacity: 1;
+							}
 						}
 					}
 
@@ -111,7 +242,6 @@
 						opacity: 1;
 					}
 				}
-				
 			}
 		}
 	}

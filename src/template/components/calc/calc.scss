@@ -35,6 +35,11 @@
 			&:nth-child(1) {
 				width: 50%;
 				min-height: 55px;
+
+				@include media($width_xs) {
+					width: 100%;
+					margin-bottom: 27px;
+				}
 			}
 
 			&:nth-child(2) {
@@ -54,6 +59,22 @@
 				.calc-label {
 					font-size: $fs_2;
 				}
+
+				.calc-price__icon {
+					display: flex;
+					align-items: center;
+				}
+
+				@include media($width_xs_s) {
+					// flex-direction: column;
+					// align-items: flex-start;
+
+					img {
+						position: relative;
+						right: 0;
+						height: 35px;
+					}
+				}
 			}
 
 			mark {
@@ -68,7 +89,7 @@
 			}
 
 			.rsform-hint {
-				left: 31px;
+				left: 20px;
 			}
 		}
 	}
@@ -127,8 +148,6 @@
 				height: 19px;
 
 				&:before {
-					left: 10px;
-					top: 4px;
 					width: 7px;
 					height: 13px;
 				}

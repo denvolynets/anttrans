@@ -3,7 +3,7 @@ mixin calc(className)
         div(class=`${className}-calc__inner` id='calc')
             h1 Калькулятор грузоперевозки
             .g-row
-                .g-col.g-col_md_6
+                .g-col.g-col_lg_6
                     .rsform-row
                         +rsformGroup({
                             type: 'text',
@@ -59,7 +59,7 @@ mixin calc(className)
                                 name: 'from',
                                 labelText: 'Верхняя, боковая загрузка-выгрузка'
                             })
-                .g-col.g-col_md_6
+                .g-col.g-col_lg_6
                     .calc-result
                         .calc-time.calc-result__row
                             .calc-label Время в пути

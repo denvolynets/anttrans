@@ -3,11 +3,12 @@ block title
 	+title("Услуги")
 block content
 	+header()
-		.header-banner__static.js-scroll-zoom(style='background-image: url(./assets/images/temp/2-1.jpg)')
-			.g-grid
-				.header-banner
-					h1 Перевозка негабаритных и тяжеловесных грузов по России
-					p Доставляем грузы по всей стране
+		.header-banner__static
+				.header-banner.js-scroll-zoom(style='background-image: url(./assets/images/temp/2-1.jpg)')
+					.g-grid
+						.header-banner__inner
+							h1 Перевозка негабаритных и тяжеловесных грузов по России
+							p Доставляем грузы по всей стране
 				.header-form
 					.g-grid
 						+formCalc('services')

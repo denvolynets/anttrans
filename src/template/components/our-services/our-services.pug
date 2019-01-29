@@ -22,9 +22,8 @@ mixin ourServices()
     -
     section.our-services.g-bg_grb
         .g-grid
-            .g-row
-                h2.g-clr_m.g-mb_1 Наши услуги
-                p Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.
-                +carousel(services, 'services')(
-                    data-swiper=`{"speed": 500, "effect": "slide", "loop": false, "slidesPerView": 3, "centeredSlides": true, "slideToClickedSlide": true, "initialSlide": 1}`
-                )
+            h2.g-clr_m.g-mb_1 Наши услуги
+            p Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.
+            +carousel(services, 'services')(
+                data-swiper=`{"speed": 500, "effect": "slide", "loop": false, "slidesPerView": 3, "centeredSlides": true, "slideToClickedSlide": true, "initialSlide": 1, "breakpoints": { "1024": { "slidesPerView": 2, "initialSlide": 0, "centeredSlides": false, "spaceBetween": 20 },  "768": { "slidesPerView": 1, "spaceBetween": 20} }}`
+            )

@@ -25,6 +25,23 @@ html {
 
 .requisite {
 	table {
+		@include media($width_xs_s) {
+			tr {
+				display: flex;
+				flex-direction: column;
+
+				td {
+					&:first-child {
+						padding-bottom: 0;
+					}
+
+					&:last-child {
+						padding-top: 2px;
+					}
+				}
+			}
+		}
+
 		td {
 			padding-right: 40px;
 			padding-top: 7px;
@@ -36,6 +53,15 @@ html {
 			}
 		}
 	}
+}
+
+.mfp-wrap {
+	overflow: hidden;
+}
+
+.mfp-container {
+	overflow: auto;
+	padding: 10px;
 }
 
 .mm-wrapper_blocking:not(.ismobile) {
@@ -55,7 +81,7 @@ html {
 
 .mm-panel::-webkit-scrollbar-thumb
 {
-	background-color: $clr_main;
+	background-color: $clr_yell;
 	border: none;
 }
 
@@ -81,7 +107,7 @@ html {
 	.mm-panels .border {
 		height: 2px;
 		width: 0;
-		background: linear-gradient(to left, transparent, $clr_main);
+		background: linear-gradient(to left, transparent, $clr_yell);
 		bottom: 0;
 		position: absolute;
 		left: 20px;
@@ -96,7 +122,7 @@ html {
 			a,
 			span {
 				padding-left: 30px;
-				color: $clr_main;
+				color: $clr_yell;
 			}
 
 			.border {
@@ -106,7 +132,7 @@ html {
 
 			.mm-btn_prev:before,
 			.mm-btn_next:after {
-				border-color: $clr_main;
+				border-color: $clr_yell;
 			}
 		}
 	}
@@ -176,7 +202,7 @@ html {
 
 	.mm-panel_has-navbar .mm-navbar:hover {
 		.mm-navbar__title {
-			color: $clr_main;
+			color: $clr_yell;
 		}
 		
 		.border {
@@ -187,7 +213,7 @@ html {
 		.mm-btn_prev:before,
 		.mm-btn_next:after {
 			left: 33px;
-			border-color: $clr_main;
+			border-color: $clr_yell;
 		}
 	}
 

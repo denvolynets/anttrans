@@ -10,7 +10,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="./assets/css/app.css"/>
+    <link rel="stylesheet" href="./assets/css/app.bundle.css"/>
     <script src="./assets/js/app.bundle.js"></script>
     <meta property="og:type" content="article">
     <meta property="article:publisher" content="...">
@@ -22,7 +22,7 @@
       <header class="header">
         <div class="header-top">
           <div class="g-grid">
-            <div class="g-d_f g-jc_sb g-as_c"><a class="header-top__logo g-d_f g-as_c" href="#"><img class="svg" src="./assets/images/svg/logo.svg"/></a>
+            <div class="g-d_f g-jc_sb g-as_c"><a class="header-top__logo g-d_f g-as_c" href="/"><img class="svg" src="./assets/images/svg/logo.svg"/></a>
               <nav class="header-top__nav g-d_f g-as_c">
                 <ul class="g-d_f">
                   <li class="header-top__link dropdown"><a>Москва</a>
@@ -41,77 +41,78 @@
                       <li><a href="Волгоград">Волгоград</a></li>
                     </ul>
                   </li>
-                  <li class="header-top__link g-hide_lg"><a href="/company">Компания</a></li>
-                  <li class="header-top__link g-hide_lg"><a href="/services">Услуги</a></li>
-                  <li class="header-top__link g-hide_lg"><a href="/services">Быстрая заявка</a></li>
-                  <li class="header-top__link g-hide_lg"><a href="/contacts">Контакты</a></li>
+                  <li class="header-top__link g-hide_lg"><a href="/about.html">Компания</a></li>
+                  <li class="header-top__link g-hide_lg"><a href="/services.html">Услуги</a></li>
+                  <li class="header-top__link g-hide_lg"><a href="/calculator.html">Быстрая заявка</a></li>
+                  <li class="header-top__link g-hide_lg"><a href="/contacts.html">Контакты</a></li>
                 </ul>
               </nav>
-              <div class="header-top__contacts g-d_f g-as_c"><a class="header-top__phone g-d_f g-fd_c g-hide_lg" href="tel:88005553535">8 800 555-35-35<small>Звонок по России бесплатный</small></a><a class="btn-md btn-yell btn js-popup g-hide_lg" href="#popup-callback">Заказать звонок</a><a class="header-top__burger" href="#menu">
+              <div class="header-top__contacts g-d_f g-as_c"><a class="header-top__phone g-d_f g-fd_c g-hide_lg" href="tel:88005553535">8 800 555-35-35<small>Звонок по России бесплатный</small></a><a class="btn-md btn-yell btn js-popup g-hide_lg" href="#popup-cities"><span>Заказать звонок</span></a><a class="header-top__burger" href="#menu">
                   <div class="menu-icon"><span class="line"></span><span class="line line--second"></span><span class="line line--third"></span></div></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="header-banner__static js-scroll-zoom" style="background-image: url(./assets/images/temp/2-1.jpg)">
-          <div class="g-grid">
-            <div class="header-banner">
-              <h1>Перевозка негабаритных и тяжеловесных грузов по России</h1>
-              <p>Доставляем грузы по всей стране</p>
-            </div>
-            <div class="header-form">
-              <div class="g-grid">
-                <form class="form-calc form-calc__services rsform js-required">
-                  <h3 class="g-mb_2">Быстрый рассчет стоимости на перевозку 
-                    <mark>негабаритного груза</mark>
-                  </h3>
-                  <div class="rsform-row">
-                    <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
-                        <svg>
-                          <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
-                        </svg></span>
-                      <input class="rsform-input icon" type="text" name="from" placeholder="Откуда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите начальную точку маршрута&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
-                    </div>
-                    <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
-                        <svg>
-                          <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
-                        </svg></span>
-                      <input class="rsform-input icon" type="text" name="to" placeholder="Куда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите конечную точку маршрута&quot;,&quot;minL&quot;: 2,&quot;lang&quot;: &quot;ru&quot;}"/>
-                    </div>
-                  </div>
-                  <div class="rsform-row__vertical">
-                    <div class="rsform-group js-rsform__field rs-check_mark">
-                      <textarea class="rsform-input" type="textarea" name="textarea" placeholder="Опишите груз"></textarea>
-                    </div>
-                    <div class="rsform-row__vertical--fx_c">
-                      <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
-                          <svg>
-                            <use xlink:href="./assets/images/svg-sprite/sprite.svg#scale"></use>
-                          </svg></span>
-                        <input class="rsform-input icon" type="text" name="to" placeholder="Вес" data-required="{&quot;type&quot;: &quot;numerical&quot;,&quot;message&quot;:&quot;Введите вес&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
-                      </div>
-                      <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
-                          <svg>
-                            <use xlink:href="./assets/images/svg-sprite/sprite.svg#3d"></use>
-                          </svg></span>
-                        <input class="rsform-input icon" type="text" name="to" placeholder="Объeм" data-required="{&quot;type&quot;: &quot;numerical&quot;,&quot;message&quot;:&quot;Введите объём&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rsform-row">
-                    <div class="rsform-group js-rsform__field rs-check_mark">
-                      <input class="rsform-input" type="text" name="from" placeholder="Откуда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите начальную точку маршрута&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
-                    </div>
-                    <div class="rsform-group js-rsform__field rs-check_mark">
-                      <input class="rsform-input" type="text" name="to" placeholder="Куда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите конечную точку маршрута&quot;,&quot;minL&quot;: 2,&quot;lang&quot;: &quot;ru&quot;}"/>
-                    </div>
-                  </div>
-                  <div class="rsform-row__vertical g-d_f g-ai_c g-mt_1">
-                    <button class="btn-lg btn-yell btn rsform-btn" type="submit">Отправить запрос
-                    </button><small>Нажимая кнопку «отправить» <a href="/">я даю согласие на обработку персональных данных</a></small>
-                  </div>
-                </form>
+        <div class="header-banner__static">
+          <div class="header-banner js-scroll-zoom" style="background-image: url(./assets/images/temp/2-1.jpg)">
+            <div class="g-grid">
+              <div class="header-banner__inner">
+                <h1>Перевозка негабаритных и тяжеловесных грузов по России</h1>
+                <p>Доставляем грузы по всей стране</p>
               </div>
+            </div>
+          </div>
+          <div class="header-form">
+            <div class="g-grid">
+              <form class="form-calc form-calc__services rsform js-required">
+                <h3 class="g-mb_2">Быстрый рассчет стоимости на перевозку 
+                  <mark>негабаритного груза</mark>
+                </h3>
+                <div class="rsform-row">
+                  <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
+                      <svg>
+                        <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
+                      </svg></span>
+                    <input class="rsform-input icon" type="text" name="from" placeholder="Откуда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите начальную точку маршрута&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                  </div>
+                  <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
+                      <svg>
+                        <use xlink:href="./assets/images/svg-sprite/sprite.svg#placeholder"></use>
+                      </svg></span>
+                    <input class="rsform-input icon" type="text" name="to" placeholder="Куда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите конечную точку маршрута&quot;,&quot;minL&quot;: 2,&quot;lang&quot;: &quot;ru&quot;}"/>
+                  </div>
+                </div>
+                <div class="rsform-row__vertical">
+                  <div class="rsform-group js-rsform__field rs-check_mark">
+                    <textarea class="rsform-input" type="textarea" name="textarea" placeholder="Опишите груз"></textarea>
+                  </div>
+                  <div class="rsform-row__vertical--fx_c">
+                    <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
+                        <svg>
+                          <use xlink:href="./assets/images/svg-sprite/sprite.svg#scale"></use>
+                        </svg></span>
+                      <input class="rsform-input icon" type="text" name="to" placeholder="Вес" data-required="{&quot;type&quot;: &quot;numerical&quot;,&quot;message&quot;:&quot;Введите вес&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                    </div>
+                    <div class="rsform-group js-rsform__field rs-check_mark"><span class="rsform-icon">
+                        <svg>
+                          <use xlink:href="./assets/images/svg-sprite/sprite.svg#3d"></use>
+                        </svg></span>
+                      <input class="rsform-input icon" type="text" name="to" placeholder="Объeм" data-required="{&quot;type&quot;: &quot;numerical&quot;,&quot;message&quot;:&quot;Введите объём&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="rsform-row">
+                  <div class="rsform-group js-rsform__field rs-check_mark">
+                    <input class="rsform-input" type="text" name="from" placeholder="Откуда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите начальную точку маршрута&quot;,&quot;minL&quot;: 1,&quot;lang&quot;: &quot;ru&quot;}"/>
+                  </div>
+                  <div class="rsform-group js-rsform__field rs-check_mark">
+                    <input class="rsform-input" type="text" name="to" placeholder="Куда" data-required="{&quot;type&quot;: &quot;alphabet&quot;,&quot;message&quot;:&quot;Введите конечную точку маршрута&quot;,&quot;minL&quot;: 2,&quot;lang&quot;: &quot;ru&quot;}"/>
+                  </div>
+                </div>
+                <div class="rsform-row__vertical g-d_f g-ai_c g-mt_1">
+                  <button class="btn-lg btn-yell btn rsform-btn" type="submit"><span>Отправить запрос</span></button><small>Нажимая кнопку «отправить» <a href="/">я даю согласие на обработку персональных данных</a></small>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -221,7 +222,7 @@
             <div class="g-col g-col_lg_4">
               <div class="avtopark-cartext g-mt_3">
                 <h3 class="h3 g-clr_m g-mb_1"></h3>
-                <p class="p"></p><a class="btn-lg btn-yell btn" href="javascript:void(0)">Узнать стоимость перевозки</a>
+                <p class="p"></p><a class="btn-lg btn-yell btn" href="javascript:void(0)"><span>Узнать стоимость перевозки</span></a>
               </div>
             </div>
           </div>
@@ -233,7 +234,7 @@
           <p>Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.</p>
           <div class="how-step">
             <div class="how-step__item">
-              <div class="how-step__item--title">Вы оставляете заявку на сайте</div><a class="btn-md btn-yell btn" href="javascript:void(0)">Оставить заявку</a>
+              <div class="how-step__item--title">Вы оставляете заявку на сайте</div><a class="btn-md btn-yell btn" href="javascript:void(0)"><span>Оставить заявку</span></a>
               <div class="how-step__item--num"><img src="./assets/images/svg/1.svg"/></div>
             </div>
             <div class="how-step__item">
@@ -282,49 +283,51 @@
       </section>
       <section class="our-services g-bg_grb">
         <div class="g-grid">
-          <div class="g-row">
-            <h2 class="g-clr_m g-mb_1">Наши услуги</h2>
-            <p>Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.</p>
-            <div class="carousel carousel-services" data-swiper="{&quot;speed&quot;: 500, &quot;effect&quot;: &quot;slide&quot;, &quot;loop&quot;: false, &quot;slidesPerView&quot;: 3, &quot;centeredSlides&quot;: true, &quot;slideToClickedSlide&quot;: true, &quot;initialSlide&quot;: 1}">
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
-                      <div class="carousel-services__info">
-                        <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
-                        <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
-                      <div class="carousel-services__info">
-                        <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
-                        <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
-                      <div class="carousel-services__info">
-                        <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
-                        <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
-                      <div class="carousel-services__info">
-                        <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
-                        <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
-                      </div>
+          <h2 class="g-clr_m g-mb_1">Наши услуги</h2>
+          <p>Чаще всего, это вид доставки грузов осуществляется в контейнерах, которые имеют стандартные, принятые во всем мире, характеристики: габариты, массу, особенности конструкции. Использование подобных «ёмкостей» позволяет обезопасить груз от внешних воздействий.</p>
+          <div class="carousel carousel-services" data-swiper="{&quot;speed&quot;: 500, &quot;effect&quot;: &quot;slide&quot;, &quot;loop&quot;: false, &quot;slidesPerView&quot;: 3, &quot;centeredSlides&quot;: true, &quot;slideToClickedSlide&quot;: true, &quot;initialSlide&quot;: 1, &quot;breakpoints&quot;: { &quot;1024&quot;: { &quot;slidesPerView&quot;: 2, &quot;initialSlide&quot;: 0, &quot;centeredSlides&quot;: false, &quot;spaceBetween&quot;: 20 },  &quot;768&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 20} }}">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
+                    <figure><img src="./assets/images/temp/services-carousel.png"/></figure>
+                    <div class="carousel-services__info">
+                      <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
+                      <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
                     </div>
                   </div>
                 </div>
-                <div class="carousel-navs g-grid">
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
+                <div class="swiper-slide">
+                  <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
+                    <figure><img src="./assets/images/temp/services-carousel.png"/></figure>
+                    <div class="carousel-services__info">
+                      <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
+                      <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
+                    </div>
+                  </div>
                 </div>
+                <div class="swiper-slide">
+                  <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
+                    <figure><img src="./assets/images/temp/services-carousel.png"/></figure>
+                    <div class="carousel-services__info">
+                      <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
+                      <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="carousel-services__item" style="background-image: url(./assets/images/temp/services-carousel.png)">
+                    <figure><img src="./assets/images/temp/services-carousel.png"/></figure>
+                    <div class="carousel-services__info">
+                      <h4 class="carousel-services__info--title">Перевозка экскаваторов</h4>
+                      <p class="carousel-services__info--desc">It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was fast at both ends; fast to Queequeg's broad canvas belt, and fast to my narrow leather one. So that for better or for worse, we two, for the time, were wedded; and should poor .</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-navs g-grid">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
             </div>
           </div>
@@ -406,8 +409,7 @@
                 <div class="rsform-group js-rsform__field rs-check_mark">
                   <input class="rsform-input" type="tel" name="tel" placeholder="Ваш номер" data-required="{&quot;type&quot;: &quot;phoneRU&quot;,&quot;message&quot;:&quot;Введите ващ телефон&quot;}"/>
                 </div>
-                <button class="btn-lg btn-yell btn rsform-btn" type="submit">Перезвоните мне
-                </button>
+                <button class="btn-lg btn-yell btn rsform-btn" type="submit"><span>Перезвоните мне</span></button>
               </form>
               <div class="popup-subtitle">Мы с вами свяжемся в течении 30 секунд!</div>
             </div>
@@ -491,8 +493,7 @@
                   </div>
                 </div>
                 <div class="btn-wrapper rsform-group">
-                  <button class="btn-lg btn-yell btn rsform-btn" type="submit">Отправить
-                  </button><small>Нажимая кнопку «отправить» <a href="/">я даю согласие на обработку персональных данных</a></small>
+                  <button class="btn-lg btn-yell btn rsform-btn" type="submit"><span>Отправить</span></button><small>Нажимая кнопку «отправить» <a href="/">я даю согласие на обработку персональных данных</a></small>
                 </div>
               </form>
             </div>

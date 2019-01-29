@@ -4,7 +4,7 @@ export default function carousel() {
 	$('.carousel .swiper-container').each(function() {
 		let t = $(this);
 		let params = t.parent().data('swiper');
-
+	
 		let dataParams = {
 			effect: 'fade',
 			speed: 800,
@@ -17,15 +17,19 @@ export default function carousel() {
 			},
 			autoHeight: true
 		};
-
+	
 		if (params) {
 			dataParams = Object.assign(dataParams, params);
 		}
-
-		console.log(params);
-
+	
 		let categoriesSwiper = new Swiper(t[0], dataParams);
-
+	
 		slidersCategories.push(categoriesSwiper);
 	});
+
+	setTimeout(() => {
+		slidersCategories.forEach(item => {
+			item.update();
+		});
+	}, 350);
 }

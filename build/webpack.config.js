@@ -32,6 +32,7 @@ module.exports = (env) => {
 		context: path.resolve(__dirname, '../src'),
 		cache: true,
 		entry: {
+			vendor: ['../src/assets/libs/jquery/jquery-3.3.1.min.js'],
 			app: './app.js'
 		},
 		output: {
@@ -44,6 +45,7 @@ module.exports = (env) => {
 			overlay: true,
 			compress: true,
 			port: 9090,
+			host: '0.0.0.0',
 			disableHostCheck: true,
 			historyApiFallback: true,
 			quiet: true,
@@ -55,6 +57,19 @@ module.exports = (env) => {
 		performance: {
 			hints: false
 		},
+		// optimization: {
+		// 	splitChunks: {
+		// 		cacheGroups: {
+		// 			vendor: {
+		// 				chunks: 'initial',
+		// 				name: 'vendor',
+		// 				test: 'vendor',
+		// 				enforce: true
+		// 			}
+		// 		}
+		// 	},
+		// 	runtimeChunk: true
+		// },
 		module: {
 			rules: [
 				{
@@ -177,7 +192,7 @@ module.exports = (env) => {
 				}),
 				
 				new WebpackBuildNotifierPlugin({
-					title: 'RedSoft',
+					title: 'AntTrans',
 					suppressSuccess: 'initial',
 					activateTerminalOnError: true
 				}),

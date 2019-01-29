@@ -34,7 +34,6 @@
 							arr1[option] = arr2[option];
 						} else {
 							arr1[option]['val'] = arr2[option];
-
 							if (option === 'minL') {
 								arr1[option]['mess'] = 'Минимальная длина ' + arr2[option] + ' ' + ONLOAD_FUNC.declOfNum(arr2[option], ['символ', 'символа', 'символов']);
 							}
@@ -44,7 +43,9 @@
 					}
 				}
 			}
-			return arr1;
+			if (arr1) {
+				return JSON.parse(JSON.stringify(arr1));
+			}
 		}
 	};
 
@@ -99,15 +100,15 @@
 						valNumSplit = valToNum.split('');
 
 						if (inputOptions.type === 'email') {
-							EL_FUNC.checkValue(EL_FUNC.checkEmail(inputVal));
+							EL_FUNC.checkValue(EL_FUNC.checkEmail(inputVal), event);
 						} else if (inputOptions.type === 'alphabet' || inputOptions.type === 'numerical') {
 							EL_FUNC.alphabetORnumerical(inputOptions.type);
 
-							EL_FUNC.checkValue(inputVal.length >= inputOptions.minL.val);
+							EL_FUNC.checkValue(inputVal.length >= inputOptions.minL.val, event);
 						} else if (inputOptions.type === 'phoneRU') {
 							EL_FUNC.checkValue(valToNum.length >= 12 && valNumSplit[1] === '9');
 						} else if (inputAttrType === 'checkbox' || inputOptions.type === 'checkbox') {
-							EL_FUNC.checkValue(EL.prop('checked'));
+							EL_FUNC.checkValue(EL.prop('checked'), event);
 						} else if (inputOptions.type === 'password') {
 							EL_FUNC.checkValue(EL_FUNC.checkPassword());
 							
@@ -156,7 +157,7 @@
 								EL.siblings('.rsform-hint').text(inputOptions.message); // если параметр mess пустой, то выводим дефолтное сообщение из data-required
 							}
 						},
-						'checkValue': function(check) {
+						'checkValue': function(check, event) {
 							/* дополнительные сообщения об ошибках при определенных условиях */
 							if (inputOptions.type === 'email') {
 								if (inputVal.length > 0) {

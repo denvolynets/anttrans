@@ -43,6 +43,17 @@ const app = {
 	},
 	bindEvents: () => {
 		let readyFUNC = {
+			mfpOpt: {
+				type: 'inline',
+				fixedContentPos: false,
+				fixedBgPos: true,
+				overflowY: 'auto',
+				closeBtnInside: true,
+				preloader: false,
+				midClick: true,
+				removalDelay: 300,
+				mainClass: 'my-mfp-slide-bottom'
+			},
 			isMobile: () => { return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent); },
 			mobileMenu: () => {
 				if (readyFUNC.isMobile()) {
@@ -89,37 +100,19 @@ const app = {
 			}
 		};
 
+		readyFUNC.mobileMenu();
+
 		$('input[type="number"]').niceNumber();
 
 		$('form').rsForm();
 
 		$('select').niceSelect();
 
-		$('.js-popup').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-slide-bottom',
-			callbacks: {
-				open: function() {
-
-				},
-				close: function() {
-
-				}
-			}
-		});
+		$('.js-popup').magnificPopup(readyFUNC.mfpOpt);
 
 		imgToSvg();
 
 		carousel();
-
-		readyFUNC.mobileMenu();
 
 		// eslint-disable-next-line no-unused-vars
 		let tariffsTable = new TariffsTable();
@@ -131,7 +124,7 @@ const app = {
 		// 	contentTouchScroll: true
 		// });
 
-		$('.scrollbar-outer').overlayScrollbars({ /* your options */ }); 
+		$('.scrollbar-outer').overlayScrollbars({}); 
 	}
 };
 

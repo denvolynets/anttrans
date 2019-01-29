@@ -91,16 +91,17 @@ $h: header;
 					width: 100%;
 					left: 0;
 					right: 0;
-					bottom: 0;
-					height: 1px;
-					background-color: $clr_wh;
+					bottom: -24px;
+					height: 2px;
+					background-color: $clr_yell;
 					transition: all $trans15;
 					transform-origin: left;
 					transform: scaleX(0);
 				}
 			}
 			
-			&:hover {
+			&:hover,
+			&.active {
 				> a {
 					&:after {
 						transform: scaleX(1);
@@ -167,6 +168,10 @@ $h: header;
 			background-color: rgba(#161616, .7);
 			padding: 30px;
 
+			@include media($width_md) {
+				max-width: 100%;
+			}
+
 			a {
 				color: $clr_wh;
 			}
@@ -215,7 +220,14 @@ $h: header;
 	&-banner {
 		position: relative;
 		background-color: $clr_dark_l;
+		background-size: cover;
+		background-position: center;
 		$b: &;
+
+		@include media($width_lg) {
+			background-size: cover !important;
+			background-position: center center !important;
+		}
 
 		.carousel {
 			.js-scroll-zoom {
@@ -276,12 +288,31 @@ $h: header;
 				background-color: rgba(#616161, .28);
 			}
 
+			@include media($width_lg) {
+				background-size: cover !important;
+				background-position: center center !important;
+			}
+
 			&--calc {
 				overflow: hidden;
 
 				> .g-grid {
 					position: relative;
 					z-index: 2;
+				}
+
+				@include media($width_xs) {
+					&:after {
+						content: '';
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						top: 0;
+						display: block;
+						background: linear-gradient(to bottom, transparent, transparent, #161616, #161616);
+						z-index: 1;
+					}
 				}
 			}
 
@@ -307,19 +338,37 @@ $h: header;
 				}
 			}
 
-			#{$b} {
+			#{$b}__inner {
+				background-size: cover;
+				background-position: center;
 				box-sizing: border-box;
 				min-height: 730px;
 				padding: 170px 0;
-				max-width: 720px;
+				max-width: calc(100% - 560px);
 				width: 100%;
-				background: transparent;
+
+				@include media($width_lg) {
+					max-width: 100%;
+					min-height: 0;
+					padding: 120px 0 120px;
+				}
+
+				@include media($width_xs) {
+					padding-bottom: 55px;
+				}
 			}
 		}
 
 		&__text {
+			padding: 170px 0 120px;
+
 			#{$b} {
+				background: none;
 				max-width: 900px;
+			}
+
+			@include media($width_md) {
+				padding: 120px 0 60px;
 			}
 		}
 	}
@@ -328,5 +377,29 @@ $h: header;
 		min-height: 730px;
 		padding: 170px 0;
 		box-sizing: border-box;
+
+		@include media($width_md) {
+			padding: 120px 0 60px;
+			min-height: 0;
+
+			.rsform-row {
+				width: 100%;
+			}
+		}
+	}
+
+	&-contacts {
+		.#{$h}-card {
+			.g-grid {
+				padding: 0;
+				display: flex;
+				align-items: center;
+			}
+
+			&__inner {
+				background-color: rgba(#161616, 1);
+				width: 100%;
+			}
+		}
 	}
 }

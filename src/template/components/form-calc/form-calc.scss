@@ -9,11 +9,31 @@ $f_c: 'form-calc';
 	margin-left: auto;
 	padding: 30px 30px 39px;
 	box-sizing: border-box;
-	border: 1px solid $clr_wh;
-	border-radius: $br_r;
+	// border: 1px solid $clr_wh;
+	// border-radius: $br_r;
 	overflow: hidden;
 	background-color: rgba(#161616, .2);
 	margin-top: -25px;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		box-shadow: inset 0 0 0 1px $clr_wh;
+		transition: all $trans;
+		border-radius: $br_r;
+		pointer-events: none;
+	}
+
+	&:hover {
+		&:before {
+			box-shadow: inset 0 0 0 2px $clr_wh;
+		}
+	}
 
 	@include rw($width_md) {
 		margin-top: 0;
@@ -35,6 +55,34 @@ $f_c: 'form-calc';
 
 	&__services {
 		max-width: 535px;
+
+		@include media($width_lg) {
+			max-width: 100%;
+			padding-bottom: 30px;
+
+			&.form-calc .rsform-btn {
+				margin-bottom: 0;
+			}
+		}
+
+		@include media($width_xs_s) {
+			&.form-calc .rsform-btn {
+				margin-bottom: 10px;
+			}
+
+			.rsform-row__vertical {
+				flex-wrap: wrap;
+				flex-direction: column-reverse;
+
+				> * {
+					width: 100%;
+				}
+
+				&:last-child {
+					flex-direction: column;
+				}
+			}
+		}
 	}
 
 	h3 {

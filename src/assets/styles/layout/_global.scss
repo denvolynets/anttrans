@@ -886,6 +886,13 @@ hr {
 }
 
 .dropdown {
+	a {
+		&:after {
+			display: none;
+		}
+	}
+	
+
 	&-child {
 		position: absolute;
 		opacity: 0;

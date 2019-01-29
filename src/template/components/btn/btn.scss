@@ -26,6 +26,39 @@
 
 	&-yell {
 		background: linear-gradient(to bottom, #ffd959, #ffb22d);
+
+		// &.hv:hover {
+		// 	background: linear-gradient(to bottom, $clr_main, #00bd2d);
+		// }
+		position: relative;
+
+		span {
+			position: relative;
+			z-index: 2;
+		}
+
+		&.hv {
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				display: block;
+				z-index: 1;
+				background: linear-gradient(to bottom, $clr_main, #00a928);
+				pointer-events: none;
+				opacity: 0;
+				transition: all $trans;
+			}
+	
+			&:hover {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
 	}
 	
 	&-gr {

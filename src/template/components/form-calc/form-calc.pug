@@ -76,14 +76,14 @@ mixin formCalc(type)
                     req: '{"type": "numerical","message":"Введите вес","minL": 1,"lang": "ru"}',
                     type: 'text',
                     name: 'to',
-                    placeholder: 'Вес',
+                    placeholder: 'Вес, кг',
                     icon: 'scale'
                 })
                 +rsformGroup({
                     req: '{"type": "numerical","message":"Введите объём","minL": 1,"lang": "ru"}',
                     type: 'text',
                     name: 'to',
-                    placeholder: 'Объeм',
+                    placeholder: 'Объeм, м3',
                     icon: '3d'
                 })
             +btn('lg','yell', 'submit').rsform-btn.g-mt_1 Рассчитать стоимость

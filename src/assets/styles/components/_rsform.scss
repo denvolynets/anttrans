@@ -119,6 +119,11 @@ $form: rsform;
 			.#{$form} {
 				&-input {
 					border-color: $clr_main;
+					background-color: rgba($clr_main, 0.05);
+				}
+
+				&-icon {
+					border-color: $clr_main;
 				}
 			}
 		}
@@ -159,14 +164,13 @@ $form: rsform;
 
 					&:before {
 						content: '';
-						left: 8px;
-						top: 4px;
+						left: 5px;
+						top: 1px;
 						width: 5px;
 						height: 10px;
 						border: solid transparent;
 						border-width: 0 3px 3px 0;
-						transform: rotate(45deg);
-						zoom: 68%;
+						transform: rotate(45deg) scale(.68);
 						position: absolute;
 					}
 				}
@@ -254,7 +258,7 @@ $form: rsform;
 	}
 
 	&-input {
-		padding: 9px 30px 9px 30px;
+		padding: 9px 30px 9px 20px;
 		outline: none;
 		border: 1px solid transparent;
 		min-height: 55px;
@@ -266,7 +270,7 @@ $form: rsform;
 		font-family: $ff_bold;
 
 		&.icon {
-			padding: 9px 30px 9px 79px;
+			padding: 9px 7px 9px 76px;
 		}
 
 		@include placeholder() {

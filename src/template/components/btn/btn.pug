@@ -3,16 +3,20 @@ mixin btn(size = 'md', color = 'yell', type = 'link', agree = false)
         .btn-wrapper.rsform-group
             if type == 'submit'
                 button(type="submit" class=`btn-${size == null ? 'md' : size} btn-${color}`).btn&attributes(attributes)
-                    block
+                    span
+                        block
                 small Нажимая кнопку «отправить» #[a(href='/') я даю согласие на обработку персональных данных]
             else
                 a(href="javascript:void(0)" class=`btn-${size == null ? 'md' : size} btn-${color}`).btn&attributes(attributes)
-                    block
+                    span
+                        block
                 small Нажимая кнопку «отправить» #[a(href='/') я даю согласие на обработку персональных данных]
     else 
         if type == 'submit'
             button(type="submit" class=`btn-${size == null ? 'md' : size} btn-${color}`).btn&attributes(attributes)
-                block
+                span
+                    block
         else
             a(href="javascript:void(0)" class=`btn-${size == null ? 'md' : size} btn-${color}`).btn&attributes(attributes)
-                block
+                span
+                    block
