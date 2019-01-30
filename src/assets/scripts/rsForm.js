@@ -49,7 +49,7 @@
 		}
 	};
 
-	const METHODS = {
+	var METHODS = {
 		initForm: function() {
 			this.each(function() {
 				var THIS = $(this);

@@ -4,7 +4,8 @@
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: nowrap;
-
+		flex-direction: row;
+		
 		@include media($width_xs) {
 			flex-wrap: wrap;
 		}
@@ -54,6 +55,10 @@
 			padding-left: 20px;
 			padding-right: 20px;
 			transition: all $trans;
+
+			@include placeholder() {
+				color: $clr_wh;
+			}
 		}
 
 		.rsform {

@@ -1,5 +1,81 @@
 include ../_mixins/list
-
+- 
+	var footerMenu = [
+		{
+			"name": "Компания",
+			"href": '/about.html'
+		},{
+			"name": "Услуги",
+			"href": '/services.html',
+			"childs": [
+				{
+					"name": "Междугородние перевозки",
+					"href": "#",
+					"childs": [
+						{
+							"name": "Санкт-Петербург",
+							"href": '/city'
+						},{
+							"name": "Екатеринбург",
+							"href": '/city'
+						},{
+							"name": "Нижний Новгород",
+							"href": '/city'
+						},{
+							"name": "Казань",
+							"href": '/city'
+						},{
+							"name": "Челябинск",
+							"href": '/city'
+						},{
+							"name": "Омск",
+							"href": '/city'
+						},{
+							"name": "Самара",
+							"href": '/city'
+						},{
+							"name": "Ростов-на-Дону",
+							"href": '/city'
+						},{
+							"name": "Уфа",
+							"href": '/city'
+						},{
+							"name": "Пермь",
+							"href": '/city'
+						},{
+							"name": "Воронеж",
+							"href": '/city'
+						},{
+							"name": "Волгоград",
+							"href": '/city'
+						}
+					]
+				},{
+					"name": "Страхование груза",
+					"href": '#'
+				}
+			]
+		},{
+			"name": "Быстрая заявка",
+			"href": '/calculator.html'
+		},{
+			"name": "Калькулятор перевозки",
+			"href": '/calculator.html'
+		},{
+			"name": "Скидки и акции",
+			"href": '#'
+		},{
+			"name": "Отзывы",
+			"href": '#'
+		},{
+			"name": "Карьера в АНТТРАНС",
+			"href": '#'
+		},{
+			"name": "Контакты",
+			"href": '/contacts.html'
+		}
+	];
+-
 doctype html
 html(lang="ru")
 	include ../_shared/head
@@ -11,3 +87,21 @@ html(lang="ru")
 			.g-hide
 				+popups()
 		nav#menu
+			ul
+				each link, index in footerMenu
+					if (link.childs)
+						li
+							span= link.name
+							ul
+								each subLink, index in link.childs
+									if (subLink.childs)
+										li
+											span= subLink.name
+											ul
+												each subLink1, index in subLink.childs
+													li #[a(href= subLink1.href = '#')= subLink1.name]
+									else
+										li #[a(href= subLink.href = '#')= subLink.name]
+					else
+						li 
+							a(href= link.href)= link.name

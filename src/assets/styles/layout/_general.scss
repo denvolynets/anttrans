@@ -90,6 +90,10 @@ html {
 }
 
 #menu {
+	@include media($width_xs) {
+		--mm-iconpanel-size: 10px;
+	}
+
 	.mm-panels {
 		bottom: 109px;
 		
@@ -153,22 +157,36 @@ html {
 	.mm-navbar {
 		border-bottom-color: transparent;
 		background-color: transparent;
-	}
-	
-	.mm-navbar a {
-		color: $clr_wh;
-		font-size: $fs_175;
-		font-family: $ff_main;
+
+		a {
+			color: $clr_wh;
+			font-size: $fs_175;
+			font-family: $ff_main;
+			width: 100%;
+
+			
+		}
+
+		.mm-navbar__title {
+			@include media($width_xs) {
+				font-size: 13px;
+				white-space: pre-wrap;
+				text-overflow: unset;
+				line-height: 1.1;
+			}
+		}
 	}
 
 	.mm-navbars_bottom {
 		background-color: transparent;
 		border-top-color: transparent;
+		overflow: hidden;
 
 		.mm-navbar {
 			display: flex;
 			flex-direction: column;
 			height: auto;
+			margin-top: -2px;
 		}
 
 		a {
@@ -181,6 +199,8 @@ html {
 			width: auto;
 			display: inline-flex;
 			margin: auto;
+			background-color: #333;
+			text-align: center;
 
 			small {
 				margin-top: 1px;
@@ -223,9 +243,20 @@ html {
 		.mm-navbar {
 			padding-top: 10px;
 
+			a {
+				width: auto;
+			}
+
 			.border {
 				display: none;
 			}
 		}
 	}
+}
+.mm-navbars_bottom > .mm-navbar > :not(img):not(.mm-btn), .mm-navbars_top > .mm-navbar > :not(img):not(.mm-btn) {
+	flex: none;
+}
+
+.mm-menu a, .mm-menu a:active, .mm-menu a:hover, .mm-menu a:link, .mm-menu a:visited {
+	color: $clr_wh;
 }

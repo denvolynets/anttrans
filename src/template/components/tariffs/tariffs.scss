@@ -109,6 +109,8 @@ $trf: 'tariffs';
 		table {
 			width: 100%;
 			border-collapse: collapse;
+			position: relative;
+			z-index: 3;
 			
 			thead {
 				background-color: $clr_gray_3;

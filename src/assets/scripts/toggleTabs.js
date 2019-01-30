@@ -1,6 +1,6 @@
 export default function toggleTabs() {
 	(function() {
-		const tabs = '.js-tabs';
+		var tabs = '.js-tabs';
 
 		$(tabs).each(function() {
 			$(this).find('[data-choose]').each(function(index) {
@@ -19,13 +19,13 @@ export default function toggleTabs() {
 		});
 
 		$('[data-target]').click(function() {
-			let dataTarget = $(this).data('target');
+			var dataTarget = $(this).data('target');
 
 			$(this).parents(tabs).find('[data-target]').not(this).removeClass('active');
 			$(this).addClass('active');
 
 			$(this).parents(tabs).find('[data-choose]').each(function() {
-				let dataChoose = $(this).data('choose');
+				var dataChoose = $(this).data('choose');
 				if (dataChoose === dataTarget) {
 					$(this).show();
 				} else {

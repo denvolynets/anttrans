@@ -24,6 +24,11 @@
 		font-size: $fs_1;
 	}
 
+	&-inner {
+		display: inline-flex;
+		flex-direction: column;
+	}
+
 	&-yell {
 		background: linear-gradient(to bottom, #ffd959, #ffb22d);
 
@@ -35,6 +40,10 @@
 		span {
 			position: relative;
 			z-index: 2;
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			text-align: center;
 		}
 
 		&.hv {

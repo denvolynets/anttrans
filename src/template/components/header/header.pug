@@ -57,12 +57,6 @@ mixin header(type)
 				"href": '/contacts.html'
 			}
 		];
-		var lang = [
-			"RU",
-			"ENG",
-			"FR",
-			"DE"
-		];
 	-
 
 	header.header&attributes(attributes)
@@ -79,7 +73,7 @@ mixin header(type)
 										a= link.name
 										ul.header-top__link--child.dropdown-child
 											each subLink, index in link.childs
-												li #[a(href= subLink.name)= subLink.name]
+												li #[a(href= subLink.href = '#')= subLink.name]
 								else
 									li.header-top__link(class=`${index !== 0 ? 'g-hide_lg' : ''}`) #[a(href= link.href)= link.name]
 					div.header-top__contacts.g-d_f.g-as_c

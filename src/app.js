@@ -2,8 +2,6 @@
 import '../src/assets/styles/_app.scss';
 // js components
 import '../node_modules/jquery.nice-number/dist/jquery.nice-number';
-import '../node_modules/jquery-mousewheel/jquery.mousewheel';
-import '../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
 import '../node_modules/magnific-popup/dist/jquery.magnific-popup.min';
 import '../node_modules/jquery-nice-select/js/jquery.nice-select.min';
 import '../node_modules/jquery.mmenu/dist/jquery.mmenu.all';
@@ -14,6 +12,8 @@ import imgToSvg from '../src/assets/scripts/imgToSvg';
 import carousel from './template/components/carousel/carousel';
 import TariffsTable from './template/components/tariffs/tariffs';
 import Avtopark from './template/components/avtopark/avtopark';
+
+import svg4everybody from 'svg4everybody';
 
 const app = {
 	load: () => {
@@ -55,18 +55,25 @@ const app = {
 				mainClass: 'my-mfp-slide-bottom'
 			},
 			isMobile: () => { return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent); },
+			isIE: () => {
+				let ua = navigator.userAgent;
+				let isIE = ua.indexOf('MSIE ') > -1 || ua.indexOf('Trident/') > -1;
+				
+				return isIE; 
+			},
 			mobileMenu: () => {
 				if (readyFUNC.isMobile()) {
 					$('html').addClass('ismobile');
 				}
 
-				let menu = $('.header-top__nav > ul').clone();
-				menu.children('li.dropdown').each(function() {
-					$(this).children('a').first().replaceWith('<span>' + $(this).children('a').first().html() + '</span>');
-				});
-				menu.find('*').removeAttr('class');
-				menu.removeAttr('class');
-				menu.appendTo('#menu');
+				// let menu = $('.header-top__nav > ul').clone();
+				// menu.children('li.dropdown').each(function() {
+				// 	$(this).children('a').first().replaceWith('<span>' + $(this).children('a').first().html() + '</span>');
+				// });
+				// menu.find('*').removeAttr('class');
+				// menu.removeAttr('class');
+				// menu.appendTo('#menu');
+				
 				$('#menu').mmenu({
 					'extensions': [
 						'theme-dark',
@@ -114,6 +121,8 @@ const app = {
 
 		carousel();
 
+		svg4everybody();
+
 		// eslint-disable-next-line no-unused-vars
 		let tariffsTable = new TariffsTable();
 		// eslint-disable-next-line no-unused-vars
@@ -124,7 +133,9 @@ const app = {
 		// 	contentTouchScroll: true
 		// });
 
-		$('.scrollbar-outer').overlayScrollbars({}); 
+		$('.scrollbar-outer').overlayScrollbars({});
+
+		if (readyFUNC.isIE()) $('body').addClass('ie');
 	}
 };
 

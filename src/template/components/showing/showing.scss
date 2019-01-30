@@ -237,3 +237,9 @@
 		stroke-width: 1;
 	}
 }
+
+body.ie {
+	.showing-svg.animate #path {
+		stroke-width: 1;
+	}
+}

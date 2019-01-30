@@ -45,11 +45,12 @@
 			&:nth-child(2) {
 				justify-content: space-between;
 
-				img {
+				img, svg {
 					position: absolute;
 					right: 20px;
 					bottom: 0;
 					height: 125px;
+					width: 170px;
 				}
 
 				mark {
@@ -69,10 +70,11 @@
 					// flex-direction: column;
 					// align-items: flex-start;
 
-					img {
+					img, svg {
 						position: relative;
 						right: 0;
-						height: 35px;
+						height: 60px;
+						width: 60px;
 					}
 				}
 			}

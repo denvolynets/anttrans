@@ -45,123 +45,106 @@ module.exports = (env) => {
 			overlay: true,
 			compress: true,
 			port: 9090,
-			host: '0.0.0.0',
-			disableHostCheck: true,
-			historyApiFallback: true,
-			quiet: true,
 			stats: consoleStats
-		},
-		resolve: {
 		},
 		stats: consoleStats,
 		performance: {
 			hints: false
 		},
-		// optimization: {
-		// 	splitChunks: {
-		// 		cacheGroups: {
-		// 			vendor: {
-		// 				chunks: 'initial',
-		// 				name: 'vendor',
-		// 				test: 'vendor',
-		// 				enforce: true
-		// 			}
-		// 		}
-		// 	},
-		// 	runtimeChunk: true
-		// },
 		module: {
-			rules: [
-				{
-					test: /\.js$/,
-					use: [
-						{
-							loader: 'babel-loader',
-							// eslint-disable-next-line no-dupe-keys
-							loader: 'eslint-loader',
-							options: {
-								cacheDirectory: true,
-								presets: ['es2015']
-							}
+			rules: [{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						cacheDirectory: true,
+						presets: ['es2015']
+					}
+				}]
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: [{
+					loader: 'eslint-loader'
+				}]
+			},
+			{
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: 'css-loader'
+				})
+			},
+			{
+				test: /\.(sass|scss)$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: [{
+						loader: 'css-loader',
+						query: {
+							importLoaders: 1,
+							sourceMap: !prod
 						}
+					},
+					'sass-loader?sourceMap'
 					]
-				},
-				{
-					test: /\.css$/,
-					use: ExtractTextPlugin.extract({
-						fallback: 'style-loader',
-						use: 'css-loader'
-					})
-				},
-				{
-					test: /\.(sass|scss)$/,
-					use: ExtractTextPlugin.extract({
-						fallback: 'style-loader',
-						use: [
-							{
-								loader: 'css-loader',
-								query: {
-									importLoaders: 1,
-									sourceMap: !prod
-								}
-							},
-							'sass-loader?sourceMap'
-						]
-					})
-				},
-				{
-					test: /\.svg$/,
-					include: [
-						path.resolve(__dirname, '../src/assets/images/svg/')
-					],
-					loader: 'svg-sprite-loader',
-					options: {
-						extract: true,
-						spriteFilename: 'assets/images/svg-sprite/sprite.svg'
-					}
-				},
-				{
-					test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
-					loader: 'url-loader',
-					exclude: [
-						path.resolve(__dirname, '../src/assets/images/svg/'),
-						path.resolve(__dirname, '../src/assets/fonts/'),
-						path.resolve(__dirname, '../dist/assets/svg-sptire/')
-					],
-					options: {
-						emitFile: false,
-						limit: 3000,
-						name: '../../[path][name].[ext]'
-					}
-				},
-				{
-					test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
-					include: [
-						path.resolve(__dirname, '../src/assets/fonts/')
-					],
-					loader: 'url-loader',
-					options: {
-						limit: 5000,
-						publicPath: prod ? '../../' : '/',
-						name: prod ? '[path][name].[ext]' : '../[path][name].[ext]'
-					}
-				},
-				{
-					test: /\.(mp4)(\?.*)?$/,
-					loader: 'url-loader',
-					options: {
-						limit: 10000,
-						name: 'assets/videos/[name].[hash:7].[ext]'
-					}
-				},
-				{
-					test: /\.(sass|scss)$/,
-					loader: 'import-glob-loader'
-				},
-				{
-					test: /\.pug$/,
-					loaders: ['file-loader?name=../dist/[name].html', 'pug-html-loader?pretty&exports=false']
+				})
+			},
+			{
+				test: /\.svg$/,
+				include: [
+					path.resolve(__dirname, '../src/assets/images/svg/')
+				],
+				loader: 'svg-sprite-loader',
+				options: {
+					extract: true,
+					spriteFilename: 'assets/images/svg-sprite/sprite.svg'
 				}
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
+				loader: 'url-loader',
+				exclude: [
+					path.resolve(__dirname, '../src/assets/images/svg/'),
+					path.resolve(__dirname, '../src/assets/fonts/'),
+					path.resolve(__dirname, '../dist/assets/svg-sptire/')
+				],
+				options: {
+					emitFile: false,
+					limit: 3000,
+					name: '../../[path][name].[ext]'
+				}
+			},
+			{
+				test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+				include: [
+					path.resolve(__dirname, '../src/assets/fonts/')
+				],
+				loader: 'url-loader',
+				options: {
+					limit: 5000,
+					publicPath: prod ? '../../' : '/',
+					name: prod ? '[path][name].[ext]' : '../[path][name].[ext]'
+				}
+			},
+			{
+				test: /\.(mp4)(\?.*)?$/,
+				loader: 'url-loader',
+				options: {
+					limit: 10000,
+					name: 'assets/videos/[name].[hash:7].[ext]'
+				}
+			},
+			{
+				test: /\.(sass|scss)$/,
+				loader: 'import-glob-loader'
+			},
+			{
+				test: /\.pug$/,
+				loaders: ['file-loader?name=../dist/[name].html', 'pug-html-loader?pretty&exports=false']
+			}
 			]
 		},
 		plugins: (function(argv) {
@@ -172,25 +155,24 @@ module.exports = (env) => {
 						id: 'svg-sprite'
 					}
 				}),
-				new CopyWebpackPlugin([
-					{
-						from: '../manifest.json',
-						to: 'manifest.json'
-					},
-					{
-						from: '../browserconfig.xml',
-						to: 'browserconfig.xml'
-					},
-					{
-						from: 'assets/images',
-						to: 'assets/images'
-					}
+				new CopyWebpackPlugin([{
+					from: '../manifest.json',
+					to: 'manifest.json'
+				},
+				{
+					from: '../browserconfig.xml',
+					to: 'browserconfig.xml'
+				},
+				{
+					from: 'assets/images',
+					to: 'assets/images'
+				}
 				]),
 				new ExtractTextPlugin({
 					filename: 'assets/css/[name].bundle.css',
 					allChunks: true
 				}),
-				
+
 				new WebpackBuildNotifierPlugin({
 					title: 'AntTrans',
 					suppressSuccess: 'initial',
@@ -222,13 +204,17 @@ module.exports = (env) => {
 				// 	}
 				// })
 			];
-	
+
 			if (argv.env.NODE_ENV === 'production') {
 				pluginsComplete.push(
 					new OptimizeCssAssetsPlugin({
 						cssProcessor: require('cssnano'),
 						cssProcessorPluginOptions: {
-							preset: ['default', { discardComments: { removeAll: true } }]
+							preset: ['default', {
+								discardComments: {
+									removeAll: true
+								}
+							}]
 						},
 						canPrint: true
 					}),

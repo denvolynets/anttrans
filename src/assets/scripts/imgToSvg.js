@@ -1,16 +1,22 @@
-export default function imgToSvg() {
-	$('img.svg').each((i, e) => {
-		const $img = $(e);
+'use strict';
 
-		const imgID = $img.attr('id');
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+exports.default = imgToSvg;
+function imgToSvg() {
+	$('img.svg').each(function(i, e) {
+		var $img = $(e);
 
-		const imgClass = $img.attr('class');
+		var imgID = $img.attr('id');
 
-		const imgURL = $img.attr('src');
+		var imgClass = $img.attr('class');
 
-		$.get(imgURL, (data) => {
+		var imgURL = $img.attr('src');
+
+		$.get(imgURL, function(data) {
 			// Get the SVG tag, ignore the rest
-			let $svg = $(data).find('svg');
+			var $svg = $(data).find('svg');
 
 			// Add replaced image's ID to the new SVG
 			if (typeof imgID !== 'undefined') {
@@ -18,7 +24,7 @@ export default function imgToSvg() {
 			}
 			// Add replaced image's classes to the new SVG
 			if (typeof imgClass !== 'undefined') {
-				$svg = $svg.attr('class', `${imgClass}replaced-svg`);
+				$svg = $svg.attr('class', imgClass + 'replaced-svg');
 			}
 
 			// Remove any invalid XML tags as per http://validator.w3.org
@@ -26,7 +32,7 @@ export default function imgToSvg() {
 
 			// Check if the viewport is set, if the viewport is not set the SVG wont't scale.
 			if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-				$svg.attr(`viewBox 0 0  ${$svg.attr('height')} ${$svg.attr('width')}`);
+				$svg.attr('viewBox 0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'));
 			}
 
 			// Replace image with new SVG

@@ -29,7 +29,7 @@ $h: header;
 	}
 
 	&-top {
-		min-height: 70px;
+		height: 70px;
 		display: flex;
 		align-items: center;
 		position: absolute;
@@ -135,6 +135,7 @@ $h: header;
 			padding: 170px 20px;
 			width: auto;
 			pointer-events: none;
+			width: 100%;
 
 			@include rw($width_md) {
 				position: relative;

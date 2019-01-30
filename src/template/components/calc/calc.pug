@@ -69,11 +69,12 @@ mixin calc(className)
                                 .calc-label Цена перезвоки
                                 mark.calc-value 50 000 &#8381;
                             .calc-price__icon
-                                img(src='./assets/images/svg/porter.svg')
+                                svg
+                                    use(xlink:href=`./assets/images/svg-sprite/sprite.svg#porter`)
                     form.calc-result__form.rsform
                         .rsform-row
                             +rsformGroup({
-                                req: '{"type": "phoneRU","message":"Введите ващ телефон"}',
+                                req: '{"type": "phoneRU","message":"Введите ваш телефон"}',
                                 type: 'tel',
                                 name: 'tel',
                                 placeholder: 'Ваш номер'

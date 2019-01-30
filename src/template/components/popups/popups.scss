@@ -125,10 +125,7 @@
 				height: 19px;
 	
 				&:before {
-					left: 10px;
-					top: 4px;
-					width: 7px;
-					height: 13px;
+					top: 3px;
 				}
 			}
 		}
@@ -213,10 +210,12 @@
 		}
 
 		.btn {
-			width: calc(50% - 6px);
+			&-inner {
+				width: calc(50% - 6px);
 			
-			@include media($width_xs) {
-				width: 100%;
+				@include media($width_xs) {
+					width: 100%;
+				}
 			}
 			
 			&-wrapper {
