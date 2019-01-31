@@ -106,7 +106,7 @@
 
 							EL_FUNC.checkValue(inputVal.length >= inputOptions.minL.val, event);
 						} else if (inputOptions.type === 'phoneRU') {
-							EL_FUNC.checkValue(valToNum.length >= 12 && valNumSplit[1] === '9');
+							EL_FUNC.checkValue(valToNum.length >= 11 && valNumSplit[1] === '9');
 						} else if (inputAttrType === 'checkbox' || inputOptions.type === 'checkbox') {
 							EL_FUNC.checkValue(EL.prop('checked'), event);
 						} else if (inputOptions.type === 'password') {

@@ -1,5 +1,5 @@
 mixin rsformGroup(params)
-    .rsform-group.js-rsform__field.rs-check_mark&attributes(attributes)
+    .rsform-group.js-rsform__field.rs-check_mark(class=`${params.icon ? 'icon': ''}`)&attributes(attributes)
         if (params.type !== 'checkbox' && params.labelText)
             span.rsform-title= params.labelText || ''
         if (params.icon)
@@ -12,16 +12,14 @@ mixin rsformGroup(params)
                     type=`${params.type}`, 
                     name=`${params.name}`, 
                     placeholder=`${params.placeholder || ''}`, 
-                    data-required=`${params.req}`,
-                    class=`${params.icon ? 'icon': ''}`
+                    data-required=`${params.req}`
                 )
             else if (params.type == 'checkbox')
                 label.rsform-checkbox
                     input.rsform-checkbox--input(
                         type=`${params.type}`, 
                         name=`${params.name}`, 
-                        data-required=`${params.req}`,
-                        class=`${params.icon ? 'icon': ''}`
+                        data-required=`${params.req}`
                     )
                     span.rsform-checkbox--input__clone
                     if (params.labelText)
@@ -31,24 +29,21 @@ mixin rsformGroup(params)
                     type=`${params.type}`, 
                     name=`${params.name}`, 
                     placeholder=`${params.placeholder || ''}`, 
-                    data-required=`${params.req}`,
-                    class=`${params.icon ? 'icon': ''}`
+                    data-required=`${params.req}`
                 )
         else 
             if (params.type == 'textarea')
                 textarea.rsform-input(
                     type=`${params.type}`, 
                     name=`${params.name}`, 
-                    placeholder=`${params.placeholder || ''}`,
-                    class=`${params.icon ? 'icon': ''}`
+                    placeholder=`${params.placeholder || ''}`
                 )
             else if (params.type == 'checkbox')
                 label.rsform-checkbox
                     input.rsform-checkbox--input(
                         type=`${params.type}`, 
                         name=`${params.name}`, 
-                        data-required=`${params.req}`,
-                        class=`${params.icon ? 'icon': ''}`
+                        data-required=`${params.req}`
                     )
                     span.rsform-checkbox--input__clone
                     if (params.labelText)
@@ -57,6 +52,5 @@ mixin rsformGroup(params)
                 input.rsform-input(
                     type=`${params.type}`, 
                     name=`${params.name}`, 
-                    placeholder=`${params.placeholder || ''}`,
-                    class=`${params.icon ? 'icon': ''}`
+                    placeholder=`${params.placeholder || ''}`
                 )

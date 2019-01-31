@@ -66,6 +66,7 @@
     "swiper": "^4.4.6"
   },
   "dependencies": {
+    "inputmask": "^4.0.6",
     "pug-html-loader": "^1.1.5"
   }
 }

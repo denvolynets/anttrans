@@ -6,6 +6,7 @@ import '../node_modules/magnific-popup/dist/jquery.magnific-popup.min';
 import '../node_modules/jquery-nice-select/js/jquery.nice-select.min';
 import '../node_modules/jquery.mmenu/dist/jquery.mmenu.all';
 import '../node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min';
+import '../node_modules/inputmask/dist/jquery.inputmask.bundle';
 
 import '../src/assets/scripts/rsForm';
 import imgToSvg from '../src/assets/scripts/imgToSvg';
@@ -114,6 +115,8 @@ const app = {
 		$('form').rsForm();
 
 		$('select').niceSelect();
+
+		$('input[type="tel"]').inputmask('+7 (999) 999-99-99'); 
 
 		$('.js-popup').magnificPopup(readyFUNC.mfpOpt);
 

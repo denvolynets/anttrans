@@ -4,14 +4,14 @@ mixin formCalc(type)
             h3.g-mb_2 Быстрый рассчет стоимости на перевозку #[mark негабаритного груза]
             .rsform-row
                 +rsformGroup({
-                    req: '{"type": "alphabet","message":"Введите начальную точку маршрута","minL": 1,"lang": "ru"}',
+                    req: '{"minL": 1,"lang": "ru"}',
                     type: 'text',
                     name: 'from',
                     placeholder: 'Откуда',
                     icon: 'placeholder'
                 })
                 +rsformGroup({
-                    req: '{"type": "alphabet","message":"Введите конечную точку маршрута","minL": 2,"lang": "ru"}',
+                    req: '{"minL": 2,"lang": "ru"}',
                     type: 'text',
                     name: 'to',
                     placeholder: 'Куда',
@@ -40,16 +40,16 @@ mixin formCalc(type)
                 })
             .rsform-row
                 +rsformGroup({
-                    req: '{"type": "alphabet","message":"Введите начальную точку маршрута","minL": 1,"lang": "ru"}',
-                    type: 'text',
+                    req: '{"type": "phoneRU"}',
+                    type: 'tel',
                     name: 'from',
-                    placeholder: 'Откуда'
+                    placeholder: 'Ваш телефон'
                 })
                 +rsformGroup({
-                    req: '{"type": "alphabet","message":"Введите конечную точку маршрута","minL": 2,"lang": "ru"}',
+                    req: '{"message":"Введите ваше имя","minL": 2}',
                     type: 'text',
-                    name: 'to',
-                    placeholder: 'Куда'
+                    name: 'name',
+                    placeholder: 'Ваше имя'
                 })
             .rsform-row__vertical.g-d_f.g-ai_c.g-mt_1
                 +btn('lg','yell', 'submit').rsform-btn Отправить запрос
