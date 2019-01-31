@@ -59,6 +59,7 @@
 			border: 1px solid $clr_wh;
 			background: rgba($clr_main, .5);
 			transition: all $trans;
+			outline: none;
 
 			&.swiper-button-disabled {
 				opacity: 1;

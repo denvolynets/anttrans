@@ -129,6 +129,12 @@
 			font-size: $fs_05;
 			color: $clr_dark_2;
 		}
+
+		.btn-inner {
+			@include media($width_xs) {
+				width: 100%;
+			}
+		}
 	}
 
 	.btn {

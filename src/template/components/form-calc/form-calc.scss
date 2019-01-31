@@ -27,11 +27,19 @@ $f_c: 'form-calc';
 		transition: all $trans;
 		border-radius: $br_r;
 		pointer-events: none;
+
+		@include rw($width_xs) {
+			display: none;
+		}
 	}
 
 	&:hover {
 		&:before {
 			box-shadow: inset 0 0 0 2px $clr_wh;
+
+			@include rw($width_xs) {
+				display: none;
+			}
 		}
 	}
 

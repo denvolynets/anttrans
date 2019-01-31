@@ -39,6 +39,9 @@
 					background-color: $clr_main_2;
 				}
 			}
+			&.swiper-button-disabled {
+				opacity: 0.5;
+			}
 		}
 	}
 
