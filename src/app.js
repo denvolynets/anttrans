@@ -96,7 +96,7 @@ const app = {
 						'position': 'bottom',
 						'content': [
 							$('.header-top__phone').clone().removeClass('g-hide_lg').get(0).outerHTML,
-							$('.header-top .btn.js-popup').clone().removeClass('g-hide_lg').get(0).outerHTML
+							$('.header-top .btn').clone().removeClass('g-hide_lg').get(0).outerHTML
 						]
 					}]
 				});

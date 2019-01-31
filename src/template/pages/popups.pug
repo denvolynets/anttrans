@@ -3,4 +3,16 @@ block title
 	+title("Услуги")
 block content
 	+header()
-	+popups()
+	.popup-links
+		div.g-grid
+			div.g-row
+				nav
+					ul
+						li
+							a.js-popup(href="#popup-callback") Попап 1
+						li
+							a.js-popup(href="#popup-request") Попап 2
+						li
+							a.js-popup(href="#popup-cities") Попап 3
+	.g-hide
+		+popups()
