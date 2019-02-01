@@ -12,17 +12,23 @@ $adv: 'advantages';
 	}
 
 	&-item {
-		@include media($width_md, 0) {
+		@include media($width_md) {
 			width: calc(100% / 2);
 		}
 
-		@include media($width_xs, 0) {
+		@include media($width_xs) {
 			&:last-child {
 				margin-bottom: 0;
 			}
 		}
 
-		@include media($width_xs_s, 0) {
+		@include media($width_xs_s, 1) {
+			&:nth-last-child(2) {
+				margin-bottom: 0;
+			}
+		}
+
+		@include media($width_xs_s) {
 			width: calc(100% / 1);
 		}
 

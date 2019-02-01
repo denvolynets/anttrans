@@ -67,7 +67,8 @@ $f_c: 'form-calc';
 		@include media($width_lg) {
 			max-width: 100%;
 			padding-bottom: 30px;
-
+			background-color: transparent;
+			
 			&.form-calc .rsform-btn {
 				margin-bottom: 0;
 			}

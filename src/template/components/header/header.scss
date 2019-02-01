@@ -287,6 +287,10 @@ $h: header;
 				bottom: 0;
 				top: 0;
 				background-color: rgba(#616161, .28);
+
+				@include media($width_lg) {
+					display: none;
+				}
 			}
 
 			@include media($width_lg) {
