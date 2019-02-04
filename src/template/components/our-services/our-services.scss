@@ -30,9 +30,7 @@
 				}
 
 				&.swiper-button-disabled {
-					&:before {
-						background-color: $clr_main_2;
-					}
+					opacity: 0.57;
 				}
 
 				&:first-child {
@@ -40,7 +38,7 @@
 				}
 
 				&:last-child {
-					margin-right: -30px;
+					margin-right: -29px;
 
 					@include media($width_md) {
 						margin-right: -30px;
