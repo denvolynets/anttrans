@@ -9,6 +9,10 @@
 
 	@include media($width_xs) {
 		min-height: 0;
+
+		h2 {
+			display: none;
+		}
 	}
 
 	h2,
@@ -49,7 +53,7 @@
 		opacity: 0;
 
 		@include media($width_xs) {
-			display: none;
+			// display: none;
 		}
 
 		&.animate {
@@ -135,7 +139,7 @@
 		display: none;
 
 		@include media($width_xs) {
-			display: flex;
+			// display: flex;
 			position: relative;
 			z-index: 1;
 			color: $clr_wh;
