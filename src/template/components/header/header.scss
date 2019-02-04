@@ -46,6 +46,13 @@ $h: header;
 		&__logo {
 			position: relative;
 			bottom: 4px;
+
+			svg {
+				text {
+					font-family: $ff_seg;
+					font-weight: 900;
+				}
+			}
 		}
 
 		&__nav {
