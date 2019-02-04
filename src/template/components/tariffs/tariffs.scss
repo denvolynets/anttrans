@@ -244,9 +244,25 @@ $trf: 'tariffs';
 	.dropdown {
 		a {
 			color: $clr_main_1;
+			display: inline-block;
+			width: 100%;
 		}
 
+		li {
+			margin-bottom: 3px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
 		> a {
+			min-width: 80px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
 			&:before {
 				@include arrow($clr_main_1, 2px, 3px, 'down');
 			}
