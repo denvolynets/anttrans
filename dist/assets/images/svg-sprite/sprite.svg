@@ -1,18 +1,18 @@
 <svg id="svg-sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol viewBox="0 0 41 72" id="1">
 	<rect fill="rgb(255,255,255)" fill-opacity="0" stroke="none" transform="translate(41 30)" width="32" height="72" />
-	<text fill="rgb(0,189,45)" stroke="none" font-size="100" font-weight="bold" font-family="Segoe UI" x="0" y="72">
+	<text fill="rgb(0,189,45)" stroke="none" font-size="100" font-weight="700" font-family="Segoe UI, Arial" x="0" y="72">
 			1
 	</text>
 
 </symbol><symbol viewBox="0 0 51 72" id="2">
 	<rect fill="rgb(255,255,255)" fill-opacity="0" stroke="none" transform="matrix(0.993 0 0 0.993 3.97949 29.797)" width="47.000244" height="73" />
-	<text fill="rgb(0,189,45)" stroke="none" transform="matrix(0.993 0 0 0.993 0.0078125 1)" font-size="100" font-weight="bold" font-family="Segoe UI" x="0" y="72">
+	<text fill="rgb(0,189,45)" stroke="none" transform="matrix(0.993 0 0 0.993 0.0078125 1)" font-size="100" font-weight="700" font-family="Segoe UI" x="0" y="72">
 			2
 	</text>
 
 </symbol><symbol viewBox="0 0 51 74" id="3">
 	<rect fill="rgb(255,255,255)" fill-opacity="0" stroke="none" transform="translate(37 30)" width="45" height="73" />
-	<text fill="rgb(0,189,45)" stroke="none" font-size="100" font-weight="bold" font-family="Segoe UI" x="0" y="73">
+	<text fill="rgb(0,189,45)" stroke="none" font-size="100" font-weight="700" font-family="Segoe UI" x="0" y="73">
 			3
 	</text>
 
