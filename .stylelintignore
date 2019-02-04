@@ -1,3 +1,4 @@
 src/assets/libs
 dist
 dist/*
+src/app.js

@@ -9,6 +9,7 @@ import '../node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min';
 import '../node_modules/inputmask/dist/jquery.inputmask.bundle';
 
 import '../src/assets/scripts/rsForm';
+import ScrollParallax from '../src/assets/scripts/scrollParallax';
 import imgToSvg from '../src/assets/scripts/imgToSvg';
 import carousel from './template/components/carousel/carousel';
 import TariffsTable from './template/components/tariffs/tariffs';
@@ -32,14 +33,8 @@ const app = {
 						sSVG.addClass('animate');
 					}
 				}
-			},
-			'scrollBgZoom': () => {
-				$('.js-scroll-zoom').css({
-					backgroundSize: (100 + st / 15) + '%'
-				});
 			}
 		};
-		scrFUNC.scrollBgZoom();
 		scrFUNC.showingSVG();
 	},
 	bindEvents: () => {
@@ -67,13 +62,17 @@ const app = {
 					$('html').addClass('ismobile');
 				}
 
-				// let menu = $('.header-top__nav > ul').clone();
-				// menu.children('li.dropdown').each(function() {
-				// 	$(this).children('a').first().replaceWith('<span>' + $(this).children('a').first().html() + '</span>');
-				// });
-				// menu.find('*').removeAttr('class');
-				// menu.removeAttr('class');
-				// menu.appendTo('#menu');
+				(() => {
+					return;
+
+					let menu = $('.header-top__nav > ul').clone();
+					menu.children('li.dropdown').each(function() {
+						$(this).children('a').first().replaceWith('<span>' + $(this).children('a').first().html() + '</span>');
+					});
+					menu.find('*').removeAttr('class');
+					menu.removeAttr('class');
+					menu.appendTo('#menu');
+				})();
 				
 				$('#menu').mmenu({
 					'extensions': [
@@ -109,7 +108,7 @@ const app = {
 		};
 
 		readyFUNC.mobileMenu();
-
+		
 		$('input[type="number"]').niceNumber();
 
 		$('form').rsForm();
@@ -130,6 +129,8 @@ const app = {
 		let tariffsTable = new TariffsTable();
 		// eslint-disable-next-line no-unused-vars
 		let avtopark = new Avtopark();
+		// eslint-disable-next-line no-unused-vars
+		let scrollParallax = new ScrollParallax();
 
 		$('.scrollbar-outer').overlayScrollbars({});
 

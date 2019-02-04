@@ -144,7 +144,6 @@ $h: header;
 			margin: auto;
 			left: 0;
 			padding: 170px 20px;
-			width: auto;
 			pointer-events: none;
 			width: 100%;
 
@@ -237,17 +236,10 @@ $h: header;
 		$b: &;
 
 		@include media($width_lg) {
-			background-size: cover !important;
 			background-position: center center !important;
 		}
 
 		.carousel {
-			.js-scroll-zoom {
-				@include rw(($width_lgx - 36px)) {
-					background-size: cover !important;
-				}
-			}
-
 			.swiper-slide {
 				@include rw($width_xs) {
 					background-position: 29% center;
@@ -305,7 +297,7 @@ $h: header;
 			}
 
 			@include media($width_md) {
-				background-size: cover !important;
+				// background-size: cover !important;
 				background-position: center center !important;
 			}
 
