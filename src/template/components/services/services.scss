@@ -34,6 +34,10 @@
 				background-color: $clr_main;
 			}
 
+			&:after {
+				border-color: $clr_main;
+			}
+
 			&:not(.swiper-button-disabled) {
 				&:hover {
 					background-color: $clr_main_2;

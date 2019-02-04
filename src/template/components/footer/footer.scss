@@ -11,6 +11,41 @@
 	span {
 		font-size: $fs_05;
 		color: $clr_wh;
+		display: inline-flex;
+		align-items: center;
+		transition: all $trans;
+	}
+	
+	svg {
+		* {
+			transition: all $trans;
+		}
+	}
+
+	a {
+		&:hover {
+			color: $clr_yell;
+
+			svg:not(.s-stroke) {
+				path {
+					fill: $clr_yell;
+				}
+
+				text {
+					fill: $clr_yell;
+				}
+			}
+
+			svg.s-stroke {
+				path {
+					stroke: $clr_yell;
+				}
+
+				text {
+					fill: $clr_yell;
+				}
+			}
+		}
 	}
 
 	ul > li:not(.g-mb_2.g-mt_2) {
@@ -23,6 +58,11 @@
 
 	a.footer-phone {
 		font-size: 30px;
+	}
+
+	&-socials {
+		display: flex;
+		align-items: center;
 	}
 
 	&-bottom {
@@ -60,7 +100,8 @@
 			display: flex;
 			align-items: center;
 
-			img {
+			img,
+			svg {
 				margin-right: 10px;
 				position: relative;
 				bottom: 2px;

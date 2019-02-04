@@ -101,7 +101,11 @@ $f_c: 'form-calc';
 		padding-right: 10px;
 	}
 
-	.rsform-btn {
-		margin-bottom: -26px;
+	.btn-inner {
+		margin-bottom: -14px;
+
+		@include media($width_xs) {
+			margin-bottom: -26px;
+		}
 	}
 }

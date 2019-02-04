@@ -39,6 +39,10 @@ $h: header;
 		z-index: 3;
 		border-bottom: 1px solid rgba($clr_wh, .2);
 
+		.btn-inner {
+			justify-content: center;
+		}
+
 		&__logo {
 			position: relative;
 			bottom: 4px;
@@ -67,7 +71,7 @@ $h: header;
 			color: $clr_wh;
 
 			small {
-				font-size: 10px;
+				font-size: .52em;
 				font-family: $ff_main;
 				margin-top: -9px;
 				margin-bottom: -3px;

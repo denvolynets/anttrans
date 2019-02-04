@@ -14,8 +14,25 @@
 		transition: all $trans;
 		z-index: 4;
 
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 2px;
+			width: 100%;
+			height: 1px;
+			display: block;
+			transition: all $trans;
+			border-bottom: 1px dashed $clr_main_1;
+		}
+
 		&:hover {
 			color: $clr_main;
+
+			&:after {
+				border-bottom-color: $clr_main;
+			}
 		}
 
 		@include media($width_xs) {
@@ -116,6 +133,10 @@
 
 			&:before {
 				background-color: $clr_main;
+			}
+
+			&:after {
+				border-color: $clr_main;
 			}
 
 			&:not(.swiper-button-disabled) {

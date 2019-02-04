@@ -25,6 +25,10 @@
 					transition: all $trans;
 				}
 
+				&:after {
+					border-color: $clr_main;
+				}
+
 				&.swiper-button-disabled {
 					&:before {
 						background-color: $clr_main_2;

@@ -84,11 +84,36 @@
 				margin: auto;
 				display: block;
 			}
+
+			&:after {
+				content: '';
+				border: solid $clr_wh;
+				border-width: 0 1px 1px 0;
+				padding: 2px;
+				position: absolute;
+				display: inline-block;
+				left: -27px;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				height: 0;
+				width: 0;
+				transform: rotate(135deg);
+			}
 			
 
 			&:first-child {
 				right: -1px;
 				left: auto;
+			}
+
+			&:last-child {
+				&:after {
+					transform: rotate(-45deg);
+					left: 0;
+					right: -27px;
+				}
 			}
 		}
 	}

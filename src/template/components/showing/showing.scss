@@ -3,16 +3,12 @@
 
 	background-image: url(../../assets/images/temp/7.jpg);
 	background-position: center center;
-	min-height: 610px;
+	min-height: 570px;
 	position: relative;
 	overflow: hidden;
 
 	@include media($width_xs) {
 		min-height: 0;
-
-		h2 {
-			display: none;
-		}
 	}
 
 	h2,
@@ -53,7 +49,7 @@
 		opacity: 0;
 
 		@include media($width_xs) {
-			// display: none;
+			display: none;
 		}
 
 		&.animate {
@@ -65,8 +61,7 @@
 				animation: dash 7.5s ease forwards .15s;
 			}
 
-			#{$self}-group {
-
+			#{$self}-group {	
 				text {
 					font-family: $ff_bold;
 				}
@@ -144,7 +139,7 @@
 		display: none;
 
 		@include media($width_xs) {
-			// display: flex;
+			display: flex;
 			position: relative;
 			z-index: 1;
 			color: $clr_wh;
