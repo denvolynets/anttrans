@@ -282,6 +282,7 @@ $form: rsform;
 		font-family: $ff_bold;
 		display: flex;
 		align-items: center;
+		line-height: normal;
 
 		@include placeholder() {
 			color: $clr_main;
@@ -289,8 +290,6 @@ $form: rsform;
 
 		&::placeholder {
 			color: $clr_gray;
-			display: flex;
-			align-items: center;
 		}
 	}
 
