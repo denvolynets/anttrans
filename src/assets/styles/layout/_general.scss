@@ -10,8 +10,28 @@ body {
 	background: transparent;
 	margin: 0;
 
+	&:before {
+		content: '';
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background-color: #fff;
+		transition: all $trans;
+		z-index: 9999;
+	}
+
 	&.show-body {
 		opacity: 1;
+
+		&:before {
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 
 	@include rw($width_xs) {

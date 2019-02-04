@@ -131,14 +131,13 @@ const app = {
 		// eslint-disable-next-line no-unused-vars
 		let avtopark = new Avtopark();
 
-		// $('.scrollbar-outer').mCustomScrollbar({
-		// 	documentTouchScroll: false,
-		// 	contentTouchScroll: true
-		// });
-
 		$('.scrollbar-outer').overlayScrollbars({});
 
 		if (readyFUNC.isIE()) $('body').addClass('ie');
+
+		setTimeout(() => {
+			$('body').addClass('show-body');
+		}, 150);
 	}
 };
 
