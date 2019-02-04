@@ -64,6 +64,14 @@ $f_c: 'form-calc';
 	&__services {
 		max-width: 535px;
 
+		.btn-inner {
+			margin-bottom: 0 !important;
+		}
+
+		.rsform-row__vertical {
+			margin-bottom: -14px;
+		}
+
 		@include media($width_md) {
 			max-width: 100%;
 			padding-bottom: 30px;
