@@ -66,6 +66,11 @@
 			}
 
 			#{$self}-group {
+
+				text {
+					font-family: $ff_bold;
+				}
+
 				@for $i from 1 through 5 {
 					&:nth-child(#{$i}) {
 						#{$self}-title {

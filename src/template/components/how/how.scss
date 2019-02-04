@@ -51,11 +51,12 @@
 			&--num {
 				font-size: 100px;
 				color: $clr_main;
-				font-family: $ff_main;
+				font-family: $ff_exbold;
 				position: absolute;
 				right: 30px;
 				bottom: 0;
-				line-height: .57;
+				line-height: .7;
+				font-weight: 700;
 
 				img {
 					@include media($width_xs) {
