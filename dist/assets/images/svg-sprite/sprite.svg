@@ -1,6 +1,6 @@
 <svg id="svg-sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol viewBox="0 0 41 72" id="1">
 	<rect fill="rgb(255,255,255)" fill-opacity="0" stroke="none" transform="translate(41 30)" width="32" height="72" />
-	<text fill="rgb(0,189,45)" stroke="none" font-size="100" font-weight="700" font-family="Segoe UI, Arial" x="0" y="72">
+	<text fill="rgb(0,189,45)" stroke="none" font-size="100" font-weight="700" font-family="Segoe UI" x="0" y="72">
 			1
 	</text>
 
