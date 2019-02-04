@@ -58,6 +58,10 @@
 				line-height: .7;
 				font-weight: 700;
 
+				@include media($width_xs) {
+					font-size: 52px;
+				}
+
 				img {
 					@include media($width_xs) {
 						height: 43px;

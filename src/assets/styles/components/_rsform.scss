@@ -51,6 +51,7 @@ $form: rsform;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		position: relative;
 		margin-bottom: 12px;
 
@@ -279,6 +280,8 @@ $form: rsform;
 		background-color: transparent;
 		color: $clr_main;
 		font-family: $ff_bold;
+		display: flex;
+		align-items: center;
 
 		@include placeholder() {
 			color: $clr_main;
