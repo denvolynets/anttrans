@@ -68,8 +68,16 @@ $f_c: 'form-calc';
 			margin-bottom: 0 !important;
 		}
 
-		.rsform-row__vertical {
+		.rsform-row__vertical:last-child {
 			margin-bottom: -14px;
+
+			@include media($width_md) {
+				margin-bottom: -5px;
+			}
+
+			@include media($width_xs) {
+				margin-bottom: 30px;
+			}
 		}
 
 		@include media($width_md) {
@@ -82,7 +90,7 @@ $f_c: 'form-calc';
 			}
 
 			.btn-inner {
-				margin-bottom: -4px !important;
+				margin-bottom: 0px !important;
 			}
 		}
 

@@ -13,6 +13,10 @@
 		small {
 			margin-top: 2px;
 			color: #bbb;
+
+			@include media($width_xs) {
+				margin-top: 10px;
+			}
 		}
 	}
 
@@ -32,13 +36,17 @@
 			width: 100%;
 			position: relative;
 
+			@include media($width_xs) {
+				margin-bottom: 27px;
+			}
+
 			&:nth-child(1) {
 				width: 50%;
 				min-height: 55px;
 
 				@include media($width_xs) {
 					width: 100%;
-					margin-bottom: 27px;
+					margin-bottom: 10px;
 				}
 			}
 
@@ -66,11 +74,12 @@
 					align-items: center;
 				}
 
-				@include media($width_xs_s) {
+				@include media($width_xs) {
 					// flex-direction: column;
 					// align-items: flex-start;
 
-					img, svg {
+					img,
+					svg {
 						position: relative;
 						right: 0;
 						height: 60px;
