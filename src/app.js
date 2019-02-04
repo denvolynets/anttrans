@@ -91,7 +91,7 @@ const app = {
 					],
 					'iconPanels': true,
 					'navbar': {
-						'title': '<a class="title_link" href="./"><img src="./assets/images/svg/logo.svg"></a>'
+						'title': '<a class="title_link" href="./"><img class="svg" src="./assets/images/svg/logo.svg"></a>'
 					},
 					'navbars': [{
 						'position': 'bottom',

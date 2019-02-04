@@ -192,8 +192,10 @@ img.svg {
 			font-size: $fs_175;
 			font-family: $ff_main;
 			width: 100%;
-
 			
+			text {
+				font-family: $ff_segbold;
+			}
 		}
 
 		.mm-navbar__title {
