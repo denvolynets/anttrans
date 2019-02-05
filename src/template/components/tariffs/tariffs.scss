@@ -248,6 +248,7 @@ $trf: 'tariffs';
 			width: 100%;
 		}
 
+
 		li {
 			margin-bottom: 3px;
 			
@@ -270,7 +271,9 @@ $trf: 'tariffs';
 
 		&:hover {
 			> a:before {
-				@include arrow($clr_main_1, 2px, 3px, 'up');
+				bottom: 3px;
+				
+				@include arrow($clr_main_1, 2px, 3px, 'down');
 			}
 		}
 

@@ -146,6 +146,7 @@ $h: header;
 			padding: 170px 20px;
 			pointer-events: none;
 			width: 100%;
+			z-index: 2;
 
 			@include rw($width_md) {
 				position: relative;
@@ -234,6 +235,25 @@ $h: header;
 		background-size: cover;
 		background-position: center;
 		$b: &;
+
+		&.bg-mask {
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				display: block;
+				z-index: 1;
+				background-color: rgba($clr_black, .5);
+			}
+			
+			> * {
+				position: relative;
+				z-index: 2;
+			}
+		}
 
 		@include media($width_lg) {
 			background-position: center center !important;

@@ -24,6 +24,8 @@ export default class TariffsTable {
 	}
 
 	dropdownCities() {
+		return;
+		
 		this.curRegDataUpdate();
 
 		this.app.find('.tariffs-city').prepend(`<a data-city="${this.currCity}">${this.currCity}</a>`);
@@ -125,7 +127,6 @@ export default class TariffsTable {
 			THIS.currRegion = $(this).data('region');
 			THIS.app.find('.tariffs-table tbody').html('');
 			THIS.tableRows();
-			// $('.scrollbar-outer').mCustomScrollbar('scrollTo', 'top');
 			$('.scrollbar-outer').overlayScrollbars().scroll({ y: 0 }, 500);
 		});
 	}

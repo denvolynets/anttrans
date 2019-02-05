@@ -18,7 +18,11 @@
 			> div {
 				margin: 0;
 				background-color: transparent;
-				border-color: transparent;
+				border-color: $clr_main_2;
+
+				&:hover {
+					background-color: $clr_main_2;
+				}
 
 				&:before {
 					background-color: $clr_main;
@@ -33,17 +37,17 @@
 					opacity: 0.57;
 				}
 
-				&:first-child {
-					margin-left: -30px;
-				}
+				// &:first-child {
+				// 	margin-left: -30px;
+				// }
 
-				&:last-child {
-					margin-right: -29px;
+				// &:last-child {
+				// 	margin-right: -29px;
 
-					@include media($width_md) {
-						margin-right: -30px;
-					}
-				}
+				// 	@include media($width_md) {
+				// 		margin-right: -30px;
+				// 	}
+				// }
 			}
 
 			@include media($width_xs) {

@@ -63,7 +63,7 @@ const app = {
 				}
 
 				(() => {
-					return;
+					return; //* отключил клонирование основного меню в мобильное.
 
 					let menu = $('.header-top__nav > ul').clone();
 					menu.children('li.dropdown').each(function() {
@@ -149,9 +149,7 @@ function requireAll(r) {
 	r.keys().forEach(r);
 }
 requireAll(require.context('./assets/images/svg/', true, /\.svg$/));
-
-function requireAllPug(r) { r.keys().forEach(r); }
-requireAllPug(require.context('./template/pages/', true, /\.pug$/));
+requireAll(require.context('./template/pages/', true, /\.pug$/));
 
 if (module.hot) {
 	module.hot.accept();
